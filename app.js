@@ -187,6 +187,7 @@
     let activeIndex = 0;
     let scrollIndex = 0;
     let frame = 0;
+    let detailAnimation;
     function positionDetail() {
       const detail = details[activeIndex];
       if (compact.matches) {
@@ -199,11 +200,22 @@
 
     function selectMilestone(index) {
       if (index === activeIndex) return;
+      const offset = index > activeIndex ? 10 : -10;
+      detailAnimation?.cancel();
+      detailAnimation = undefined;
       buttons[activeIndex].setAttribute("aria-pressed", "false");
       if (!compact.matches) buttons[activeIndex].after(details[activeIndex]);
       activeIndex = index;
       buttons[index].setAttribute("aria-pressed", "true");
       positionDetail();
+
+      const content = details[index].querySelector(".timeline-detail-content");
+      if (!reducedMotion.matches && typeof content.animate === "function") {
+        detailAnimation = content.animate(
+          [{ opacity: 0.35, transform: `translateY(${offset}px)` }, { opacity: 1, transform: "none" }],
+          { duration: 320, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
+        );
+      }
     }
 
     function syncMilestoneWithScroll() {
@@ -290,9 +302,9 @@
     let pages = [];
     let pageIndex = 0;
     let turningPage;
+    let drag;
 
     function pageMarkup(index) {
-      const [heading, paragraph] = pages[index];
       return `
         <section>
           <div class="work-reader-folio">
@@ -301,8 +313,10 @@
               : "<span>Tóm lược tác phẩm</span>"}
             <span>Trang ${index + 1} / ${pages.length}</span>
           </div>
-          <h3>${escapeHtml(heading)}</h3>
-          ${index === 0 ? `
+          ${pages[index].map(([heading, ...paragraphs], noteIndex) => `
+            <div class="work-reader-note">
+              ${noteIndex === 0 ? `<h3>${escapeHtml(heading)}</h3>` : `<h4>${escapeHtml(heading)}</h4>`}
+              ${index === 0 && noteIndex === 0 ? `
             <figure class="work-reader-figure">
               <div class="work-reader-photo">
                 <span class="work-reader-plate" aria-hidden="true">${escapeHtml(work.title)}</span>
@@ -310,7 +324,9 @@
               </div>
               <figcaption>${escapeHtml(work.imageCaption)}</figcaption>
             </figure>` : ""}
-          <p>${escapeHtml(paragraph)}</p>
+              ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+            </div>
+          `).join("")}
         </section>
       `;
     }
@@ -328,8 +344,12 @@
     }
 
     function updatePageControls() {
-      previous.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === 0));
-      next.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex + (singlePage.matches ? 1 : 2) >= pages.length));
+      const atStart = pageIndex === 0;
+      const atEnd = pageIndex + (singlePage.matches ? 1 : 2) >= pages.length;
+      previous.setAttribute("aria-disabled", String(Boolean(turningPage) || atStart));
+      next.setAttribute("aria-disabled", String(Boolean(turningPage) || atEnd));
+      book.querySelector(".work-reader-corner-prev").hidden = atStart;
+      book.querySelector(".work-reader-corner-next").hidden = atEnd;
     }
 
     function showSpread(index) {
@@ -344,65 +364,189 @@
     }
 
     function clearTurn() {
-      turningPage?.remove();
+      drag = undefined;
+      if (turningPage) {
+        turningPage.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+        turningPage.remove();
+      }
       turningPage = undefined;
     }
 
-    function addLeafFace(leaf, className, index, scrollTop = 0) {
+    function addLeafFace(leaf, className, index, visiblePage) {
       const face = document.createElement("div");
       face.className = `work-reader-content ${className}`;
       leaf.append(face);
-      setPage(face, index);
-      face.scrollTop = scrollTop;
+      if (visiblePage) {
+        face.append(visiblePage.firstElementChild.cloneNode(true));
+        face.scrollTop = visiblePage.scrollTop;
+      } else {
+        setPage(face, index);
+      }
     }
 
-    function turnPage(direction) {
+    function animatePaperCurl(leaf, isSingle, forward, duration, easing) {
+      const stripCount = 12;
+      const samples = 32;
+      const faces = Array.from(leaf.children, (face) => ({ face, scrollTop: face.scrollTop }));
+      const stripWidth = leaf.getBoundingClientRect().width / stripCount;
+      const arc = isSingle ? Math.PI / 2 : Math.PI;
+      const maxBend = isSingle ? 0.48 : 0.96;
+      const tracks = Array.from({ length: stripCount }, () => []);
+
+      // Join each strip to the edge of the previous one to keep the paper continuous.
+      for (let sample = 0; sample <= samples; sample++) {
+        const time = sample / samples;
+        const progress = forward ? time : 1 - time;
+        const bend = Math.sin(Math.PI * progress) * maxBend;
+        let x = 0;
+        let z = 0;
+        tracks.forEach((track, index) => {
+          const angle = -arc * progress - bend * (index + 0.5) / stripCount;
+          track.push({
+            transform: `translate3d(${x}px, 0, ${z}px) rotateY(${angle}rad) translateX(${-index * stripWidth}px)`
+          });
+          x += Math.cos(angle) * stripWidth;
+          z -= Math.sin(angle) * stripWidth;
+        });
+      }
+
+      const strips = tracks.map((_, index) => {
+        const strip = document.createElement("div");
+        strip.className = "work-reader-paper-strip";
+        faces.forEach(({ face }, side) => {
+          const clone = face.cloneNode(true);
+          const photo = clone.querySelector("img[hidden]");
+          if (photo?.complete && photo.naturalWidth) photo.hidden = false;
+          else photo?.addEventListener("load", () => { photo.hidden = false; }, { once: true });
+          const band = side === 0 ? index : stripCount - index - 1;
+          const left = Math.max(0, band / stripCount * 100 - 0.04);
+          const right = Math.max(0, (stripCount - band - 1) / stripCount * 100 - 0.04);
+          clone.style.clipPath = `inset(0 ${right}% 0 ${left}%)`;
+          strip.append(clone);
+        });
+        return strip;
+      });
+      leaf.replaceChildren(...strips);
+
+      return strips.map((strip, index) => {
+        faces.forEach(({ scrollTop }, side) => {
+          strip.children[side].scrollTop = scrollTop;
+        });
+        return strip.animate(tracks[index], {
+          duration,
+          easing,
+          fill: "both"
+        });
+      });
+    }
+
+    function turnPage(direction, interactive = false) {
       const isSingle = singlePage.matches;
       const destination = pageIndex + direction * (isSingle ? 1 : 2);
       if (!reader.open || turningPage || destination < 0 || destination >= pages.length) return;
       if (reducedMotion.matches || typeof book.animate !== "function") {
-        showSpread(destination);
+        if (!interactive) showSpread(destination);
         return;
       }
 
+      const turn = document.createElement("div");
+      turn.className = "work-reader-turn";
+      turn.setAttribute("aria-hidden", "true");
+      const shadow = document.createElement("div");
+      shadow.className = "work-reader-turn-shadow";
       const leaf = document.createElement("div");
       leaf.className = "work-reader-leaf";
-      leaf.setAttribute("aria-hidden", "true");
-      book.append(leaf);
-      turningPage = leaf;
+      turn.append(shadow, leaf);
+      book.append(turn);
+      turningPage = turn;
       const forward = direction > 0;
       if (isSingle) {
-        addLeafFace(leaf, "", forward ? pageIndex : destination, forward ? left.scrollTop : 0);
+        addLeafFace(leaf, "", forward ? pageIndex : destination, forward ? left : undefined);
         if (forward) setPage(left, destination);
       } else if (forward) {
-        addLeafFace(leaf, "work-reader-right", pageIndex + 1, right.scrollTop);
+        addLeafFace(leaf, "work-reader-right", pageIndex + 1, right);
         addLeafFace(leaf, "work-reader-leaf-back", destination);
         setPage(right, destination + 1);
       } else {
         addLeafFace(leaf, "work-reader-right", destination + 1);
-        addLeafFace(leaf, "work-reader-leaf-back", pageIndex, left.scrollTop);
+        addLeafFace(leaf, "work-reader-leaf-back", pageIndex, left);
         setPage(left, destination);
       }
       updatePageControls();
 
-      const flat = { transform: "rotateY(0deg)" };
-      const folded = { transform: isSingle ? "rotateY(-90deg)" : "rotateY(-180deg)" };
-      const animation = leaf.animate(forward ? [flat, folded] : [folded, flat], {
-        duration: isSingle ? 440 : 620,
-        easing: "cubic-bezier(0.35, 0, 0.22, 1)",
-        fill: "forwards"
-      });
-      animation.addEventListener("finish", () => {
-        if (turningPage !== leaf) return;
+      const duration = isSingle ? 510 : 740;
+      const animations = animatePaperCurl(leaf, isSingle, forward, duration,
+        interactive ? "linear" : "cubic-bezier(0.42, 0, 0.28, 1)");
+      animations.push(shadow.animate([
+        { opacity: 0, transform: "scaleX(0.4)" },
+        { opacity: 1, transform: "scaleX(1)" },
+        { opacity: 0, transform: "scaleX(0.4)" }
+      ], { duration, easing: "ease-in-out" }));
+      if (interactive) animations.forEach((animation) => animation.pause());
+      animations[0].addEventListener("finish", () => {
+        if (turningPage !== turn) return;
+        const completed = animations[0].playbackRate > 0;
         clearTurn();
-        if (reader.open) showSpread(destination);
+        if (reader.open) showSpread(completed ? destination : pageIndex);
+      });
+      return { animations, duration, width: leaf.offsetWidth };
+    }
+
+    book.addEventListener("pointerdown", (event) => {
+      const corner = event.target.closest(".work-reader-corner");
+      if (!corner || turningPage || !event.isPrimary || event.button !== 0) return;
+      event.preventDefault();
+      const direction = Number(corner.dataset.direction);
+      const turn = turnPage(direction, true);
+      if (!turn) {
+        turnPage(direction);
+        return;
+      }
+      drag = { ...turn, id: event.pointerId, direction, startX: event.clientX, progress: 0, moved: false };
+      book.setPointerCapture(event.pointerId);
+    });
+
+    window.addEventListener("pointermove", (event) => {
+      if (drag?.id !== event.pointerId) return;
+      const distance = drag.startX - event.clientX;
+      drag.moved ||= Math.abs(distance) > 5;
+      drag.progress = Math.max(0, Math.min(0.99, distance * drag.direction / drag.width));
+      drag.animations.forEach((animation) => { animation.currentTime = drag.duration * drag.progress; });
+    });
+
+    function releaseCorner(event) {
+      if (drag?.id !== event.pointerId) return;
+      const turn = drag;
+      drag = undefined;
+      const complete = event.type === "pointerup" && (!turn.moved || turn.progress >= 0.25);
+      if (!complete && turn.progress === 0) {
+        restoreSpread();
+        return;
+      }
+      turn.animations.forEach((animation) => {
+        animation.playbackRate = complete ? 1.5 : -1.5;
+        animation.play();
       });
     }
 
-    singlePage.addEventListener("change", () => {
+    window.addEventListener("pointerup", releaseCorner);
+    window.addEventListener("pointercancel", releaseCorner);
+    window.addEventListener("blur", () => {
+      if (drag) restoreSpread();
+    });
+    book.addEventListener("dragstart", (event) => {
+      if (drag) event.preventDefault();
+    });
+
+    function restoreSpread() {
       if (!reader.open) return;
       clearTurn();
       showSpread(singlePage.matches ? pageIndex : pageIndex - pageIndex % 2);
+    }
+
+    singlePage.addEventListener("change", restoreSpread);
+    window.addEventListener("resize", () => {
+      if (turningPage) restoreSpread();
     });
     previous.addEventListener("click", () => turnPage(-1));
     next.addEventListener("click", () => turnPage(1));
@@ -426,7 +570,11 @@
       work = DATA.classicWorks[Number(card.dataset.workIndex)];
       title.textContent = work.title;
       meta.textContent = `${work.year} · ${work.original}`;
-      pages = [[work.title, work.significance], ...work.readingNotes];
+      const [introduction, ...notes] = work.readingNotes;
+      pages = [[[work.title, work.significance], introduction]];
+      for (let index = 0; index < notes.length; index += 2) {
+        pages.push(notes.slice(index, index + 2));
+      }
       delete left.dataset.pageIndex;
       delete right.dataset.pageIndex;
       source.href = work.fullTextUrl;
@@ -899,6 +1047,44 @@
 
   // ==================== HIỆU ỨNG CUỘN MƯỢT MÀ ====================
   function initSmoothScrollAndReveal() {
+    const root = document.documentElement;
+    let heroScrollFrame = 0;
+
+    function cancelHeroScroll() {
+      window.cancelAnimationFrame(heroScrollFrame);
+      heroScrollFrame = 0;
+    }
+
+    function scrollFromHero(target) {
+      const start = window.scrollY;
+      const padding = parseFloat(window.getComputedStyle(root).scrollPaddingTop) || 0;
+      const margin = parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+      const top = start + target.getBoundingClientRect().top - padding - margin;
+      const destination = Math.max(0, Math.min(top, root.scrollHeight - root.clientHeight));
+      const distance = destination - start;
+      const duration = Math.min(1100, 550 + Math.abs(distance) * 0.12);
+      let startedAt;
+
+      function step(now) {
+        startedAt ??= now;
+        const progress = Math.min(1, (now - startedAt) / duration);
+        const eased = progress * progress * (3 - 2 * progress);
+        window.scrollTo({ top: start + distance * eased, behavior: "instant" });
+        heroScrollFrame = progress < 1 ? window.requestAnimationFrame(step) : 0;
+      }
+
+      if (distance) heroScrollFrame = window.requestAnimationFrame(step);
+    }
+
+    window.addEventListener("wheel", cancelHeroScroll, { passive: true });
+    window.addEventListener("pointerdown", cancelHeroScroll, { passive: true });
+    window.addEventListener("popstate", cancelHeroScroll);
+    window.addEventListener("keydown", (event) => {
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) {
+        cancelHeroScroll();
+      }
+    });
+
     document.addEventListener("click", (event) => {
       if (!isPlainClick(event)) return;
       const link = event.target.closest('.site-header a[href^="#"], .site-hero a[href^="#"]');
@@ -909,16 +1095,20 @@
       if (!target) return;
 
       event.preventDefault();
+      cancelHeroScroll();
       if (window.location.hash !== hash) {
         window.history.pushState(null, "", hash);
       }
       if (!target.hasAttribute("tabindex")) target.tabIndex = -1;
       target.focus({ preventScroll: true });
-      target.scrollIntoView({ block: "start", behavior: reducedMotion.matches ? "instant" : "smooth" });
+      if (!reducedMotion.matches && link.closest(".hero-actions")) {
+        scrollFromHero(target);
+      } else {
+        target.scrollIntoView({ block: "start", behavior: reducedMotion.matches ? "instant" : "smooth" });
+      }
     });
 
     const progressBar = document.getElementById("scroll-progress-bar");
-    const root = document.documentElement;
     const header = document.querySelector(".site-header");
     const syncHeaderHeight = () => {
       if (header) root.style.setProperty("--header-height", `${header.offsetHeight}px`);

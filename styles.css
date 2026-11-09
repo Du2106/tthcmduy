@@ -864,11 +864,14 @@ body.theme-light .phuong-stat-box {
   border: 1px solid var(--border-bronze);
   background: var(--bg-obsidian);
   content: "";
+  transition: background-color 220ms var(--ease-out), border-color 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
 }
 
 .timeline-list li:has([aria-pressed="true"])::before {
   background: var(--red-primary);
   border-color: var(--red-primary);
+  transform: scale(1.25);
 }
 
 .timeline-milestone,
@@ -906,6 +909,7 @@ body.theme-light .phuong-stat-box {
 .timeline-year {
   font-size: 1.1rem;
   font-weight: 900;
+  transition: color 220ms var(--ease-out);
 }
 
 .timeline-milestone[aria-pressed="true"] .timeline-year,
@@ -949,7 +953,6 @@ body.theme-light .phuong-stat-box {
 .timeline-detail-content {
   display: grid;
   gap: 1rem;
-  animation: enter-up 280ms var(--ease-out) both;
 }
 
 .timeline-detail-header {
@@ -1018,8 +1021,8 @@ body.theme-light .work-card-link {
   inset: 0;
   margin: auto;
   padding: 0;
-  width: min(76rem, calc(100% - 2rem));
-  height: min(47rem, calc(100dvh - 2rem));
+  width: min(68rem, calc(100% - 1.25rem), max(36rem, calc((100dvh - 7rem) * 1.24)));
+  height: min(64rem, calc(100dvh - 1.25rem));
   border: 1px solid var(--border-bronze);
   background: var(--bg-obsidian);
   color: var(--text-white);
@@ -1085,7 +1088,7 @@ html:has(.work-reader[open]) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
-  perspective: 1400px;
+  overflow: clip;
   margin: 0.75rem clamp(0.65rem, 3vw, 1.4rem) 0;
   border: 1px solid #bc9868;
   border-radius: 0.85rem;
@@ -1126,7 +1129,7 @@ html:has(.work-reader[open]) {
   position: relative;
   display: grid;
   place-items: center;
-  height: clamp(7rem, 27vh, 14rem);
+  height: clamp(7rem, 22dvh, 13rem);
   overflow: hidden;
   padding: 0.55rem;
   border: 1px solid #dfd3be;
@@ -1163,6 +1166,7 @@ html:has(.work-reader[open]) {
 .work-reader-content {
   min-height: 0;
   overflow-y: auto;
+  scrollbar-gutter: stable;
   overscroll-behavior: contain;
   padding: clamp(1rem, 3vw, 2.3rem);
   background: linear-gradient(90deg, #f3ecdb, #fbf8ef 92%, #e8dac0);
@@ -1191,21 +1195,87 @@ html:has(.work-reader[open]) {
   font-weight: 800;
 }
 
-.work-reader-leaf {
+.work-reader-note + .work-reader-note {
+  margin-top: 1.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid #e5dcc9;
+}
+
+.work-reader-note h4 {
+  margin-bottom: 0.45rem;
+  color: #152033;
+  font-size: 1.05em;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.work-reader-content p + p {
+  margin-top: 0.8em;
+}
+
+.work-reader-corner {
   position: absolute;
+  inset-block-end: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: rgb(139 103 54 / 10%);
+  touch-action: none;
+  cursor: grab;
+  transition: background-color 160ms var(--ease-out);
+}
+
+.work-reader-corner:active {
+  cursor: grabbing;
+}
+
+.work-reader-corner-prev {
+  inset-inline-start: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.work-reader-corner-next {
+  inset-inline-end: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.work-reader-corner:hover {
+  background: rgb(139 103 54 / 24%);
+}
+
+.work-reader-turn {
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  inset: 0 0 0 50%;
-  transform-origin: left center;
-  transform-style: preserve-3d;
+  perspective: 1750px;
   pointer-events: none;
 }
 
-.work-reader-leaf > .work-reader-content {
+.work-reader-turn-shadow {
+  position: absolute;
+  inset: 0 24%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgb(49 29 14 / 24%), transparent);
+}
+
+.work-reader-leaf,
+.work-reader-paper-strip {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+
+.work-reader-leaf {
+  inset-inline-start: 50%;
+}
+
+.work-reader-leaf > .work-reader-content,
+.work-reader-paper-strip > .work-reader-content {
   position: absolute;
   inset: 0;
   overflow: hidden;
   backface-visibility: hidden;
-  box-shadow: 0 0 20px rgb(47 25 9 / 22%);
+  box-shadow: inset -1px 0 rgb(112 79 38 / 30%), 3px 0 14px rgb(47 25 9 / 15%);
 }
 
 .work-reader-leaf-back {
@@ -1237,6 +1307,11 @@ html:has(.work-reader[open]) {
 }
 
 @media (max-width: 640px) {
+  .work-reader {
+    width: min(32rem, calc(100% - 0.75rem));
+    height: min(54rem, calc(100dvh - 0.75rem));
+  }
+
   .work-reader-book {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1247,6 +1322,16 @@ html:has(.work-reader[open]) {
 
   .work-reader-leaf {
     inset-inline-start: 0;
+  }
+
+  .work-reader-turn {
+    perspective-origin: left center;
+  }
+
+  .work-reader-turn-shadow {
+    inset-inline: 0 45%;
+    transform-origin: left center;
+    background: linear-gradient(90deg, rgb(49 29 14 / 22%), transparent);
   }
 
   .work-reader-content {
