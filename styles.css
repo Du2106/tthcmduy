@@ -1080,28 +1080,18 @@ html:has(.work-reader[open]) {
 }
 
 .work-reader-book {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
+  perspective: 1400px;
   margin: 0.75rem clamp(0.65rem, 3vw, 1.4rem) 0;
   border: 1px solid #bc9868;
   border-radius: 0.85rem;
   background: #f8f1e3;
   box-shadow: 0 0 0 4px #63271e, 0 5px 0 4px #381510;
   color: #273044;
-}
-
-.work-reader-illustration,
-.work-reader-content {
-  padding: clamp(1rem, 3vw, 2.3rem);
-}
-
-.work-reader-illustration {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 1rem;
-  background: linear-gradient(90deg, #f3ecdb, #fbf8ef 92%, #e8dac0);
 }
 
 .work-reader-folio {
@@ -1128,15 +1118,15 @@ html:has(.work-reader[open]) {
 
 .work-reader-figure {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
   gap: 0.55rem;
-  margin: 0;
+  margin: 0 0 0.9rem;
 }
 
 .work-reader-photo {
   position: relative;
   display: grid;
   place-items: center;
+  height: clamp(7rem, 27vh, 14rem);
   overflow: hidden;
   padding: 0.55rem;
   border: 1px solid #dfd3be;
@@ -1170,19 +1160,18 @@ html:has(.work-reader[open]) {
   font-style: italic;
 }
 
-.work-reader-page-stage {
-  position: relative;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr);
-  perspective: 1200px;
-}
-
 .work-reader-content {
   min-height: 0;
   overflow-y: auto;
-  background: linear-gradient(90deg, #d5c3a5, #fbf8ef 1.6rem, #f6efdf);
+  overscroll-behavior: contain;
+  padding: clamp(1rem, 3vw, 2.3rem);
+  background: linear-gradient(90deg, #f3ecdb, #fbf8ef 92%, #e8dac0);
   color: #273044;
   line-height: 1.7;
+}
+
+.work-reader-right {
+  background: linear-gradient(90deg, #d5c3a5, #fbf8ef 1.6rem, #f6efdf);
 }
 
 .work-reader-content:focus-visible {
@@ -1204,11 +1193,23 @@ html:has(.work-reader[open]) {
 
 .work-reader-leaf {
   position: absolute;
-  inset: 0;
+  z-index: 1;
+  inset: 0 0 0 50%;
   transform-origin: left center;
+  transform-style: preserve-3d;
   pointer-events: none;
+}
+
+.work-reader-leaf > .work-reader-content {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   backface-visibility: hidden;
-  box-shadow: 8px 0 24px rgb(47 25 9 / 25%);
+  box-shadow: 0 0 20px rgb(47 25 9 / 22%);
+}
+
+.work-reader-leaf-back {
+  transform: rotateY(180deg);
 }
 
 .work-reader-pagination {
@@ -1238,33 +1239,14 @@ html:has(.work-reader[open]) {
 @media (max-width: 640px) {
   .work-reader-book {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
   }
 
-  .work-reader-illustration {
-    grid-template-rows: auto auto;
-    gap: 0.4rem;
-    padding-block: 0.6rem;
-    border-bottom: 1px solid #dfd3be;
+  #work-reader-right {
+    display: none;
   }
 
-  .work-reader-figure {
-    grid-template-columns: 6.5rem minmax(0, 1fr);
-    grid-template-rows: 4rem;
-    align-items: center;
-  }
-
-  .work-reader-photo {
-    height: 100%;
-  }
-
-  .work-reader-plate {
-    font-size: 0.62rem;
-  }
-
-  .work-reader-figure figcaption {
-    text-align: start;
-    font-size: 0.72rem;
+  .work-reader-leaf {
+    inset-inline-start: 0;
   }
 
   .work-reader-content {

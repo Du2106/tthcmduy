@@ -278,16 +278,15 @@
     });
     const title = document.getElementById("work-reader-title");
     const meta = document.getElementById("work-reader-meta");
-    const content = document.getElementById("work-reader-content");
+    const book = document.getElementById("work-reader-book");
+    const left = document.getElementById("work-reader-left");
+    const right = document.getElementById("work-reader-right");
     const source = document.getElementById("work-reader-source");
     const previous = document.getElementById("work-reader-prev");
     const next = document.getElementById("work-reader-next");
     const pageLabel = document.getElementById("work-reader-page");
-    const year = document.getElementById("work-reader-year");
-    const plate = document.getElementById("work-reader-plate");
-    const figure = document.querySelector(".work-reader-figure");
-    const caption = document.getElementById("work-reader-caption");
-    let image;
+    const singlePage = window.matchMedia("(max-width: 640px)");
+    let work;
     let pages = [];
     let pageIndex = 0;
     let turningPage;
@@ -297,70 +296,114 @@
       return `
         <section>
           <div class="work-reader-folio">
-            <span>Tóm lược tác phẩm</span>
+            ${index === 0
+              ? `<span class="work-reader-year">${escapeHtml(work.year)} · Tư liệu</span>`
+              : "<span>Tóm lược tác phẩm</span>"}
             <span>Trang ${index + 1} / ${pages.length}</span>
           </div>
           <h3>${escapeHtml(heading)}</h3>
+          ${index === 0 ? `
+            <figure class="work-reader-figure">
+              <div class="work-reader-photo">
+                <span class="work-reader-plate" aria-hidden="true">${escapeHtml(work.title)}</span>
+                <img alt="" decoding="async" hidden>
+              </div>
+              <figcaption>${escapeHtml(work.imageCaption)}</figcaption>
+            </figure>` : ""}
           <p>${escapeHtml(paragraph)}</p>
         </section>
       `;
     }
 
-    function updatePageControls() {
-      previous.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === 0));
-      next.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === pages.length - 1));
+    function setPage(side, index) {
+      if (side.dataset.pageIndex === String(index)) return;
+      side.dataset.pageIndex = index;
+      side.innerHTML = index < pages.length ? pageMarkup(index) : "";
+      side.scrollTop = 0;
+      const photo = side.querySelector("img");
+      if (photo) {
+        photo.addEventListener("load", () => { photo.hidden = false; }, { once: true });
+        photo.src = work.imageUrl;
+      }
     }
 
-    function showPage(index) {
+    function updatePageControls() {
+      previous.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === 0));
+      next.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex + (singlePage.matches ? 1 : 2) >= pages.length));
+    }
+
+    function showSpread(index) {
       pageIndex = index;
-      content.innerHTML = pageMarkup(index);
-      content.scrollTop = 0;
-      pageLabel.textContent = `Trang ${index + 1} / ${pages.length}`;
+      setPage(left, index);
+      if (!singlePage.matches) setPage(right, index + 1);
+      const range = !singlePage.matches && index + 1 < pages.length
+        ? `${index + 1}–${index + 2}`
+        : index + 1;
+      pageLabel.textContent = `Trang ${range} / ${pages.length}`;
       updatePageControls();
     }
 
+    function clearTurn() {
+      turningPage?.remove();
+      turningPage = undefined;
+    }
+
+    function addLeafFace(leaf, className, index, scrollTop = 0) {
+      const face = document.createElement("div");
+      face.className = `work-reader-content ${className}`;
+      leaf.append(face);
+      setPage(face, index);
+      face.scrollTop = scrollTop;
+    }
+
     function turnPage(direction) {
-      const destination = pageIndex + direction;
+      const isSingle = singlePage.matches;
+      const destination = pageIndex + direction * (isSingle ? 1 : 2);
       if (!reader.open || turningPage || destination < 0 || destination >= pages.length) return;
-      if (reducedMotion.matches || typeof content.animate !== "function") {
-        showPage(destination);
+      if (reducedMotion.matches || typeof book.animate !== "function") {
+        showSpread(destination);
         return;
       }
 
-      const leaf = content.cloneNode(true);
-      leaf.removeAttribute("id");
-      leaf.removeAttribute("tabindex");
+      const leaf = document.createElement("div");
+      leaf.className = "work-reader-leaf";
       leaf.setAttribute("aria-hidden", "true");
-      leaf.classList.add("work-reader-leaf");
-      const forward = direction > 0;
-      if (!forward) leaf.innerHTML = pageMarkup(destination);
-      content.after(leaf);
-      leaf.scrollTop = forward ? content.scrollTop : 0;
+      book.append(leaf);
       turningPage = leaf;
-      if (forward) {
-        showPage(destination);
+      const forward = direction > 0;
+      if (isSingle) {
+        addLeafFace(leaf, "", forward ? pageIndex : destination, forward ? left.scrollTop : 0);
+        if (forward) setPage(left, destination);
+      } else if (forward) {
+        addLeafFace(leaf, "work-reader-right", pageIndex + 1, right.scrollTop);
+        addLeafFace(leaf, "work-reader-leaf-back", destination);
+        setPage(right, destination + 1);
       } else {
-        updatePageControls();
+        addLeafFace(leaf, "work-reader-right", destination + 1);
+        addLeafFace(leaf, "work-reader-leaf-back", pageIndex, left.scrollTop);
+        setPage(left, destination);
       }
+      updatePageControls();
 
       const flat = { transform: "rotateY(0deg)" };
-      const folded = { transform: "rotateY(-90deg)" };
+      const folded = { transform: isSingle ? "rotateY(-90deg)" : "rotateY(-180deg)" };
       const animation = leaf.animate(forward ? [flat, folded] : [folded, flat], {
-        duration: 440,
+        duration: isSingle ? 440 : 620,
         easing: "cubic-bezier(0.35, 0, 0.22, 1)",
         fill: "forwards"
       });
       animation.addEventListener("finish", () => {
         if (turningPage !== leaf) return;
-        leaf.remove();
-        turningPage = undefined;
-        if (reader.open) {
-          if (forward) updatePageControls();
-          else showPage(destination);
-        }
+        clearTurn();
+        if (reader.open) showSpread(destination);
       });
     }
 
+    singlePage.addEventListener("change", () => {
+      if (!reader.open) return;
+      clearTurn();
+      showSpread(singlePage.matches ? pageIndex : pageIndex - pageIndex % 2);
+    });
     previous.addEventListener("click", () => turnPage(-1));
     next.addEventListener("click", () => turnPage(1));
     reader.addEventListener("keydown", (event) => {
@@ -371,9 +414,7 @@
       }
     });
     reader.addEventListener("close", () => {
-      if (reader.open) return;
-      turningPage?.remove();
-      turningPage = undefined;
+      if (!reader.open) clearTurn();
     });
 
     container.addEventListener("click", (event) => {
@@ -381,30 +422,16 @@
       if (!card || !isPlainClick(event)) return;
 
       event.preventDefault();
-      turningPage?.remove();
-      turningPage = undefined;
-      const work = DATA.classicWorks[Number(card.dataset.workIndex)];
+      clearTurn();
+      work = DATA.classicWorks[Number(card.dataset.workIndex)];
       title.textContent = work.title;
       meta.textContent = `${work.year} · ${work.original}`;
-      year.textContent = work.year;
-      plate.textContent = work.title;
-      caption.textContent = work.original;
-      const photo = document.createElement("img");
-      photo.alt = "";
-      photo.decoding = "async";
-      photo.hidden = true;
-      figure.querySelector("img").replaceWith(photo);
-      image = photo;
-      photo.addEventListener("load", () => {
-        if (image !== photo) return;
-        caption.textContent = work.imageCaption;
-        photo.hidden = false;
-      }, { once: true });
-      photo.src = work.imageUrl;
       pages = [[work.title, work.significance], ...work.readingNotes];
+      delete left.dataset.pageIndex;
+      delete right.dataset.pageIndex;
       source.href = work.fullTextUrl;
       reader.showModal();
-      showPage(0);
+      showSpread(0);
     });
   }
 
