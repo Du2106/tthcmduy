@@ -1,0 +1,15 @@
+{
+  "name": "tthcm-vmu-campaign",
+  "version": "1.0.0",
+  "description": "Website học liệu số Tư tưởng Hồ Chí Minh của Trường Đại học Hàng hải Việt Nam (VMU)",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "dev": "npx --yes serve . -l 3000"
+  },
+  "keywords": [
+    "tu-tuong-ho-chi-minh",
+    "vmu",
+    "dai-hoc-hang-hai-viet-nam",
+    "campaign"
+  ]
+}
