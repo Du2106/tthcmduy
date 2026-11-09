@@ -280,6 +280,72 @@
     const meta = document.getElementById("work-reader-meta");
     const content = document.getElementById("work-reader-content");
     const source = document.getElementById("work-reader-source");
+    const previous = document.getElementById("work-reader-prev");
+    const next = document.getElementById("work-reader-next");
+    const pageLabel = document.getElementById("work-reader-page");
+    let pages = [];
+    let pageIndex = 0;
+    let turningPage;
+
+    function showPage(index) {
+      const [heading, paragraph] = pages[index];
+      pageIndex = index;
+      content.innerHTML = `
+        <section>
+          <h3>${escapeHtml(heading)}</h3>
+          <p>${escapeHtml(paragraph)}</p>
+        </section>
+      `;
+      content.scrollTop = 0;
+      pageLabel.textContent = `Trang ${index + 1} / ${pages.length}`;
+      previous.setAttribute("aria-disabled", String(index === 0));
+      next.setAttribute("aria-disabled", String(index === pages.length - 1));
+    }
+
+    function turnPage(direction) {
+      const destination = pageIndex + direction;
+      if (destination < 0 || destination >= pages.length) return;
+      turningPage?.remove();
+      if (reducedMotion.matches || typeof content.animate !== "function") {
+        showPage(destination);
+        return;
+      }
+
+      const leaf = content.cloneNode(true);
+      leaf.removeAttribute("id");
+      leaf.removeAttribute("tabindex");
+      leaf.setAttribute("aria-hidden", "true");
+      leaf.classList.add("work-reader-leaf");
+      leaf.style.transformOrigin = direction > 0 ? "left center" : "right center";
+      content.after(leaf);
+      leaf.scrollTop = content.scrollTop;
+      turningPage = leaf;
+      showPage(destination);
+
+      const animation = leaf.animate([
+        { transform: "rotateY(0deg)", opacity: 1 },
+        { transform: `rotateY(${direction * -88}deg)`, opacity: 0.18 }
+      ], { duration: 440, easing: "cubic-bezier(0.35, 0, 0.22, 1)" });
+      animation.addEventListener("finish", () => {
+        leaf.remove();
+        if (turningPage === leaf) turningPage = undefined;
+      });
+    }
+
+    previous.addEventListener("click", () => turnPage(-1));
+    next.addEventListener("click", () => turnPage(1));
+    reader.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        turnPage(event.key === "ArrowLeft" ? -1 : 1);
+      }
+    });
+    reader.addEventListener("close", () => {
+      turningPage?.remove();
+      turningPage = undefined;
+    });
+
     container.addEventListener("click", (event) => {
       const card = event.target.closest("[data-work-index]");
       if (!card || !isPlainClick(event)) return;
@@ -288,18 +354,10 @@
       const work = DATA.classicWorks[Number(card.dataset.workIndex)];
       title.textContent = work.title;
       meta.textContent = `${work.year} · ${work.original}`;
-      content.innerHTML = `
-        <p class="work-reader-summary">${escapeHtml(work.significance)}</p>
-        ${work.readingNotes.map(([heading, paragraph]) => `
-          <section>
-            <h3>${escapeHtml(heading)}</h3>
-            <p>${escapeHtml(paragraph)}</p>
-          </section>
-        `).join("")}
-      `;
+      pages = [["Giới thiệu", work.significance], ...work.readingNotes];
       source.href = work.fullTextUrl;
       reader.showModal();
-      content.scrollTop = 0;
+      showPage(0);
     });
   }
 

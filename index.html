@@ -64,17 +64,17 @@
           03. Di sản văn kiện
         </a>
         <a href="#04-bac-ho-voi-hai-phong" class="bg-[#ee1c25]/10 text-amber-300 hover:bg-[#ee1c25]/20 hover:text-white transition-all">
-          🌺 04. Bác Hồ với Hải Phòng
+          04. Bác Hồ với Hải Phòng
         </a>
         <a href="#05-giao-trinh" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          05. Giáo trình 6 Chương
+          05. Giáo trình
         </a>
         <a href="#06-on-tap" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
           06. Trắc nghiệm
         </a>
       </nav>
 
-      <!-- Nút bo tròn chuyển đổi Sắc nền Sơn mài Tối / Giấy dó Sáng -->
+      <!-- Nút chuyển đổi nền sáng và tối -->
       <div class="flex items-center gap-3">
         <button
           type="button"
@@ -549,7 +549,14 @@
         </form>
       </div>
     </header>
-    <div id="work-reader-content" class="work-reader-content" tabindex="0" aria-label="Nội dung tìm hiểu tác phẩm"></div>
+    <div class="work-reader-book">
+      <div id="work-reader-content" class="work-reader-content" tabindex="0" aria-label="Nội dung tìm hiểu tác phẩm"></div>
+    </div>
+    <footer class="work-reader-pagination" aria-label="Lật trang sách">
+      <button id="work-reader-prev" type="button" aria-controls="work-reader-content" aria-disabled="true">← Trang trước</button>
+      <span id="work-reader-page" aria-live="polite" aria-atomic="true"></span>
+      <button id="work-reader-next" type="button" aria-controls="work-reader-content" aria-disabled="true">Trang sau →</button>
+    </footer>
   </dialog>
 
   <!-- ================= HỘP THOẠI CHI TIẾT CHƯƠNG HỌC ================= -->
