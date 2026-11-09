@@ -140,7 +140,6 @@
     if (!list || !pages.length) return;
 
     const compact = window.matchMedia("(max-width: 767px)");
-    const header = document.querySelector(".site-header");
     const yearOf = (page) => page.timelineYear || page.dateBadge.match(/\b\d{4}\b/)?.[0] || page.period;
     list.innerHTML = pages.map((page, index) => `
       <li>
@@ -185,8 +184,6 @@
     });
 
     let activeIndex = 0;
-    let scrollIndex = 0;
-    let frame = 0;
     let detailAnimation;
     function positionDetail() {
       const detail = details[activeIndex];
@@ -218,31 +215,9 @@
       }
     }
 
-    function syncMilestoneWithScroll() {
-      frame = 0;
-      const readingLine = (header?.offsetHeight || 0) + 32;
-      const bounds = list.getBoundingClientRect();
-      if (bounds.top > window.innerHeight || bounds.bottom < readingLine) return;
-      const passed = buttons.findLastIndex((button) => button.getBoundingClientRect().top <= readingLine);
-      const index = Math.max(0, passed);
-      if (index === scrollIndex) return;
-      scrollIndex = index;
-      selectMilestone(index);
-    }
-
-    function scheduleMilestoneSync() {
-      if (!frame) frame = window.requestAnimationFrame(syncMilestoneWithScroll);
-    }
-
     buttons[0].setAttribute("aria-pressed", "true");
     positionDetail();
-    compact.addEventListener("change", () => {
-      positionDetail();
-      scheduleMilestoneSync();
-    });
-    window.addEventListener("scroll", scheduleMilestoneSync, { passive: true });
-    window.addEventListener("resize", scheduleMilestoneSync);
-    scheduleMilestoneSync();
+    compact.addEventListener("change", positionDetail);
 
     list.addEventListener("click", (event) => {
       const button = event.target.closest(".timeline-milestone");
@@ -1110,6 +1085,11 @@
 
     const progressBar = document.getElementById("scroll-progress-bar");
     const header = document.querySelector(".site-header");
+    const navigation = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'), (link) => ({
+      link,
+      section: document.getElementById(link.hash.slice(1))
+    })).filter(({ section }) => section);
+    let activeLink;
     const syncHeaderHeight = () => {
       if (header) root.style.setProperty("--header-height", `${header.offsetHeight}px`);
     };
@@ -1119,6 +1099,19 @@
       const progress = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
       if (progressBar) {
         progressBar.style.transform = `scaleX(${progress})`;
+      }
+
+      const readingLine = Math.min(root.clientHeight, (header?.offsetHeight ?? 0) + 40);
+      const current = navigation.findLast(({ section }) => section.getBoundingClientRect().top <= readingLine);
+      const last = navigation.at(-1);
+      const atEnd = distance > 0 && window.scrollY >= distance - 1;
+      const visibleLink = atEnd && last?.section.getBoundingClientRect().top < root.clientHeight
+        ? last.link
+        : current?.link;
+      if (visibleLink !== activeLink) {
+        activeLink?.removeAttribute("aria-current");
+        visibleLink?.setAttribute("aria-current", "location");
+        activeLink = visibleLink;
       }
       frame = 0;
     };
