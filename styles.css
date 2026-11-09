@@ -1205,6 +1205,7 @@ html:has(.work-reader[open]) {
 .work-reader-leaf {
   position: absolute;
   inset: 0;
+  transform-origin: left center;
   pointer-events: none;
   backface-visibility: hidden;
   box-shadow: 8px 0 24px rgb(47 25 9 / 25%);

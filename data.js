@@ -279,7 +279,7 @@ window.TTHCM_DATA = {
         ["Cách lập luận", "Tác giả dùng dẫn chứng, chuyện kể và giọng châm biếm để đối chiếu lời tuyên truyền về công cuộc khai hóa với những gì người dân phải trải qua. Phần cuối hướng sự chú ý sang khả năng tổ chức và đấu tranh của chính các dân tộc thuộc địa."]
       ],
       significance:
-        "Tố cáo đanh thép tội ác của chủ nghĩa thực dân tại các thuộc địa (trong đó có cảnh đời khắc nghiệt của người lao động bản xứ trên các tàu biển) và thức tỉnh các dân tộc bị áp bức đứng lên tự giải phóng."
+        "Nguyễn Ái Quốc phơi bày việc thực dân Pháp cưỡng bức tuyển lính, bóc lột lao động và đàn áp người dân tại các thuộc địa. Tác phẩm cũng kêu gọi các dân tộc bị áp bức tự tổ chức đấu tranh."
     },
     {
       year: "1927",
@@ -294,7 +294,7 @@ window.TTHCM_DATA = {
         ["Từ kinh nghiệm quốc tế đến tổ chức trong nước", "Tác giả bàn về các cuộc cách mạng ở Mỹ, Pháp và Nga, sau đó giới thiệu những hình thức tổ chức như công hội, nông hội và hợp tác xã. Các ví dụ giúp người đọc hiểu vì sao một phong trào cần đường lối, tổ chức và sự tham gia của quần chúng."]
       ],
       significance:
-        "Phác thảo toàn diện phương hướng chiến lược của cách mạng Việt Nam; mở đầu bằng hai mươi ba điều về “Tư cách một người kách mệnh” và hình ảnh “người cầm lái có vững thuyền mới chạy”."
+        "Tập hợp các bài giảng của Nguyễn Ái Quốc tại Quảng Châu về đường lối cách mạng, vai trò của tổ chức và những phẩm chất người làm cách mạng cần rèn luyện."
     },
     {
       year: "1945",

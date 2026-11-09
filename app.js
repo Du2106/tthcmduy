@@ -292,30 +292,36 @@
     let pageIndex = 0;
     let turningPage;
 
-    function showPage(index) {
+    function pageMarkup(index) {
       const [heading, paragraph] = pages[index];
-      pageIndex = index;
-      const pageNumber = `Trang ${index + 1} / ${pages.length}`;
-      content.innerHTML = `
+      return `
         <section>
           <div class="work-reader-folio">
-            <span>Hồ sơ tác phẩm</span>
-            <span>${pageNumber}</span>
+            <span>Tóm lược tác phẩm</span>
+            <span>Trang ${index + 1} / ${pages.length}</span>
           </div>
           <h3>${escapeHtml(heading)}</h3>
           <p>${escapeHtml(paragraph)}</p>
         </section>
       `;
+    }
+
+    function updatePageControls() {
+      previous.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === 0));
+      next.setAttribute("aria-disabled", String(Boolean(turningPage) || pageIndex === pages.length - 1));
+    }
+
+    function showPage(index) {
+      pageIndex = index;
+      content.innerHTML = pageMarkup(index);
       content.scrollTop = 0;
-      pageLabel.textContent = pageNumber;
-      previous.setAttribute("aria-disabled", String(index === 0));
-      next.setAttribute("aria-disabled", String(index === pages.length - 1));
+      pageLabel.textContent = `Trang ${index + 1} / ${pages.length}`;
+      updatePageControls();
     }
 
     function turnPage(direction) {
       const destination = pageIndex + direction;
-      if (destination < 0 || destination >= pages.length) return;
-      turningPage?.remove();
+      if (!reader.open || turningPage || destination < 0 || destination >= pages.length) return;
       if (reducedMotion.matches || typeof content.animate !== "function") {
         showPage(destination);
         return;
@@ -326,19 +332,32 @@
       leaf.removeAttribute("tabindex");
       leaf.setAttribute("aria-hidden", "true");
       leaf.classList.add("work-reader-leaf");
-      leaf.style.transformOrigin = direction > 0 ? "left center" : "right center";
+      const forward = direction > 0;
+      if (!forward) leaf.innerHTML = pageMarkup(destination);
       content.after(leaf);
-      leaf.scrollTop = content.scrollTop;
+      leaf.scrollTop = forward ? content.scrollTop : 0;
       turningPage = leaf;
-      showPage(destination);
+      if (forward) {
+        showPage(destination);
+      } else {
+        updatePageControls();
+      }
 
-      const animation = leaf.animate([
-        { transform: "rotateY(0deg)", opacity: 1 },
-        { transform: `rotateY(${direction * -88}deg)`, opacity: 0.18 }
-      ], { duration: 440, easing: "cubic-bezier(0.35, 0, 0.22, 1)" });
+      const flat = { transform: "rotateY(0deg)" };
+      const folded = { transform: "rotateY(-90deg)" };
+      const animation = leaf.animate(forward ? [flat, folded] : [folded, flat], {
+        duration: 440,
+        easing: "cubic-bezier(0.35, 0, 0.22, 1)",
+        fill: "forwards"
+      });
       animation.addEventListener("finish", () => {
+        if (turningPage !== leaf) return;
         leaf.remove();
-        if (turningPage === leaf) turningPage = undefined;
+        turningPage = undefined;
+        if (reader.open) {
+          if (forward) updatePageControls();
+          else showPage(destination);
+        }
       });
     }
 
@@ -352,6 +371,7 @@
       }
     });
     reader.addEventListener("close", () => {
+      if (reader.open) return;
       turningPage?.remove();
       turningPage = undefined;
     });
@@ -361,6 +381,8 @@
       if (!card || !isPlainClick(event)) return;
 
       event.preventDefault();
+      turningPage?.remove();
+      turningPage = undefined;
       const work = DATA.classicWorks[Number(card.dataset.workIndex)];
       title.textContent = work.title;
       meta.textContent = `${work.year} · ${work.original}`;
