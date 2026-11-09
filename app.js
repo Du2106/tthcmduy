@@ -283,6 +283,11 @@
     const previous = document.getElementById("work-reader-prev");
     const next = document.getElementById("work-reader-next");
     const pageLabel = document.getElementById("work-reader-page");
+    const year = document.getElementById("work-reader-year");
+    const plate = document.getElementById("work-reader-plate");
+    const figure = document.querySelector(".work-reader-figure");
+    const caption = document.getElementById("work-reader-caption");
+    let image;
     let pages = [];
     let pageIndex = 0;
     let turningPage;
@@ -290,14 +295,19 @@
     function showPage(index) {
       const [heading, paragraph] = pages[index];
       pageIndex = index;
+      const pageNumber = `Trang ${index + 1} / ${pages.length}`;
       content.innerHTML = `
         <section>
+          <div class="work-reader-folio">
+            <span>Hồ sơ tác phẩm</span>
+            <span>${pageNumber}</span>
+          </div>
           <h3>${escapeHtml(heading)}</h3>
           <p>${escapeHtml(paragraph)}</p>
         </section>
       `;
       content.scrollTop = 0;
-      pageLabel.textContent = `Trang ${index + 1} / ${pages.length}`;
+      pageLabel.textContent = pageNumber;
       previous.setAttribute("aria-disabled", String(index === 0));
       next.setAttribute("aria-disabled", String(index === pages.length - 1));
     }
@@ -354,7 +364,22 @@
       const work = DATA.classicWorks[Number(card.dataset.workIndex)];
       title.textContent = work.title;
       meta.textContent = `${work.year} · ${work.original}`;
-      pages = [["Giới thiệu", work.significance], ...work.readingNotes];
+      year.textContent = work.year;
+      plate.textContent = work.title;
+      caption.textContent = work.original;
+      const photo = document.createElement("img");
+      photo.alt = "";
+      photo.decoding = "async";
+      photo.hidden = true;
+      figure.querySelector("img").replaceWith(photo);
+      image = photo;
+      photo.addEventListener("load", () => {
+        if (image !== photo) return;
+        caption.textContent = work.imageCaption;
+        photo.hidden = false;
+      }, { once: true });
+      photo.src = work.imageUrl;
+      pages = [[work.title, work.significance], ...work.readingNotes];
       source.href = work.fullTextUrl;
       reader.showModal();
       showPage(0);

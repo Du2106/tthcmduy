@@ -269,6 +269,8 @@ window.TTHCM_DATA = {
     {
       year: "1925",
       title: "Bản án chế độ thực dân Pháp",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Portrait_dated_1922_of_Ho_Chi_Minh.jpg",
+      imageCaption: "Chân dung Nguyễn Ái Quốc tại Pa-ri, năm 1922.",
       original: "Xuất bản lần đầu tại Pa-ri (Pháp)",
       fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/1f0ad9a0189a7c2ea62cf837612c3d9bHO_CHI_MINH_TOAN_TAP_-_TAP_2.pdf#page=37",
       readingNotes: [
@@ -282,6 +284,8 @@ window.TTHCM_DATA = {
     {
       year: "1927",
       title: "Đường Kách mệnh",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Trotsky_Lunion_Ho_1924.jpg",
+      imageCaption: "Nguyễn Ái Quốc cùng các đại biểu Quốc tế Cộng sản tại Moskva, năm 1924.",
       original: "Tập hợp bài giảng tại Quảng Châu",
       fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/1f0ad9a0189a7c2ea62cf837612c3d9bHO_CHI_MINH_TOAN_TAP_-_TAP_2.pdf#page=291",
       readingNotes: [
@@ -295,6 +299,8 @@ window.TTHCM_DATA = {
     {
       year: "1945",
       title: "Tuyên ngôn Độc lập",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Ba_Dinh_Square_September_2nd,_1945.jpg",
+      imageCaption: "Quảng trường Ba Đình ngày 2/9/1945, khi Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập.",
       original: "Quảng trường Ba Đình, 02/09/1945",
       fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/786ba6cbfbb9aa4c66f7e55c826dce2bHO_CHI_MINH_TOAN_TAP_-_TAP_4.pdf#page=13",
       readingNotes: [
@@ -308,6 +314,8 @@ window.TTHCM_DATA = {
     {
       year: "1965–1969",
       title: "Di chúc của Chủ tịch Hồ Chí Minh",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/5/54/Ho_Chi_Minh%27s_will_1969_handwriting_version_correcting_the_opening.png",
+      imageCaption: "Bút tích Chủ tịch Hồ Chí Minh sửa phần mở đầu Di chúc năm 1969.",
       original: "Bảo vật Quốc gia (1965 – 1969)",
       fullTextUrl: "https://baochinhphu.vn/toan-van-di-chuc-cua-chu-tich-ho-chi-minh-102169104.htm",
       readingNotes: [

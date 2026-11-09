@@ -1018,8 +1018,8 @@ body.theme-light .work-card-link {
   inset: 0;
   margin: auto;
   padding: 0;
-  width: min(48rem, calc(100% - 2rem));
-  height: min(33rem, calc(100dvh - 2rem));
+  width: min(76rem, calc(100% - 2rem));
+  height: min(47rem, calc(100dvh - 2rem));
   border: 1px solid var(--border-bronze);
   background: var(--bg-obsidian);
   color: var(--text-white);
@@ -1080,23 +1080,109 @@ html:has(.work-reader[open]) {
 }
 
 .work-reader-book {
-  position: relative;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
-  perspective: 1200px;
   margin: 0.75rem clamp(0.65rem, 3vw, 1.4rem) 0;
   border: 1px solid #bc9868;
-  background: #f4e6cd;
-  box-shadow: 0 4px 0 #9e7951, 0 7px 0 #513526;
+  border-radius: 0.85rem;
+  background: #f8f1e3;
+  box-shadow: 0 0 0 4px #63271e, 0 5px 0 4px #381510;
+  color: #273044;
+}
+
+.work-reader-illustration,
+.work-reader-content {
+  padding: clamp(1rem, 3vw, 2.3rem);
+}
+
+.work-reader-illustration {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 1rem;
+  background: linear-gradient(90deg, #f3ecdb, #fbf8ef 92%, #e8dac0);
+}
+
+.work-reader-folio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #e5dcc9;
+  color: #815136;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.work-reader-year {
+  padding: 0.15rem 0.65rem;
+  border: 1px solid #edc4bf;
+  border-radius: 999px;
+  color: #861f27;
+  background: #fae5e2;
+}
+
+.work-reader-figure {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.work-reader-photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 0.55rem;
+  border: 1px solid #dfd3be;
+  border-radius: 0.65rem;
+  background: radial-gradient(ellipse at center, #f7e8c7, #e2cda3);
+}
+
+.work-reader-photo img {
+  position: absolute;
+  inset: 0.55rem;
+  width: calc(100% - 1.1rem);
+  height: calc(100% - 1.1rem);
+  object-fit: contain;
+  background: #f3e8d3;
+}
+
+.work-reader-plate {
+  max-width: 18ch;
+  color: #662c21;
+  text-align: center;
+  font-family: var(--font-quote);
+  font-size: clamp(1rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+}
+
+.work-reader-figure figcaption {
+  color: #665848;
+  text-align: center;
+  font-family: var(--font-quote);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.work-reader-page-stage {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  perspective: 1200px;
 }
 
 .work-reader-content {
   min-height: 0;
   overflow-y: auto;
-  padding: clamp(1.2rem, 5vw, 2.6rem);
-  background: linear-gradient(90deg, #dac49e, #faf0db 1.4rem, #f4e6cd);
-  color: #362318;
-  line-height: 1.8;
+  background: linear-gradient(90deg, #d5c3a5, #fbf8ef 1.6rem, #f6efdf);
+  color: #273044;
+  line-height: 1.7;
 }
 
 .work-reader-content:focus-visible {
@@ -1109,9 +1195,10 @@ html:has(.work-reader[open]) {
 }
 
 .work-reader-content h3 {
-  margin-bottom: 0.65rem;
-  color: #761e19;
-  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  margin-block: 1rem 0.65rem;
+  color: #152033;
+  font-size: clamp(1.2rem, 2.65vw, 2rem);
+  line-height: 1.25;
   font-weight: 800;
 }
 
@@ -1145,6 +1232,43 @@ html:has(.work-reader[open]) {
 .work-reader-pagination button[aria-disabled="true"] {
   opacity: 0.45;
   cursor: default;
+}
+
+@media (max-width: 640px) {
+  .work-reader-book {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .work-reader-illustration {
+    grid-template-rows: auto auto;
+    gap: 0.4rem;
+    padding-block: 0.6rem;
+    border-bottom: 1px solid #dfd3be;
+  }
+
+  .work-reader-figure {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    grid-template-rows: 4rem;
+    align-items: center;
+  }
+
+  .work-reader-photo {
+    height: 100%;
+  }
+
+  .work-reader-plate {
+    font-size: 0.62rem;
+  }
+
+  .work-reader-figure figcaption {
+    text-align: start;
+    font-size: 0.72rem;
+  }
+
+  .work-reader-content {
+    background: linear-gradient(#ebdfca, #fbf8ef 0.75rem, #f6efdf);
+  }
 }
 
 @media (max-width: 767px) {
