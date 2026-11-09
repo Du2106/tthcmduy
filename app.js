@@ -6,8 +6,6 @@
   const STORAGE_KEY = "tthcm_hai_phong_book_v2";
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  let currentBookIndex = 0;
-  let isBookFlipping = false;
   let currentChapterIndex = 0;
   let currentQuizIndex = 0;
   let quizScore = 0;
@@ -90,22 +88,6 @@
       .replace(/'/g, "&apos;");
   }
 
-  function getPageImage(page) {
-    const fallbackUri = createFallbackSvgDataUri(page);
-    const primaryImg = page.imageUrl || fallbackUri;
-    return { primaryImg, fallbackUri };
-  }
-
-  function preloadBookImages() {
-    if (!DATA.bookPages) return;
-    DATA.bookPages.forEach((p) => {
-      if (p.imageUrl) {
-        const img = new Image();
-        img.src = p.imageUrl;
-      }
-    });
-  }
-
   // ==================== 01. HIỂN THỊ DANH XƯNG QUA CÁC THỜI KỲ ====================
   function renderDanhXung() {
     const gridEl = document.getElementById("danh-xung-grid");
@@ -120,7 +102,7 @@
             <span class="font-mono-code text-xs font-extrabold text-[#ee1c25] tracking-widest">
               DANH XƯNG THỨ ${item.index}
             </span>
-            <span class="font-mono-code text-[11px] font-semibold text-amber-400/90 bg-amber-500/10 border border-amber-500/25 px-3 py-1 rounded-full">
+            <span class="font-mono-code text-[11px] font-semibold text-amber-400/90 bg-amber-500/10 border border-amber-500/25 px-3 py-1">
               ${item.period}
             </span>
           </div>
@@ -151,256 +133,116 @@
       .join("");
   }
 
-  // ==================== 02. CUỐN SÁCH GIẤY DÓ LẬT TRANG 3D ====================
-  function buildLeftPageHTML(page) {
-    const { primaryImg, fallbackUri } = getPageImage(page);
-    const numStr = page.pageNumber < 10 ? "0" + page.pageNumber : page.pageNumber;
-    return `
-      <div
-        onclick="window.prevBookPage()"
-        title="Nhấn vào trang trái để lật về trang trước"
-        class="book-page-left-surface h-full p-6 sm:p-8 lg:pr-10 flex flex-col justify-between border-b lg:border-b-0 border-amber-900/15 cursor-pointer select-none"
-      >
-        <div class="flex items-center justify-between gap-2 pb-4 border-b border-amber-900/10">
-          <span class="font-mono-code text-xs font-bold uppercase tracking-wider text-red-800 bg-red-100/90 border border-red-300 px-3.5 py-1 rounded-full">
-            MỐC SON SỐ ${numStr} • ${page.dateBadge}
-          </span>
-          <span class="font-mono-code text-[11px] font-bold text-amber-900/80">
-            SỬ VÀNG DÂN TỘC
-          </span>
-        </div>
+  // ==================== 02. BIÊN NIÊN SỬ ====================
+  function renderTimeline() {
+    const list = document.getElementById("timeline-milestones");
+    const pages = DATA.bookPages;
+    if (!list || !pages.length) return;
 
-        <div class="my-5 space-y-3">
-          <div class="archival-photo-frame group">
-            <div class="relative w-full h-64 sm:h-72 md:h-80 rounded-xl overflow-hidden bg-stone-200 flex items-center justify-center">
-              <img
-                src="${primaryImg}"
-                alt="${escapeHtml(page.title)}"
-                onerror="this.onerror=null; this.src='${fallbackUri}';"
-                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-              <div class="absolute bottom-2.5 right-2.5 px-3 py-1 rounded-full bg-slate-950/80 text-amber-200 text-[11px] font-mono-code backdrop-blur-sm">
-                ${page.period}
+    const compact = window.matchMedia("(max-width: 767px)");
+    const header = document.querySelector(".site-header");
+    const yearOf = (page) => page.timelineYear || page.dateBadge.match(/\b\d{4}\b/)?.[0] || page.period;
+    list.innerHTML = pages.map((page, index) => `
+      <li>
+        <button class="timeline-milestone" type="button" data-index="${index}"
+          aria-controls="timeline-detail-${index}" aria-pressed="false">
+          <span class="timeline-meta">
+            <strong class="timeline-year">${escapeHtml(yearOf(page))}</strong>
+            <span class="timeline-location">${escapeHtml(page.location)}</span>
+          </span>
+          <strong class="timeline-milestone-title">${escapeHtml(page.timelineTitle || page.title)}</strong>
+          <span class="timeline-summary">${escapeHtml(page.story[0])}</span>
+        </button>
+        <article id="timeline-detail-${index}" class="timeline-detail" aria-labelledby="timeline-title-${index}" tabindex="0">
+          <div class="timeline-detail-content">
+            <header class="timeline-detail-header">
+              <span class="timeline-period">Giai đoạn ${escapeHtml(page.period)}</span>
+              <div class="timeline-meta">
+                <span class="timeline-detail-year">${escapeHtml(yearOf(page))}</span>
+                <span class="timeline-location">${escapeHtml(page.location)}</span>
               </div>
-            </div>
-            <p class="mt-3 text-xs sm:text-sm text-stone-700 italic text-center px-2 leading-relaxed font-quote-italic">
-              ▲ ${page.imageCaption}
-            </p>
+            </header>
+            <h3 id="timeline-title-${index}">${escapeHtml(page.timelineTitle || page.title)}</h3>
+            ${page.story.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+            <blockquote>${escapeHtml(page.quote)}</blockquote>
+            <p><strong>Ý nghĩa lịch sử.</strong> ${escapeHtml(page.significance)}</p>
+            <figure class="timeline-photo">
+              <img alt="" decoding="async" loading="lazy">
+              <figcaption>${escapeHtml(page.imageCaption)}</figcaption>
+            </figure>
           </div>
+        </article>
+      </li>
+    `).join("");
 
-          <div class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-amber-100/70 border border-amber-300/80 text-xs sm:text-sm text-amber-950 font-medium">
-            <span class="text-base shrink-0">📍</span>
-            <span><strong>Địa danh lịch sử:</strong> ${page.location}</span>
-          </div>
-        </div>
+    const buttons = Array.from(list.querySelectorAll(".timeline-milestone"));
+    const details = Array.from(list.querySelectorAll(".timeline-detail"));
+    details.forEach((detail, index) => {
+      const page = pages[index];
+      const image = detail.querySelector("img");
+      image.addEventListener("error", () => { image.src = createFallbackSvgDataUri(page); }, { once: true });
+      image.src = page.imageUrl || createFallbackSvgDataUri(page);
+    });
 
-        <div class="pt-3 border-t border-amber-900/10 flex items-center justify-between text-xs text-stone-500 font-mono-code">
-          <span>TRANG ${page.pageNumber * 2 - 1}</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-amber-900/10 text-red-800 hover:bg-red-800 hover:text-white font-bold inline-flex items-center gap-1 transition">
-            ← LẬT TRANG TRƯỚC
-          </span>
-        </div>
-      </div>
-    `;
-  }
-
-  function buildRightPageHTML(page, total) {
-    return `
-      <div
-        onclick="window.nextBookPage()"
-        title="Nhấn vào trang phải để lật sang trang tiếp theo"
-        class="book-page-right-surface h-full p-6 sm:p-8 lg:pl-10 flex flex-col justify-between cursor-pointer select-none"
-      >
-        <div class="space-y-4">
-          <div class="flex items-center justify-between gap-2 pb-4 border-b border-amber-900/10">
-            <span class="font-mono-code text-xs font-bold uppercase tracking-wider text-amber-800">
-              THỜI KỲ: ${page.period}
-            </span>
-            <span class="font-mono-code text-xs text-stone-500">
-              TRANG ${page.pageNumber * 2} / ${total * 2}
-            </span>
-          </div>
-
-          <h3 class="font-serif-editorial text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
-            ${page.title}
-          </h3>
-
-          <div class="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
-            ${page.story
-              .map(
-                (para) => `
-              <p class="text-justify">${para}</p>
-            `
-              )
-              .join("")}
-          </div>
-
-          <blockquote class="rounded-2xl bg-gradient-to-r from-red-50 via-amber-50/90 to-orange-50/70 border-l-4 border-red-700 p-4 shadow-sm">
-            <p class="font-quote-italic italic text-red-950 text-sm sm:text-base font-medium leading-relaxed">
-              ${page.quote}
-            </p>
-          </blockquote>
-
-          <div class="rounded-2xl bg-sky-50/90 border border-sky-200 p-4 text-xs sm:text-sm text-sky-950 leading-relaxed">
-            <strong class="text-sky-800 uppercase tracking-wide font-mono-code text-[11px] block mb-1">
-              ★ Ý nghĩa đối với Tổ quốc Việt Nam:
-            </strong>
-            ${page.significance}
-          </div>
-        </div>
-
-        <div class="pt-4 mt-5 border-t border-amber-900/10 flex items-center justify-between text-xs text-stone-500 font-mono-code">
-          <span>TRANG ${page.pageNumber * 2}</span>
-          <span class="px-5 py-2 rounded-full bg-[#a30b10] hover:bg-[#c81017] text-white font-bold text-xs inline-flex items-center gap-1.5 transition shadow-md">
-            <span>LẬT TRANG TIẾP →</span>
-          </span>
-        </div>
-      </div>
-    `;
-  }
-
-  function updateBookControlsUI(targetIndex) {
-    const tabsEl = document.getElementById("book-page-tabs");
-    const pageIndicatorEl = document.getElementById("book-page-indicator");
-    const total = DATA.bookPages.length;
-    const page = DATA.bookPages[targetIndex];
-
-    if (pageIndicatorEl && page) {
-      pageIndicatorEl.textContent = `TRANG ${page.pageNumber} / ${total} • ${page.dateBadge}`;
+    let activeIndex = 0;
+    let scrollIndex = 0;
+    let frame = 0;
+    function positionDetail() {
+      const detail = details[activeIndex];
+      if (compact.matches) {
+        buttons[activeIndex].after(detail);
+      } else {
+        list.after(detail);
+        detail.scrollTop = 0;
+      }
     }
 
-    if (tabsEl) {
-      tabsEl.innerHTML = DATA.bookPages
-        .map((item, idx) => {
-          const isActive = idx === targetIndex;
-          const numStr = item.pageNumber < 10 ? "0" + item.pageNumber : item.pageNumber;
-          return `
-          <button
-            type="button"
-            onclick="window.goToBookPage(${idx})"
-            class="px-4 py-2 rounded-full font-mono-code text-xs font-bold transition-all border ${
-              isActive
-                ? "bg-[#a30b10] text-white border-[#ee1c25] shadow-lg scale-105"
-                : "btn-soft-pill border-white/15 bg-white/5 text-stone-300 hover:text-white"
-            }"
-          >
-            <span class="opacity-75">${numStr}.</span> ${item.dateBadge}
-          </button>
-        `;
-        })
-        .join("");
+    function selectMilestone(index) {
+      if (index === activeIndex) return;
+      buttons[activeIndex].setAttribute("aria-pressed", "false");
+      if (!compact.matches) buttons[activeIndex].after(details[activeIndex]);
+      activeIndex = index;
+      buttons[index].setAttribute("aria-pressed", "true");
+      positionDetail();
     }
+
+    function syncMilestoneWithScroll() {
+      frame = 0;
+      const readingLine = (header?.offsetHeight || 0) + 32;
+      const bounds = list.getBoundingClientRect();
+      if (bounds.top > window.innerHeight || bounds.bottom < readingLine) return;
+      const passed = buttons.findLastIndex((button) => button.getBoundingClientRect().top <= readingLine);
+      const index = Math.max(0, passed);
+      if (index === scrollIndex) return;
+      scrollIndex = index;
+      selectMilestone(index);
+    }
+
+    function scheduleMilestoneSync() {
+      if (!frame) frame = window.requestAnimationFrame(syncMilestoneWithScroll);
+    }
+
+    buttons[0].setAttribute("aria-pressed", "true");
+    positionDetail();
+    compact.addEventListener("change", () => {
+      positionDetail();
+      scheduleMilestoneSync();
+    });
+    window.addEventListener("scroll", scheduleMilestoneSync, { passive: true });
+    window.addEventListener("resize", scheduleMilestoneSync);
+    scheduleMilestoneSync();
+
+    list.addEventListener("click", (event) => {
+      const button = event.target.closest(".timeline-milestone");
+      if (!button) return;
+      selectMilestone(Number(button.dataset.index));
+      if (compact.matches) {
+        const detail = details[activeIndex];
+        detail.focus({ preventScroll: true });
+        detail.scrollIntoView({ block: "start" });
+      }
+    });
   }
-
-  function renderBookStaticSpread(index, mobileAnimClass = "") {
-    const spreadEl = document.getElementById("book-spread-container");
-    if (!spreadEl || !DATA.bookPages) return;
-
-    const total = DATA.bookPages.length;
-    const page = DATA.bookPages[index];
-    updateBookControlsUI(index);
-
-    spreadEl.innerHTML = `
-      <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[580px] relative ${mobileAnimClass}">
-        <div class="hidden lg:block book-center-spine"></div>
-        ${buildLeftPageHTML(page)}
-        ${buildRightPageHTML(page, total)}
-      </div>
-    `;
-  }
-
-  function animateBookFlip(fromIndex, toIndex, direction) {
-    const spreadEl = document.getElementById("book-spread-container");
-    if (!spreadEl || !DATA.bookPages) return;
-
-    const total = DATA.bookPages.length;
-    const oldPage = DATA.bookPages[fromIndex];
-    const newPage = DATA.bookPages[toIndex];
-    const isDesktop = window.innerWidth >= 1024;
-
-    if (reducedMotion.matches) {
-      currentBookIndex = toIndex;
-      renderBookStaticSpread(toIndex);
-      return;
-    }
-
-    if (!isDesktop) {
-      currentBookIndex = toIndex;
-      renderBookStaticSpread(
-        toIndex,
-        direction === "next" ? "book-mobile-flip-next" : "book-mobile-flip-prev"
-      );
-      return;
-    }
-
-    isBookFlipping = true;
-    currentBookIndex = toIndex;
-    updateBookControlsUI(toIndex);
-
-    if (direction === "next") {
-      spreadEl.innerHTML = `
-        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[580px] relative">
-          <div class="hidden lg:block book-center-spine"></div>
-          <div class="book-underlay-shadow"></div>
-          ${buildLeftPageHTML(oldPage)}
-          ${buildRightPageHTML(newPage, total)}
-
-          <div class="book-turning-leaf animate-turn-next">
-            <div class="book-leaf-face book-leaf-front">
-              ${buildRightPageHTML(oldPage, total)}
-            </div>
-            <div class="book-leaf-face book-leaf-back">
-              ${buildLeftPageHTML(newPage)}
-            </div>
-          </div>
-        </div>
-      `;
-    } else {
-      spreadEl.innerHTML = `
-        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[580px] relative">
-          <div class="hidden lg:block book-center-spine"></div>
-          <div class="book-underlay-shadow"></div>
-          ${buildLeftPageHTML(newPage)}
-          ${buildRightPageHTML(oldPage, total)}
-
-          <div class="book-turning-leaf animate-turn-prev">
-            <div class="book-leaf-face book-leaf-front">
-              ${buildRightPageHTML(newPage, total)}
-            </div>
-            <div class="book-leaf-face book-leaf-back">
-              ${buildLeftPageHTML(oldPage)}
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    setTimeout(() => {
-      isBookFlipping = false;
-      renderBookStaticSpread(toIndex);
-    }, 780);
-  }
-
-  window.nextBookPage = function () {
-    if (isBookFlipping) return;
-    const fromIdx = currentBookIndex;
-    const toIdx = (currentBookIndex + 1) % DATA.bookPages.length;
-    animateBookFlip(fromIdx, toIdx, "next");
-  };
-
-  window.prevBookPage = function () {
-    if (isBookFlipping) return;
-    const fromIdx = currentBookIndex;
-    const toIdx =
-      (currentBookIndex - 1 + DATA.bookPages.length) % DATA.bookPages.length;
-    animateBookFlip(fromIdx, toIdx, "prev");
-  };
-
-  window.goToBookPage = function (idx) {
-    if (isBookFlipping || idx === currentBookIndex) return;
-    const dir = idx > currentBookIndex ? "next" : "prev";
-    animateBookFlip(currentBookIndex, idx, dir);
-  };
 
   // ==================== 03. DI SẢN VĂN KIỆN KINH ĐIỂN ====================
   function renderClassicWorks() {
@@ -410,21 +252,55 @@
     container.innerHTML = DATA.classicWorks
       .map(
         (w, i) => `
-      <div class="ximi-card p-6 sm:p-7 space-y-3 flex flex-col justify-between">
+      <a class="ximi-card work-card p-6 sm:p-7 flex flex-col justify-between gap-5" data-work-index="${i}"
+        href="${escapeHtml(w.fullTextUrl)}" target="_blank" rel="noopener noreferrer">
         <div class="space-y-3">
           <div class="flex items-center justify-between gap-2 border-b border-white/10 pb-3">
-            <span class="font-mono-code text-xs font-extrabold text-[#ee1c25] px-3 py-1 rounded-full bg-[#ee1c25]/10 border border-[#ee1c25]/25">
+            <span class="font-mono-code text-xs font-extrabold text-[#ee1c25] px-3 py-1 bg-[#ee1c25]/10 border border-[#ee1c25]/25">
               TÁC PHẨM 0${i + 1} • ${w.year}
             </span>
             <span class="text-xs text-amber-400/90 italic text-right">${w.original}</span>
           </div>
-          <h4 class="text-lg font-extrabold">${w.title}</h4>
+          <h3 class="text-lg font-extrabold">${w.title}</h3>
           <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">${w.significance}</p>
         </div>
-      </div>
+        <span class="work-card-link">Đọc chi tiết <span aria-hidden="true">→</span></span>
+      </a>
     `
       )
       .join("");
+
+    const reader = document.getElementById("work-reader");
+    if (typeof reader?.showModal !== "function") return;
+
+    container.querySelectorAll("[data-work-index]").forEach((card) => {
+      card.setAttribute("aria-haspopup", "dialog");
+    });
+    const title = document.getElementById("work-reader-title");
+    const meta = document.getElementById("work-reader-meta");
+    const content = document.getElementById("work-reader-content");
+    const source = document.getElementById("work-reader-source");
+    container.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-work-index]");
+      if (!card || !isPlainClick(event)) return;
+
+      event.preventDefault();
+      const work = DATA.classicWorks[Number(card.dataset.workIndex)];
+      title.textContent = work.title;
+      meta.textContent = `${work.year} · ${work.original}`;
+      content.innerHTML = `
+        <p class="work-reader-summary">${escapeHtml(work.significance)}</p>
+        ${work.readingNotes.map(([heading, paragraph]) => `
+          <section>
+            <h3>${escapeHtml(heading)}</h3>
+            <p>${escapeHtml(paragraph)}</p>
+          </section>
+        `).join("")}
+      `;
+      source.href = work.fullTextUrl;
+      reader.showModal();
+      content.scrollTop = 0;
+    });
   }
 
   // ==================== 04. BÁC HỒ VỚI HẢI PHÒNG — THÀNH PHỐ HOA PHƯỢNG ĐỎ ====================
@@ -462,11 +338,11 @@
       <article class="ximi-card p-6 sm:p-7 flex flex-col justify-between space-y-5 group border border-red-500/20">
         <div class="space-y-3.5">
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3.5">
-            <span class="inline-flex items-center gap-1.5 font-mono-code text-xs font-extrabold text-amber-200 px-3.5 py-1 rounded-full bg-red-900/50 border border-red-500/40">
+            <span class="inline-flex items-center gap-1.5 font-mono-code text-xs font-extrabold text-amber-200 px-3.5 py-1 bg-red-900/50 border border-red-500/40">
               ${createMiniPhuongSvg()}
               <span>${v.order}</span>
             </span>
-            <span class="font-mono-code text-[11px] font-bold text-amber-300 bg-amber-500/10 border border-amber-500/25 px-3 py-1 rounded-full">
+            <span class="font-mono-code text-[11px] font-bold text-amber-300 bg-amber-500/10 border border-amber-500/25 px-3 py-1">
               ${v.date}
             </span>
           </div>
@@ -529,7 +405,7 @@
       <div class="ximi-card p-6 sm:p-7 flex flex-col justify-between space-y-4">
         <div class="space-y-3">
           <div class="flex items-center justify-between gap-2 border-b border-white/10 pb-3">
-            <span class="font-mono-code text-xs font-extrabold text-[#ee1c25] px-3 py-1 rounded-full bg-[#ee1c25]/10 border border-[#ee1c25]/25">
+            <span class="font-mono-code text-xs font-extrabold text-[#ee1c25] px-3 py-1 bg-[#ee1c25]/10 border border-[#ee1c25]/25">
               ${item.year}
             </span>
             <span class="text-xs text-amber-400 font-medium truncate">${item.location}</span>
@@ -591,16 +467,16 @@
           class="ximi-card p-5 md:p-6 cursor-pointer group flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
         >
           <div class="flex items-start gap-4 md:gap-6 flex-1">
-            <div class="w-14 h-14 rounded-2xl bg-[#1c100c] border border-amber-500/30 flex flex-col items-center justify-center shrink-0 group-hover:bg-[#a30b10] group-hover:border-[#ee1c25] transition-colors">
+            <div class="w-14 h-14 bg-[#1c100c] border border-amber-500/30 flex flex-col items-center justify-center shrink-0 group-hover:bg-[#a30b10] group-hover:border-[#ee1c25] transition-colors">
               <span class="font-mono-code text-[9px] text-amber-400 group-hover:text-amber-200 font-bold">MỤC</span>
               <span class="font-mono-code text-xl font-extrabold text-white">${ch.number}</span>
             </div>
             <div class="space-y-2 flex-1">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="font-mono-code text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full bg-[#ee1c25]/15 text-[#ff4d54] border border-[#ee1c25]/30">
+                <span class="font-mono-code text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 bg-[#ee1c25]/15 text-[#ff4d54] border border-[#ee1c25]/30">
                   ${ch.code}
                 </span>
-                <span class="text-xs font-medium px-3 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25">
+                <span class="text-xs font-medium px-3 py-0.5 bg-amber-500/10 text-amber-300 border border-amber-500/25">
                   ${ch.tag}
                 </span>
                 <span class="text-xs text-stone-400 font-mono-code hidden sm:inline">• ${ch.duration}</span>
@@ -612,7 +488,7 @@
                 ${ch.summary}
               </p>
               <div class="pt-1 flex flex-wrap items-center gap-2 text-xs text-sky-300">
-                <span class="inline-flex items-center gap-1 rounded-full bg-sky-950/60 border border-sky-500/30 px-3 py-1 font-medium">
+                <span class="inline-flex items-center gap-1 bg-sky-950/60 border border-sky-500/30 px-3 py-1 font-medium">
                   ⚓ Liên hệ thực tiễn sinh viên Trường Đại học Hàng hải Việt Nam
                 </span>
                 <span class="text-stone-400">${ch.sections.length} nội dung trọng tâm</span>
@@ -621,7 +497,7 @@
           </div>
 
           <div class="self-end md:self-center shrink-0">
-            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 group-hover:bg-[#a30b10] text-amber-300 group-hover:text-white border border-white/10 text-xs font-bold tracking-wider uppercase transition-all">
+            <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 group-hover:bg-[#a30b10] text-amber-300 group-hover:text-white border border-white/10 text-xs font-bold tracking-wider uppercase transition-all">
               XEM CHI TIẾT →
             </span>
           </div>
@@ -644,10 +520,10 @@
       <div class="space-y-6 text-slate-900">
         <div class="border-b border-stone-200 pb-5 pr-10">
           <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="font-mono-code text-xs font-bold uppercase px-3.5 py-1 rounded-full bg-red-100 text-red-800 border border-red-200">
+            <span class="font-mono-code text-xs font-bold uppercase px-3.5 py-1 bg-red-100 text-red-800 border border-red-200">
               ${ch.code} (${ch.number})
             </span>
-            <span class="text-xs font-semibold px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
+            <span class="text-xs font-semibold px-3.5 py-1 bg-amber-100 text-amber-900 border border-amber-200">
               ${ch.tag}
             </span>
             <span class="text-xs text-slate-500 font-mono-code">${ch.duration}</span>
@@ -660,7 +536,7 @@
           </p>
         </div>
 
-        <blockquote class="rounded-2xl bg-gradient-to-r from-red-50 via-amber-50 to-orange-50 border-l-4 border-red-700 p-4 md:p-5">
+        <blockquote class="bg-gradient-to-r from-red-50 via-amber-50 to-orange-50 border-l-4 border-red-700 p-4 md:p-5">
           <p class="font-quote-italic italic text-red-950 font-medium text-base md:text-lg leading-relaxed">
             ${ch.quote}
           </p>
@@ -670,7 +546,7 @@
           ${ch.sections
             .map(
               (sec) => `
-            <div class="rounded-2xl bg-stone-50 border border-stone-200 p-5 space-y-3">
+            <div class="bg-stone-50 border border-stone-200 p-5 space-y-3">
               <h4 class="text-base md:text-lg font-bold text-red-900">
                 ${sec.heading}
               </h4>
@@ -692,7 +568,7 @@
             .join("")}
         </div>
 
-        <div class="rounded-2xl bg-sky-50 border border-sky-300 p-5 md:p-6">
+        <div class="bg-sky-50 border border-sky-300 p-5 md:p-6">
           <div class="flex items-center gap-2 text-sky-900 font-bold text-sm uppercase tracking-wider mb-2">
             <span>⚓</span>
             <span>Vận dụng &amp; Liên hệ thực tiễn Sinh viên Trường Đại học Hàng hải Việt Nam (Hải Phòng)</span>
@@ -707,13 +583,13 @@
             onclick="window.openChapterModal(${
               (index - 1 + DATA.chapters.length) % DATA.chapters.length
             })"
-            class="px-5 py-2.5 rounded-full bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs md:text-sm text-slate-800 font-semibold transition"
+            class="px-5 py-2.5 bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs md:text-sm text-slate-800 font-semibold transition"
           >
             ← Chương trước
           </button>
           <button
             onclick="window.closeChapterModal()"
-            class="px-6 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs md:text-sm font-semibold transition"
+            class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs md:text-sm font-semibold transition"
           >
             Đóng cửa sổ
           </button>
@@ -721,7 +597,7 @@
             onclick="window.openChapterModal(${
               (index + 1) % DATA.chapters.length
             })"
-            class="px-5 py-2.5 rounded-full bg-[#a30b10] hover:bg-[#c81017] text-white text-xs md:text-sm font-semibold transition"
+            class="px-5 py-2.5 bg-[#a30b10] hover:bg-[#c81017] text-white text-xs md:text-sm font-semibold transition"
           >
             Chương tiếp theo →
           </button>
@@ -755,10 +631,10 @@
       <div class="space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
           <div class="flex items-center gap-2">
-            <span class="font-mono-code text-xs font-bold px-3.5 py-1 rounded-full bg-[#ee1c25]/20 text-[#ff4d54] border border-[#ee1c25]/40">
+            <span class="font-mono-code text-xs font-bold px-3.5 py-1 bg-[#ee1c25]/20 text-[#ff4d54] border border-[#ee1c25]/40">
               CÂU ${currentQuizIndex + 1} / ${total}
             </span>
-            <span class="text-xs font-semibold px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+            <span class="text-xs font-semibold px-3.5 py-1 bg-amber-500/15 text-amber-300 border border-amber-500/30">
               ${q.chapter}
             </span>
           </div>
@@ -802,9 +678,9 @@
                 type="button"
                 onclick="window.answerQuizQuestion(${idx})"
                 ${selectedIdx !== undefined ? "disabled" : ""}
-                class="w-full text-left p-4 rounded-2xl border transition-all flex items-start gap-3 ${btnStyle}"
+                class="w-full text-left p-4 border transition-all flex items-start gap-3 ${btnStyle}"
               >
-                <span class="w-7 h-7 rounded-full font-mono-code text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 ${badgeStyle}">
+                <span class="w-7 h-7 font-mono-code text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 ${badgeStyle}">
                   ${badge}
                 </span>
                 <span class="text-sm md:text-base leading-relaxed">${opt}</span>
@@ -817,7 +693,7 @@
         ${
           selectedIdx !== undefined
             ? `
-          <div class="p-4 rounded-2xl bg-amber-950/50 border border-amber-500/40 text-xs md:text-sm text-amber-100 leading-relaxed">
+          <div class="p-4 bg-amber-950/50 border border-amber-500/40 text-xs md:text-sm text-amber-100 leading-relaxed">
             <strong class="text-amber-400">Giải thích chi tiết:</strong> ${q.explanation}
           </div>
         `
@@ -835,7 +711,7 @@
           <button
             type="button"
             onclick="window.resetQuiz()"
-            class="px-4 py-2 rounded-full text-xs font-semibold text-stone-400 hover:text-[#ee1c25] hover:bg-white/5 transition"
+            class="px-4 py-2 text-xs font-semibold text-stone-400 hover:text-[#ee1c25] hover:bg-white/5 transition"
           >
             ↺ Làm lại từ đầu
           </button>
@@ -891,8 +767,30 @@
 
   // ==================== HIỆU ỨNG CUỘN MƯỢT MÀ ====================
   function initSmoothScrollAndReveal() {
+    document.addEventListener("click", (event) => {
+      if (!isPlainClick(event)) return;
+      const link = event.target.closest('.site-header a[href^="#"], .site-hero a[href^="#"]');
+      if (!link) return;
+
+      const hash = link.getAttribute("href");
+      const target = hash === "#" ? document.body : document.getElementById(hash.slice(1));
+      if (!target) return;
+
+      event.preventDefault();
+      if (window.location.hash !== hash) {
+        window.history.pushState(null, "", hash);
+      }
+      if (!target.hasAttribute("tabindex")) target.tabIndex = -1;
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ block: "start", behavior: reducedMotion.matches ? "instant" : "smooth" });
+    });
+
     const progressBar = document.getElementById("scroll-progress-bar");
     const root = document.documentElement;
+    const header = document.querySelector(".site-header");
+    const syncHeaderHeight = () => {
+      if (header) root.style.setProperty("--header-height", `${header.offsetHeight}px`);
+    };
     let frame = 0;
     const updateProgress = () => {
       const distance = root.scrollHeight - root.clientHeight;
@@ -908,32 +806,44 @@
 
     window.addEventListener("scroll", scheduleProgress, { passive: true });
     window.addEventListener("resize", scheduleProgress);
+    window.addEventListener("resize", syncHeaderHeight);
     if ("ResizeObserver" in window) {
       new ResizeObserver(scheduleProgress).observe(document.body);
+      if (header) new ResizeObserver(syncHeaderHeight).observe(header);
     }
+    syncHeaderHeight();
     updateProgress();
 
     if (!("IntersectionObserver" in window) || reducedMotion.matches) return;
     const observer = new IntersectionObserver((entries) => {
+      let cardIndex = 0;
       entries.forEach(({ target, isIntersecting }) => {
         if (!isIntersecting) return;
+        if (target.matches(".ximi-card, .phuong-stat-box")) {
+          target.style.setProperty("--reveal-delay", `${Math.min(cardIndex++, 3) * 65}ms`);
+        }
         target.classList.add("is-visible");
         observer.unobserve(target);
       });
     });
-    document.querySelectorAll(".reveal-on-scroll").forEach((element) => {
+    const targets = ".reveal-on-scroll > :first-child, .site-main :is(.ximi-card, .phuong-stat-box)";
+    document.querySelectorAll(targets).forEach((element) => {
       if (element.getBoundingClientRect().top <= window.innerHeight) return;
       element.classList.add("will-reveal");
       observer.observe(element);
     });
   }
 
+  function isPlainClick(event) {
+    return !event.defaultPrevented && event.button === 0 &&
+      !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+  }
+
   // Khởi chạy toàn bộ trang khi sẵn sàng
   document.addEventListener("DOMContentLoaded", () => {
     loadSavedBookPages();
     renderDanhXung();
-    renderBookStaticSpread(currentBookIndex);
-    preloadBookImages();
+    renderTimeline();
     renderClassicWorks();
     renderHaiPhongStats();
     renderHaiPhongVisits(currentHaiPhongFilter);
@@ -954,18 +864,6 @@
       const isModalOpen = modal && !modal.classList.contains("hidden");
       if (e.key === "Escape" && isModalOpen) {
         window.closeChapterModal();
-        return;
-      }
-      if (
-        !isModalOpen &&
-        document.activeElement?.tagName !== "INPUT" &&
-        document.activeElement?.tagName !== "TEXTAREA"
-      ) {
-        if (e.key === "ArrowRight") {
-          window.nextBookPage();
-        } else if (e.key === "ArrowLeft") {
-          window.prevBookPage();
-        }
       }
     });
   });

@@ -71,10 +71,12 @@ window.TTHCM_DATA = {
     }
   ],
 
-  // 02. BIÊN NIÊN SỬ SÁCH LẬT TRANG 3D (9 MỐC SON & ẢNH TƯ LIỆU XÁC THỰC)
+  // 02. BIÊN NIÊN SỬ THEO MỐC LỊCH SỬ
   bookPages: [
     {
       pageNumber: 1,
+      timelineYear: "1890",
+      timelineTitle: "Tuổi thơ ở Nghệ An và Huế",
       period: "19/05/1890 – 1910",
       dateBadge: "19/05/1890",
       location: "Làng Sen, Kim Liên, Nam Đàn, Nghệ An & Kinh thành Huế",
@@ -94,6 +96,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 2,
+      timelineYear: "1911",
+      timelineTitle: "Ra đi tìm đường cứu nước",
       period: "05/06/1911",
       dateBadge: "05/06/1911",
       location: "Bến cảng Nhà Rồng (Sài Gòn) • Cửa ngõ vươn ra biển lớn",
@@ -113,6 +117,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 3,
+      timelineYear: "1919–1920",
+      timelineTitle: "Tìm thấy con đường cứu nước",
       period: "1919 – 12/1920",
       dateBadge: "Tháng 7 & 12/1920",
       location: "Thủ đô Pa-ri & Đại hội Tua (Nước Pháp)",
@@ -132,6 +138,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 4,
+      timelineYear: "1930",
+      timelineTitle: "Chủ trì Hội nghị thành lập Đảng",
       period: "1924 – 03/02/1930",
       dateBadge: "03/02/1930",
       location: "Liên Xô, Quảng Châu & Cửu Long (Hương Cảng)",
@@ -151,6 +159,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 5,
+      timelineYear: "1941",
+      timelineTitle: "Trở về Tổ quốc sau 30 năm",
       period: "28/01/1941 – 05/1941",
       dateBadge: "28/01/1941",
       location: "Pác Bó (Hà Quảng, Cao Bằng)",
@@ -170,6 +180,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 6,
+      timelineYear: "1945",
+      timelineTitle: "Đọc Tuyên ngôn Độc lập",
       period: "02/09/1945",
       dateBadge: "02/09/1945",
       location: "Quảng trường Ba Đình, Thủ đô Hà Nội",
@@ -189,6 +201,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 7,
+      timelineYear: "1946–1954",
+      timelineTitle: "Xây dựng chính quyền và lãnh đạo kháng chiến",
       period: "1946 – 07/05/1954",
       dateBadge: "1946 – 1954",
       location: "Thủ đô Hà Nội, Chiến khu Việt Bắc & Điện Biên Phủ",
@@ -208,6 +222,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 8,
+      timelineYear: "1946–1961",
+      timelineTitle: "Bác Hồ với Hải Phòng và biển đảo",
       period: "1946 – 1961",
       dateBadge: "Chín lần thăm Hải Phòng",
       location: "Thành phố Hoa Phượng Đỏ Hải Phòng & Vùng biển Đông Bắc",
@@ -227,6 +243,8 @@ window.TTHCM_DATA = {
     },
     {
       pageNumber: 9,
+      timelineYear: "1965–1969",
+      timelineTitle: "Di chúc và di sản để lại",
       period: "1964 – 02/09/1969",
       dateBadge: "1969 • Di sản bất diệt",
       location: "Thủ đô Hà Nội & Sự nghiệp thống nhất non sông",
@@ -252,6 +270,12 @@ window.TTHCM_DATA = {
       year: "1925",
       title: "Bản án chế độ thực dân Pháp",
       original: "Xuất bản lần đầu tại Pa-ri (Pháp)",
+      fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/1f0ad9a0189a7c2ea62cf837612c3d9bHO_CHI_MINH_TOAN_TAP_-_TAP_2.pdf#page=37",
+      readingNotes: [
+        ["Hoàn cảnh xuất bản", "Nguyễn Ái Quốc viết tác phẩm bằng tiếng Pháp và xuất bản lần đầu tại Pa-ri năm 1925. Việc viết bằng tiếng Pháp đưa những câu chuyện từ các thuộc địa đến với chính độc giả ở nước Pháp."],
+        ["Từ thuế máu đến đời sống thuộc địa", "Chương mở đầu kể về việc người dân thuộc địa bị đưa sang phục vụ chiến tranh. Các chương tiếp theo cho thấy những cách khác mà bộ máy cai trị kiểm soát đời sống, từ thuế khóa và lao dịch đến việc hạn chế giáo dục."],
+        ["Cách lập luận", "Tác giả dùng dẫn chứng, chuyện kể và giọng châm biếm để đối chiếu lời tuyên truyền về công cuộc khai hóa với những gì người dân phải trải qua. Phần cuối hướng sự chú ý sang khả năng tổ chức và đấu tranh của chính các dân tộc thuộc địa."]
+      ],
       significance:
         "Tố cáo đanh thép tội ác của chủ nghĩa thực dân tại các thuộc địa (trong đó có cảnh đời khắc nghiệt của người lao động bản xứ trên các tàu biển) và thức tỉnh các dân tộc bị áp bức đứng lên tự giải phóng."
     },
@@ -259,34 +283,38 @@ window.TTHCM_DATA = {
       year: "1927",
       title: "Đường Kách mệnh",
       original: "Tập hợp bài giảng tại Quảng Châu",
+      fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/1f0ad9a0189a7c2ea62cf837612c3d9bHO_CHI_MINH_TOAN_TAP_-_TAP_2.pdf#page=291",
+      readingNotes: [
+        ["Từ lớp huấn luyện đến sách", "Tác phẩm tập hợp các bài giảng của Nguyễn Ái Quốc dành cho học viên của Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu. Sách được in năm 1927, với lối viết ngắn và nhiều câu hỏi để người học dễ theo dõi."],
+        ["Tư cách người làm cách mạng", "Phần mở đầu đặt ra những yêu cầu đối với bản thân, với người khác và trong công việc. Các yêu cầu như tiết kiệm, giữ kỷ luật và làm đúng điều mình nói gắn việc rèn luyện cá nhân với trách nhiệm trong tổ chức."],
+        ["Từ kinh nghiệm quốc tế đến tổ chức trong nước", "Tác giả bàn về các cuộc cách mạng ở Mỹ, Pháp và Nga, sau đó giới thiệu những hình thức tổ chức như công hội, nông hội và hợp tác xã. Các ví dụ giúp người đọc hiểu vì sao một phong trào cần đường lối, tổ chức và sự tham gia của quần chúng."]
+      ],
       significance:
         "Phác thảo toàn diện phương hướng chiến lược của cách mạng Việt Nam; mở đầu bằng hai mươi ba điều về “Tư cách một người kách mệnh” và hình ảnh “người cầm lái có vững thuyền mới chạy”."
-    },
-    {
-      year: "1930",
-      title: "Cương lĩnh chính trị đầu tiên của Đảng",
-      original: "Chánh cương vắn tắt, Sách lược vắn tắt",
-      significance:
-        "Xác định đường lối: “Làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản”, đặt nhiệm vụ chống đế quốc giành độc lập dân tộc lên hàng đầu."
     },
     {
       year: "1945",
       title: "Tuyên ngôn Độc lập",
       original: "Quảng trường Ba Đình, 02/09/1945",
+      fullTextUrl: "https://hochiminh.vn/upload/3000001/20251024/786ba6cbfbb9aa4c66f7e55c826dce2bHO_CHI_MINH_TOAN_TAP_-_TAP_4.pdf#page=13",
+      readingNotes: [
+        ["Bối cảnh công bố", "Ngày 2 tháng 9 năm 1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc Tuyên ngôn Độc lập, công bố sự ra đời của nước Việt Nam Dân chủ Cộng hòa."],
+        ["Quyền con người và quyền dân tộc", "Văn kiện mở đầu bằng những nguyên tắc về tự do và bình đẳng trong các bản tuyên ngôn của Mỹ và Pháp. Từ quyền của mỗi người, tác giả mở rộng lập luận sang quyền sống và quyền tự do của các dân tộc."],
+        ["Từ lập luận đến lời tuyên bố", "Phần tiếp theo nêu những chính sách cai trị của thực dân Pháp và diễn biến dẫn đến việc nhân dân Việt Nam giành chính quyền. Phần kết tuyên bố độc lập trước thế giới và thể hiện quyết tâm bảo vệ nền độc lập ấy."]
+      ],
       significance:
         "Văn kiện pháp lý và chính trị bất hủ khai sinh nước Việt Nam Dân chủ Cộng hòa, nâng quyền con người thành quyền dân tộc tự quyết thiêng liêng."
     },
     {
-      year: "1947",
-      title: "Đời sống mới & Sửa đổi lối làm việc",
-      original: "Chiến khu Việt Bắc",
-      significance:
-        "Cẩm nang rèn luyện đạo đức “Cần, Kiệm, Liêm, Chính”, phê phán bệnh quan liêu, chủ quan, hẹp hòi và xây dựng phong cách làm việc dân chủ, khoa học, gần dân."
-    },
-    {
-      year: "1969",
+      year: "1965–1969",
       title: "Di chúc của Chủ tịch Hồ Chí Minh",
       original: "Bảo vật Quốc gia (1965 – 1969)",
+      fullTextUrl: "https://baochinhphu.vn/toan-van-di-chuc-cua-chu-tich-ho-chi-minh-102169104.htm",
+      readingNotes: [
+        ["Quá trình viết", "Chủ tịch Hồ Chí Minh bắt đầu viết Di chúc năm 1965 và bổ sung trong những năm sau đó. Bản công bố năm 1969 được đọc trong lễ tang của Người."],
+        ["Đoàn kết và bồi dưỡng thế hệ sau", "Người căn dặn giữ gìn sự đoàn kết trong Đảng, rèn luyện đạo đức của cán bộ và đảng viên, đồng thời chăm lo giáo dục thanh niên để họ tiếp nối công việc của các thế hệ đi trước."],
+        ["Đời sống nhân dân và tương lai đất nước", "Di chúc nhắc đến công lao, sự hy sinh của nhân dân và trách nhiệm chăm lo đời sống của họ. Cuối văn bản, Người gửi gắm mong muốn xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh."]
+      ],
       significance:
         "Kết tinh toàn bộ tư tưởng, đạo đức, tâm hồn cao đẹp của Người về chỉnh đốn Đảng, bồi dưỡng thế hệ cách mạng cho đời sau và chăm lo đời sống nhân dân."
     }
