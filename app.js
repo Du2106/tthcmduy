@@ -47,14 +47,6 @@
     }
   }
 
-  window.toggleTheme = function () {
-    const isLight = document.body.classList.toggle("theme-light");
-    const labelEl = document.getElementById("theme-toggle-label");
-    if (labelEl) {
-      labelEl.textContent = isLight ? "☾ Sắc nền tối" : "☀ Sắc nền sáng";
-    }
-  };
-
   window.copyCampaignLink = async function () {
     const btn = document.getElementById("copy-link-btn");
     if (!btn) return;

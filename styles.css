@@ -18,16 +18,6 @@
   --font-quote: 'Lora', serif;
 }
 
-body.theme-light {
-  --bg-obsidian: #f5f3ef;
-  --bg-surface: rgba(255, 255, 255, 0.96);
-  --bg-surface-hover: #ffffff;
-  --border-subtle: rgba(0, 0, 0, 0.14);
-  --text-white: #111111;
-  --text-muted: #525252;
-  --header-bg: rgba(245, 243, 239, 0.94);
-}
-
 * {
   box-sizing: border-box;
   border-radius: 0 !important;
@@ -62,10 +52,6 @@ body {
   overflow: hidden;
   background: radial-gradient(circle at 55% 42%, #1c1c1c 0%, #121212 58%, #0a0a0a 100%);
   transform: translateZ(0);
-}
-
-body.theme-light .fixed-ambient-canvas {
-  opacity: 0.15;
 }
 
 .ambient-drum-wrapper {
@@ -249,23 +235,6 @@ body.theme-light .fixed-ambient-canvas {
   opacity: 1;
 }
 
-.theme-toggle {
-  border: 1px solid var(--border-subtle);
-  background: transparent;
-  padding: 0.45rem 0.85rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  transition: border-color 200ms ease, color 200ms ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--red-primary);
-  color: var(--text-white);
-}
-
 /* ==================== MÀN HÌNH 1 & 2: HERO & CAMPAIGN ==================== */
 .site-hero,
 .site-main {
@@ -330,10 +299,6 @@ body.theme-light .fixed-ambient-canvas {
   line-height: 1.9;
   color: #e5e5e5;
   font-weight: 400;
-}
-
-body.theme-light .hero-lead-paragraph {
-  color: #262626;
 }
 
 .hero-screen-two {
@@ -1268,12 +1233,6 @@ html:has(.work-reader[open]) {
     display: block;
     margin-left: 0;
     line-height: 1.15;
-  }
-
-  .theme-toggle {
-    min-height: 2.75rem;
-    padding-inline: 0.6rem;
-    letter-spacing: 0.04em;
   }
 
   .site-nav-links {
