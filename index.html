@@ -4,82 +4,145 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CHỦ TỊCH HỒ CHÍ MINH (1890–1969) — Bản Sắc Văn Hóa Dân Tộc &amp; Bác Hồ Với Thành Phố Hoa Phượng Đỏ Hải Phòng</title>
+  <title>CHỦ TỊCH HỒ CHÍ MINH (1890–1969) — Không Gian Học Liệu Số</title>
   <meta name="description" content="Không gian học liệu số về Chủ tịch Hồ Chí Minh, với biên niên sử theo từng mốc, các tác phẩm tiêu biểu, chuyên đề Hải Phòng, giáo trình và trắc nghiệm ôn tập." />
 
-  <!-- Phông chữ chuẩn Tiếng Việt 100%: Be Vietnam Pro & Lora -->
+  <!-- Phông chữ Condensed Display (Barlow Condensed, Oswald) & Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;1,500&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
 
-  <!-- Thư viện định dạng giao diện -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Be Vietnam Pro"', '"Segoe UI"', 'Roboto', 'Arial', 'sans-serif'],
-            serif: ['"Lora"', '"Be Vietnam Pro"', '"Segoe UI"', 'serif'],
-            mono: ['"Be Vietnam Pro"', '"Segoe UI"', 'sans-serif']
+            sans: ['"Be Vietnam Pro"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            display: ['"Barlow Condensed"', '"Oswald"', 'sans-serif'],
+            serif: ['"Lora"', 'serif'],
+            mono: ['"Be Vietnam Pro"', 'monospace']
           }
         }
       }
     };
   </script>
 
-  <!-- Giao diện truyền thống Việt Nam & Hoa Phượng Đỏ -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="min-h-screen relative font-sans">
 
-  <!-- Thanh tiến trình cuộn trang mượt mà -->
+  <!-- Thanh tiến trình cuộn trang màu đỏ trên cùng -->
   <div id="scroll-progress-bar" aria-hidden="true"></div>
 
-  <!-- ================= THANH ĐIỀU HƯỚNG ĐẬM BẢN SẮC VIỆT NAM ================= -->
+  <!-- ================= LỚP NỀN CỐ ĐỊNH XUYÊN SUỐT (CHIAROSCURO ART & RED WATERMARK) ================= -->
+  <div class="fixed-ambient-canvas" aria-hidden="true">
+    <!-- Đồ họa Trống đồng Đông Sơn & Chim Lạc Chiaroscuro Đen Trắng xoay chậm dưới nền -->
+    <div class="ambient-drum-wrapper">
+      <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="chiaroscuroSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e5e5e5" stop-opacity="0.7" />
+            <stop offset="50%" stop-color="#737373" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#262626" stop-opacity="0.2" />
+          </linearGradient>
+          <linearGradient id="chiaroscuroCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#dc2626" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#525252" stop-opacity="0.3" />
+          </linearGradient>
+
+          <!-- Chim Lạc Đông Sơn Chiaroscuro -->
+          <g id="dong-son-bird">
+            <path d="M235 96 Q285 88 345 92 L362 94 L344 98 Q292 98 225 106 Z" fill="url(#chiaroscuroSilver)" />
+            <path d="M332 92 Q312 74 285 78" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" />
+            <path d="M306 92 C292 68, 272 52, 246 56 C264 68, 276 80, 286 93 Z" fill="url(#chiaroscuroCrimson)" />
+            <path d="M288 74 L254 68 M282 82 L250 78" stroke="#a3a3a3" stroke-width="1.2" stroke-linecap="round" />
+            <path d="M298 98 C286 118, 268 132, 244 128 C260 118, 272 108, 280 99 Z" fill="url(#chiaroscuroCrimson)" />
+            <path d="M276 102 L242 116" stroke="#a3a3a3" stroke-width="1.2" stroke-linecap="round" />
+          </g>
+        </defs>
+
+        <!-- Tầng 1: Vành ngoài xoay ngược chiều kim đồng hồ -->
+        <g class="drum-layer-outer">
+          <circle cx="300" cy="300" r="290" fill="none" stroke="url(#chiaroscuroSilver)" stroke-width="1.5" />
+          <circle cx="300" cy="300" r="280" fill="none" stroke="#737373" stroke-width="3" stroke-dasharray="2 8" />
+          <circle cx="300" cy="300" r="268" fill="none" stroke="#525252" stroke-width="1.2" />
+          <circle cx="300" cy="300" r="252" fill="none" stroke="#991b1b" stroke-width="14" stroke-dasharray="3 9" stroke-opacity="0.45" />
+          <circle cx="300" cy="300" r="236" fill="none" stroke="url(#chiaroscuroSilver)" stroke-width="1.5" />
+          <circle cx="300" cy="300" r="172" fill="none" stroke="url(#chiaroscuroSilver)" stroke-width="1.5" />
+        </g>
+
+        <!-- Tầng 2: Vành 8 Chim Lạc xoay thuận chiều kim đồng hồ -->
+        <g class="drum-layer-birds">
+          <use href="#dong-son-bird" transform="rotate(0 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(45 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(90 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(135 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(180 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(225 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(270 300 300)" />
+          <use href="#dong-son-bird" transform="rotate(315 300 300)" />
+        </g>
+
+        <!-- Tầng 3: Tâm sao 14 cánh Đông Sơn -->
+        <g class="drum-layer-core">
+          <circle cx="300" cy="300" r="156" fill="none" stroke="#737373" stroke-width="6" stroke-dasharray="2 10" />
+          <circle cx="300" cy="300" r="140" fill="none" stroke="#991b1b" stroke-width="10" stroke-dasharray="14 7" stroke-opacity="0.45" />
+          <circle cx="300" cy="300" r="124" fill="none" stroke="url(#chiaroscuroSilver)" stroke-width="1.5" />
+          <circle cx="300" cy="300" r="106" fill="none" stroke="#a3a3a3" stroke-width="20" stroke-dasharray="1.5 8.5" stroke-opacity="0.25" />
+          <circle cx="300" cy="300" r="90" fill="none" stroke="url(#chiaroscuroSilver)" stroke-width="2" />
+          <polygon
+            points="300,212 311,264 338,220 326,272 368,240 337,285 386,275 341,301 386,325 337,315 368,360 326,328 338,380 311,336 300,388 289,336 262,380 274,328 232,360 263,315 214,325 259,301 214,275 263,285 232,240 274,272 262,220 289,264"
+            fill="rgba(185, 28, 28, 0.25)"
+            stroke="url(#chiaroscuroSilver)"
+            stroke-width="2"
+          />
+          <circle cx="300" cy="300" r="26" fill="#0a0a0a" stroke="#a3a3a3" stroke-width="2" />
+          <circle cx="300" cy="300" r="10" fill="#dc2626" fill-opacity="0.7" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Chữ chìm (Watermark) Đỏ thẫm nhòe ở chính giữa màn hình giống hệt chữ HVL trong ảnh mẫu -->
+    <div class="ambient-center-watermark">
+      <span>1890 — 1969</span>
+    </div>
+
+    <!-- Lớp phủ Vignette làm tối bốn góc -->
+    <div class="ambient-vignette"></div>
+  </div>
+
+  <!-- ================= THANH ĐIỀU HƯỚNG TỐI GIẢN ================= -->
   <header class="site-header">
     <div class="site-header-inner">
-      <!-- Biểu trưng Trống đồng Lạc Việt -->
       <a href="#" class="site-brand">
-        <svg class="brand-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="1.2" />
-          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-dasharray="1.5 2.5" />
-          <path d="m18 8 2.6 7.4L28 18l-7.4 2.6L18 28l-2.6-7.4L8 18l7.4-2.6L18 8Z" fill="currentColor" />
-        </svg>
+        <span class="w-2.5 h-2.5 bg-[#dc2626] inline-block"></span>
         <span>
-          <strong>Chủ Tịch Hồ Chí Minh</strong>
-          <small>Hồn Thiêng Sông Núi • 1890–1969</small>
+          <strong>HỒ CHÍ MINH</strong>
+          <small>1890 – 1969</small>
         </span>
       </a>
 
-      <!-- Mục lục hoàn toàn bằng Tiếng Việt -->
+<!-- Trong phần <header class="site-header"> -->
       <nav class="site-nav" aria-label="Mục lục trang">
-        <a href="#01-danh-xung" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          01. Danh xưng
-        </a>
-        <a href="#02-bien-nien-su" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          02. Biên niên sử
-        </a>
-        <a href="#03-di-san-van-kien" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          03. Di sản văn kiện
-        </a>
-        <a href="#04-bac-ho-voi-hai-phong" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          04. Bác Hồ với Hải Phòng
-        </a>
-        <a href="#05-giao-trinh" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          05. Giáo trình
-        </a>
-        <a href="#06-on-tap" class="hover:bg-white/[0.07] hover:text-[#ee1c25] transition-all">
-          06. Trắc nghiệm
-        </a>
+        <div class="site-nav-links">
+          <a href="#01-danh-xung">01. Danh xưng</a>
+          <a href="#02-bien-nien-su">02. Biên niên sử</a>
+          <a href="#03-di-san-van-kien">03. Văn kiện</a>
+          <a href="#04-bac-ho-voi-hai-phong">04. Hải Phòng</a>
+          <a href="#05-giao-trinh">05. Giáo trình</a>
+          <a href="#06-on-tap">06. Trắc nghiệm</a>
+          
+          <!-- Thanh gạch chân đỏ tự động trượt -->
+          <div id="nav-sliding-indicator" class="nav-sliding-indicator"></div>
+        </div>
       </nav>
 
-      <!-- Nút chuyển đổi nền sáng và tối -->
       <div class="flex items-center gap-3">
         <button
           type="button"
           onclick="window.toggleTheme()"
-          class="theme-toggle btn-soft-pill"
+          class="theme-toggle"
         >
           <span id="theme-toggle-label">☀ Sắc nền sáng</span>
         </button>
@@ -87,175 +150,64 @@
     </div>
   </header>
 
-  <!-- ================= PHẦN MỞ ĐẦU: HÀO KHÍ ĐÔNG SƠN & HỒN SEN ĐẤT VIỆT ================= -->
+<!-- ================= MÀN HÌNH 1 & 2: HERO & CAMPAIGN COUNTER (CHUẨN 2 ẢNH MẪU) ================= -->
   <section class="site-hero">
-    <div class="hero-layout">
-      <!-- Tiêu đề CHỦ TỊCH / HỒ CHÍ MINH -->
-      <div class="hero-copy">
-        <div class="flex flex-wrap items-center gap-3">
-          <div class="hero-kicker">
-            <span class="hero-kicker-dot" aria-hidden="true"></span>
-            <span>HÀNH TRÌNH CỦA MỘT VĨ NHÂN &nbsp;•&nbsp; 1890 – 1969</span>
-          </div>
-          <span class="trien-son-seal" aria-label="Ấn triện Tinh hoa Dân tộc">
-            <span>Tinh Hoa Đất Việt</span>
-          </span>
-        </div>
+    <!-- MÀN HÌNH 1: BỐ CỤC 2 TẦNG CHỮ (CHỦ TỊCH / HỒ CHÍ MINH) -->
+    <div class="editorial-container hero-screen-one">
+      <p class="hero-top-kicker">
+        HÀNH TRÌNH CỦA MỘT VĨ NHÂN &nbsp;•&nbsp; 1890 – 1969
+      </p>
 
-        <h1 class="hero-giant-title">
-          <span class="block hero-title-white">CHỦ TỊCH</span>
-          <span class="block hero-title-red">HỒ CHÍ MINH</span>
-        </h1>
+      <!-- Đã gộp HỒ CHÍ MINH thành một dòng -->
+      <h1 class="hero-giant-title">
+        <span class="hero-line-white">CHỦ TỊCH</span>
+        <span class="hero-line-red">HỒ CHÍ MINH.</span>
+      </h1>
 
-        <p class="hero-description">
-          Từ mái nhà tranh Làng Sen xứ Nghệ thấm đẫm câu dân ca ví dặm đến bến cảng vươn khơi và chín lần in dấu chân Người nơi Thành phố Hoa Phượng Đỏ Hải Phòng — cuộc đời và tư tưởng của Chủ tịch Hồ Chí Minh mãi là ngọn đuốc soi đường cho non sông gấm vóc Việt Nam.
-        </p>
-
-        <!-- Cụm nút bo tròn -->
-        <div class="hero-actions">
-          <a href="#02-bien-nien-su" class="btn-crimson-pill inline-flex items-center gap-2">
-            <span>KHÁM PHÁ BIÊN NIÊN SỬ</span>
-            <span>↓</span>
-          </a>
-          <a href="#04-bac-ho-voi-hai-phong" class="btn-outline-pill inline-flex items-center gap-2">
-            <span>🌺 BÁC HỒ VỚI HẢI PHÒNG</span>
-          </a>
-          <a href="#05-giao-trinh" class="hero-study-link">
-            <span>⚓ GIÁO TRÌNH 6 CHƯƠNG</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Họa tiết trống đồng chìm dưới nền -->
-      <div class="hero-art" aria-hidden="true">
-          <svg
-            viewBox="0 0 600 600"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- Vòng viền đồng tâm ngoài cùng -->
-            <g class="drum-rotate-ccw">
-              <circle cx="300" cy="300" r="286" fill="none" stroke="#a16207" stroke-width="1.2" stroke-opacity="0.55" />
-              <circle cx="300" cy="300" r="278" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="3 7" stroke-opacity="0.7" />
-              <circle cx="300" cy="300" r="268" fill="none" stroke="#a16207" stroke-width="1" stroke-opacity="0.5" />
-              <circle cx="300" cy="300" r="250" fill="none" stroke="#b45309" stroke-width="10" stroke-dasharray="2 12" stroke-opacity="0.45" />
-              <circle cx="300" cy="300" r="236" fill="none" stroke="#d97706" stroke-width="1.2" stroke-opacity="0.6" />
-            </g>
-
-            <!-- Vòng 6 Chim Lạc Đông Sơn sải cánh -->
-            <g class="drum-rotate-cw">
-              <g transform="rotate(0 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-              <g transform="rotate(60 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-              <g transform="rotate(120 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-              <g transform="rotate(180 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-              <g transform="rotate(240 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-              <g transform="rotate(300 300 300)">
-                <path d="M260 95 L305 85 L285 52 L302 50 L322 82 L358 74 L325 94 L308 124 L292 122 L302 98 Z" fill="#dc2626" opacity="0.9" />
-                <path d="M275 88 L335 76 L312 60 L295 62 Z" fill="#f59e0b" opacity="0.85" />
-              </g>
-            </g>
-
-            <!-- Vòng họa tiết kỷ hà truyền thống -->
-            <g class="drum-rotate-ccw">
-              <circle cx="300" cy="300" r="168" fill="none" stroke="#d97706" stroke-width="1.5" stroke-opacity="0.65" />
-              <circle cx="300" cy="300" r="152" fill="none" stroke="#b91c1c" stroke-width="12" stroke-dasharray="14 8" stroke-opacity="0.65" />
-              <circle cx="300" cy="300" r="136" fill="none" stroke="#d97706" stroke-width="1.2" stroke-opacity="0.6" />
-              <circle cx="300" cy="300" r="118" fill="none" stroke="#f59e0b" stroke-width="22" stroke-dasharray="1.5 9" stroke-opacity="0.45" />
-              <circle cx="300" cy="300" r="98" fill="none" stroke="#b91c1c" stroke-width="2.5" stroke-opacity="0.8" />
-              <circle cx="300" cy="300" r="88" fill="none" stroke="#d97706" stroke-width="1.2" stroke-opacity="0.7" />
-            </g>
-
-            <!-- Ngôi sao 14 cánh Trung tâm Mặt Trống Đồng -->
-            <g class="drum-rotate-cw">
-              <polygon
-                points="300,214 312,265 338,222 328,273 368,242 339,286 385,276 342,302 385,326 339,316 368,360 328,329 338,380 312,337 300,388 288,337 262,380 272,329 232,360 261,316 215,326 258,302 215,276 261,286 232,242 272,273 262,222 288,265"
-                fill="#7f1d1d"
-                fill-opacity="0.55"
-                stroke="#f59e0b"
-                stroke-width="2"
-              />
-              <circle cx="300" cy="300" r="24" fill="#7f1d1d" stroke="#d97706" stroke-width="2" />
-              <circle cx="300" cy="300" r="10" fill="#dc2626" />
-            </g>
-          </svg>
-      </div>
+      <p class="hero-lead-paragraph">
+        Chủ tịch Hồ Chí Minh đã dành trọn cuộc đời cho sự nghiệp giải phóng dân tộc và để lại dấu ấn sâu sắc trong lịch sử nhân loại. Mỗi tên gọi, mỗi chặng đường và di sản của Người tại Thành phố Cảng Hải Phòng là một chương sử sống động về khát vọng độc lập, tự do.
+      </p>
     </div>
 
-    <!-- Thanh lối tắt 6 chuyên mục (Hoàn toàn Tiếng Việt) -->
-    <nav class="hero-index" aria-label=" Sáu chuyên mục trọng tâm">
-      <a href="#01-danh-xung"><small>01</small><span>Danh xưng</span><span aria-hidden="true">↗</span></a>
-      <a href="#02-bien-nien-su"><small>02</small><span>Biên niên sử</span><span aria-hidden="true">↗</span></a>
-      <a href="#03-di-san-van-kien"><small>03</small><span>Di sản văn kiện</span><span aria-hidden="true">↗</span></a>
-      <a href="#04-bac-ho-voi-hai-phong"><small>04</small><span>Bác với Hải Phòng</span><span aria-hidden="true">🌺</span></a>
-      <a href="#05-giao-trinh"><small>05</small><span>Giáo trình 6 Chương</span><span aria-hidden="true">↗</span></a>
-      <a href="#06-on-tap"><small>06</small><span>Trắc nghiệm</span><span aria-hidden="true">↗</span></a>
-    </nav>
-  </section>
 
-  <!-- ================= NỘI DUNG CHÍNH ================= -->
+    
+  </section>
+  <!-- ================= NỘI DUNG CHÍNH (6 CHUYÊN MỤC ĐỒNG BỘ PHONG CÁCH) ================= -->
   <main class="site-main">
 
     <!-- ================= 01. DANH XƯNG QUA CÁC THỜI KỲ LỊCH SỬ ================= -->
     <section id="01-danh-xung" class="scroll-mt-24 space-y-10 reveal-on-scroll">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
-        <div class="space-y-2">
-          <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-[#ee1c25]">
-            01. DANH XƯNG &amp; BÚT DANH LỊCH SỬ
-          </div>
-          <h2 class="font-serif-editorial">
-            Mỗi Tên Gọi — Một Chương Sử Dân Tộc
-          </h2>
+      <div class="section-header-block">
+        <div class="section-kicker-row">
+          <span>01. DANH XƯNG &amp; BÚT DANH LỊCH SỬ</span>
+          <span class="campaign-red-dash"></span>
         </div>
-        <p class="text-xs sm:text-sm text-stone-400 max-w-md">
-          Trong suốt cuộc đời hoạt động cách mạng vì nước vì dân, Chủ tịch Hồ Chí Minh đã sử dụng hơn 170 tên gọi, bí danh và bút danh khác nhau, gắn với từng bước ngoặt giải phóng dân tộc.
-        </p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <h2 class="font-serif-editorial">
+            MỖI TÊN GỌI — MỘT CHƯƠNG SỬ DÂN TỘC
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-400 max-w-md">
+            Trong suốt cuộc đời hoạt động cách mạng vì nước vì dân, Chủ tịch Hồ Chí Minh đã sử dụng hơn 170 tên gọi, bí danh và bút danh khác nhau.
+          </p>
+        </div>
       </div>
 
       <div id="danh-xung-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- Dải hoa văn Hoa Sen truyền thống Việt Nam -->
-    <div class="viet-ornament-divider" aria-hidden="true">
-      <span class="viet-ornament-line"></span>
-      <svg class="w-9 h-9 text-amber-500" viewBox="0 0 64 64" fill="none">
-        <path d="M32 10 C37 22, 42 30, 32 46 C22 30, 27 22, 32 10 Z" fill="#dc2626" stroke="#f59e0b" stroke-width="1.5"/>
-        <path d="M32 46 C20 42, 12 30, 14 18 C22 24, 27 32, 32 46 Z" fill="#b91c1c" fill-opacity="0.85" stroke="#f59e0b" stroke-width="1.2"/>
-        <path d="M32 46 C44 42, 52 30, 50 18 C42 24, 37 32, 32 46 Z" fill="#b91c1c" fill-opacity="0.85" stroke="#f59e0b" stroke-width="1.2"/>
-        <path d="M16 50 Q32 56 48 50" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <span class="viet-ornament-line"></span>
-    </div>
-
     <!-- ================= 02. BIÊN NIÊN SỬ THEO MỐC LỊCH SỬ ================= -->
     <section id="02-bien-nien-su" class="scroll-mt-24 space-y-8 reveal-on-scroll">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-6">
-        <div class="space-y-2">
-          <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-[#ee1c25]">
-            02. BIÊN NIÊN SỬ BẰNG HÌNH (1890 – 1969)
-          </div>
-          <h2 class="font-serif-editorial">
-            Hành trình qua các mốc lịch sử
-          </h2>
-          <p class="text-sm text-stone-300 max-w-2xl">
-            Chọn một mốc lịch sử để xem chi tiết.
-          </p>
+      <div class="section-header-block">
+        <div class="section-kicker-row">
+          <span>02. BIÊN NIÊN SỬ BẰNG HÌNH (1890 – 1969)</span>
+          <span class="campaign-red-dash"></span>
         </div>
-
+        <h2 class="font-serif-editorial">
+          HÀNH TRÌNH QUA CÁC MỐC LỊCH SỬ
+        </h2>
+        <p class="text-sm text-neutral-400 max-w-2xl">
+          Chọn một mốc lịch sử bên trái để xem chi tiết tư liệu và hình ảnh.
+        </p>
       </div>
 
       <div class="timeline">
@@ -265,157 +217,47 @@
 
     <!-- ================= 03. DI SẢN VĂN KIỆN KINH ĐIỂN ================= -->
     <section id="03-di-san-van-kien" class="scroll-mt-24 space-y-8 reveal-on-scroll">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
-        <div class="space-y-2">
-          <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-[#ee1c25]">
-            03. DI SẢN VĂN KIỆN &amp; TÁC PHẨM BẤT HỦ
-          </div>
-          <h2 class="font-serif-editorial">
-            Tác phẩm &amp; văn kiện tiêu biểu
-          </h2>
-          <p class="text-sm text-stone-300">Chọn một tác phẩm để xem chi tiết và đọc toàn văn.</p>
+      <div class="section-header-block">
+        <div class="section-kicker-row">
+          <span>03. DI SẢN VĂN KIỆN &amp; TÁC PHẨM BẤT HỦ</span>
+          <span class="campaign-red-dash"></span>
         </div>
-        <span class="px-4 py-1.5 bg-amber-500/10 border border-amber-500/30 font-mono-code text-xs font-bold text-amber-400">
-          4 TÁC PHẨM &amp; VĂN KIỆN
-        </span>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <h2 class="font-serif-editorial">
+            TÁC PHẨM &amp; VĂN KIỆN TIÊU BIỂU
+          </h2>
+          <span class="px-4 py-2 border border-red-600/50 text-xs font-mono-code font-bold text-red-500 uppercase tracking-widest">
+            04 VĂN KIỆN LỊCH SỬ
+          </span>
+        </div>
       </div>
 
       <div id="classic-works-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
     </section>
 
-    <!-- Dải ngăn cách Hoa Phượng Đỏ Hải Phòng -->
-    <div class="viet-ornament-divider" aria-hidden="true">
-      <span class="viet-ornament-line"></span>
-      <span class="px-4 py-1 border border-red-500/40 bg-red-500/10 text-xs font-mono-code font-bold text-red-400 tracking-widest uppercase">
-        🌺 Thành Phố Hoa Phượng Đỏ 🌺
-      </span>
-      <span class="viet-ornament-line"></span>
-    </div>
-
     <!-- ================= 04. BÁC HỒ VỚI HẢI PHÒNG — THÀNH PHỐ HOA PHƯỢNG ĐỎ ================= -->
     <section id="04-bac-ho-voi-hai-phong" class="scroll-mt-24 space-y-10 reveal-on-scroll">
-      <!-- Bức Tranh Sơn Mài Vinh Danh Bác Hồ Với Hải Phòng & Cành Hoa Phượng Đỏ -->
       <div class="phuong-do-banner p-6 sm:p-10 lg:p-12">
-        <!-- Lớp cánh hoa phượng đỏ rơi nhẹ -->
-        <div class="phuong-petals-layer" aria-hidden="true">
-          <span class="phuong-petal"></span>
-          <span class="phuong-petal"></span>
-          <span class="phuong-petal"></span>
-          <span class="phuong-petal"></span>
-          <span class="phuong-petal"></span>
-          <span class="phuong-petal"></span>
-        </div>
-
-        <div class="phuong-banner-art" aria-hidden="true">
-          <svg
-            viewBox="0 0 360 320"
-            class="phuong-blossom-sway"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- Ánh mặt trời vàng trên biển Hải Phòng -->
-            <circle cx="185" cy="165" r="108" fill="#dc2626" fill-opacity="0.14" />
-            <circle cx="185" cy="165" r="76" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-opacity="0.35" stroke-dasharray="4 6" />
-
-            <!-- Sóng nước cửa biển Bạch Đằng - Sông Cấm phía dưới -->
-            <path d="M24 278 Q72 264 120 278 T216 278 T312 278 L336 278" fill="none" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.55" stroke-linecap="round" />
-            <path d="M42 294 Q90 282 138 294 T234 294 T324 294" fill="none" stroke="#ee1c25" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="round" />
-
-            <!-- Nhánh cành gỗ phượng vĩ vươn ra từ góc phải -->
-            <path d="M348 36 Q268 62 205 112 Q155 152 92 178" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
-            <path d="M245 86 Q218 138 190 176" fill="none" stroke="#92400e" stroke-width="3.8" stroke-linecap="round" />
-            <path d="M286 62 Q275 112 268 148" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" />
-
-            <!-- Tán lá phượng kép xanh ngọc & đồng ấm -->
-            <g fill="#15803d" opacity="0.9">
-              <ellipse cx="295" cy="105" rx="14" ry="4" transform="rotate(-25 295 105)" />
-              <ellipse cx="282" cy="118" rx="14" ry="4" transform="rotate(-25 282 118)" />
-              <ellipse cx="268" cy="131" rx="13" ry="3.8" transform="rotate(-25 268 131)" />
-              <ellipse cx="308" cy="115" rx="13" ry="3.8" transform="rotate(28 308 115)" />
-              <ellipse cx="294" cy="128" rx="13" ry="3.8" transform="rotate(28 294 128)" />
-
-              <ellipse cx="122" cy="142" rx="13" ry="3.8" transform="rotate(-35 122 142)" />
-              <ellipse cx="106" cy="152" rx="13" ry="3.8" transform="rotate(-35 106 152)" />
-              <ellipse cx="90" cy="162" rx="12" ry="3.5" transform="rotate(-35 90 162)" />
-              <ellipse cx="108" cy="186" rx="13" ry="3.8" transform="rotate(22 108 186)" />
-              <ellipse cx="92" cy="194" rx="12" ry="3.5" transform="rotate(22 92 194)" />
-            </g>
-
-            <!-- BÔNG HOA PHƯỢNG ĐỎ LỚN TRUNG TÂM (5 cánh xòe rực rỡ + cánh đốm vàng trắng + nhị cong dài) -->
-            <g transform="translate(185, 138)">
-              <!-- 4 cánh đỏ thắm xòe rộng -->
-              <path d="M0 0 C-14 -26, -48 -46, -54 -22 C-58 -2, -26 6, 0 0 Z" fill="#ee1c25" stroke="#fca5a5" stroke-width="0.8" />
-              <path d="M0 0 C18 -26, 52 -42, 56 -18 C58 4, 26 8, 0 0 Z" fill="#dc2626" stroke="#fca5a5" stroke-width="0.8" />
-              <path d="M0 0 C-26 12, -56 34, -38 52 C-22 66, -4 30, 0 0 Z" fill="#dc2626" stroke="#fca5a5" stroke-width="0.8" />
-              <path d="M0 0 C26 12, 54 36, 36 54 C18 68, 4 30, 0 0 Z" fill="#b91c1c" stroke="#fca5a5" stroke-width="0.8" />
-              <!-- Cánh phượng thứ 5 (cánh chúa điểm sắc vàng - trắng đặc trưng của Hoa Phượng Hải Phòng) -->
-              <path d="M0 0 C-16 -36, -18 -68, 0 -70 C18 -68, 16 -36, 0 0 Z" fill="#ef4444" stroke="#fde68a" stroke-width="1.2" />
-              <path d="M0 -14 C-8 -34, -8 -54, 0 -58 C8 -54, 8 -34, 0 -14 Z" fill="#fef3c7" opacity="0.92" />
-              <circle cx="-3" cy="-42" r="2" fill="#dc2626" />
-              <circle cx="4" cy="-46" r="1.8" fill="#dc2626" />
-              <circle cx="0" cy="-33" r="2.2" fill="#dc2626" />
-              <!-- Nhụy và 7 tua nhị phượng đỏ vươn cong thanh thoát -->
-              <path d="M0 0 Q-18 -34 -28 -56" fill="none" stroke="#fde047" stroke-width="1.4" stroke-linecap="round" />
-              <path d="M0 0 Q-8 -40 -12 -64" fill="none" stroke="#fca5a5" stroke-width="1.3" stroke-linecap="round" />
-              <path d="M0 0 Q10 -40 16 -63" fill="none" stroke="#fde047" stroke-width="1.4" stroke-linecap="round" />
-              <path d="M0 0 Q22 -32 32 -52" fill="none" stroke="#fca5a5" stroke-width="1.3" stroke-linecap="round" />
-              <path d="M0 0 Q0 28 -8 48" fill="none" stroke="#fde047" stroke-width="1.2" stroke-linecap="round" />
-              <circle cx="-28" cy="-56" r="3" fill="#f59e0b" />
-              <circle cx="-12" cy="-64" r="2.8" fill="#ef4444" stroke="#fde047" stroke-width="0.8" />
-              <circle cx="16" cy="-63" r="3" fill="#f59e0b" />
-              <circle cx="32" cy="-52" r="2.8" fill="#ef4444" stroke="#fde047" stroke-width="0.8" />
-              <circle cx="-8" cy="48" r="2.5" fill="#f59e0b" />
-              <circle cx="0" cy="0" r="6" fill="#fef08a" stroke="#b91c1c" stroke-width="2" />
-            </g>
-
-            <!-- Bông hoa phượng thứ hai bên phải -->
-            <g transform="translate(262, 178) scale(0.68) rotate(18)">
-              <path d="M0 0 C-14 -26, -48 -46, -54 -22 C-58 -2, -26 6, 0 0 Z" fill="#ee1c25" />
-              <path d="M0 0 C18 -26, 52 -42, 56 -18 C58 4, 26 8, 0 0 Z" fill="#dc2626" />
-              <path d="M0 0 C-26 12, -56 34, -38 52 C-22 66, -4 30, 0 0 Z" fill="#dc2626" />
-              <path d="M0 0 C26 12, 54 36, 36 54 C18 68, 4 30, 0 0 Z" fill="#b91c1c" />
-              <path d="M0 0 C-15 -34, -16 -64, 0 -66 C16 -64, 15 -34, 0 0 Z" fill="#f87171" stroke="#fde68a" stroke-width="1" />
-              <path d="M0 -14 C-6 -32, -6 -48, 0 -52 C6 -48, 6 -32, 0 -14 Z" fill="#fef3c7" />
-              <path d="M0 0 Q-14 -32 -22 -50" fill="none" stroke="#fde047" stroke-width="1.5" />
-              <path d="M0 0 Q14 -32 22 -50" fill="none" stroke="#fde047" stroke-width="1.5" />
-              <circle cx="-22" cy="-50" r="3" fill="#f59e0b" />
-              <circle cx="22" cy="-50" r="3" fill="#f59e0b" />
-              <circle cx="0" cy="0" r="5.5" fill="#fef08a" stroke="#b91c1c" stroke-width="2" />
-            </g>
-
-            <!-- Bông hoa phượng thứ ba & Nụ phượng bên trái -->
-            <g transform="translate(115, 204) scale(0.58) rotate(-24)">
-              <path d="M0 0 C-14 -26, -48 -46, -54 -22 C-58 -2, -26 6, 0 0 Z" fill="#ee1c25" />
-              <path d="M0 0 C18 -26, 52 -42, 56 -18 C58 4, 26 8, 0 0 Z" fill="#dc2626" />
-              <path d="M0 0 C-26 12, -56 34, -38 52 C-22 66, -4 30, 0 0 Z" fill="#dc2626" />
-              <path d="M0 0 C26 12, 54 36, 36 54 C18 68, 4 30, 0 0 Z" fill="#b91c1c" />
-              <path d="M0 0 C-15 -34, -16 -64, 0 -66 C16 -64, 15 -34, 0 0 Z" fill="#ef4444" stroke="#fde68a" stroke-width="1" />
-              <circle cx="0" cy="0" r="5.5" fill="#fef08a" stroke="#b91c1c" stroke-width="2" />
-            </g>
-            <!-- Nụ phượng đỏ -->
-            <ellipse cx="68" cy="182" rx="9" ry="5" transform="rotate(-22 68 182)" fill="#dc2626" stroke="#f59e0b" stroke-width="1" />
-            <ellipse cx="78" cy="166" rx="7" ry="4" transform="rotate(-38 78 166)" fill="#ef4444" />
-          </svg>
-        </div>
-
         <div class="phuong-banner-copy relative z-10 space-y-5">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-red-600/20 border border-red-400/40 text-xs font-mono-code font-bold text-amber-300 uppercase tracking-wider">
-            <span>🌺 04. CHUYÊN ĐỀ ĐẶC SẮC • THÀNH PHỐ HOA PHƯỢNG ĐỎ</span>
+          <div class="section-kicker-row">
+            <span>04. CHUYÊN ĐỀ ĐẶC SẮC • THÀNH PHỐ HOA PHƯỢNG ĐỎ</span>
+            <span class="campaign-red-dash"></span>
           </div>
 
-          <h2 class="font-serif-editorial !text-3xl sm:!text-4xl lg:!text-5xl font-black leading-tight">
-            Bác Hồ Với Hải Phòng — Chín Lần Dấu Chân Người In Trên Đất Cảng
+          <h2 class="font-serif-editorial !text-4xl sm:!text-5xl lg:!text-6xl uppercase">
+            BÁC HỒ VỚI HẢI PHÒNG — CHÍN LẦN IN DẤU CHÂN NGƯỜI
           </h2>
 
-          <p class="text-sm sm:text-base text-stone-200 leading-relaxed">
-            Sinh thời, Chủ tịch Hồ Chí Minh dành muôn vàn tình thương yêu và sự quan tâm sâu sắc cho Đảng bộ, quân và dân <strong>Thành phố Hoa Phượng Đỏ Hải Phòng</strong>. Từ ngày 20/10/1946 bước chân lên Bến Ngự đến mùa xuân năm 1960, Người đã <strong>chín lần về thăm Hải Phòng</strong> — từ bến Cảng, Nhà máy Xi măng, Cơ khí Duyên Hải đến tận đảo xa Cát Bà, Đồ Sơn — trao tặng thành phố Cảng bốn chữ vàng truyền thống: <strong class="text-amber-300">“Trung dũng – Quyết thắng”</strong>.
+          <p class="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Từ ngày 20/10/1946 bước chân lên Bến Ngự đến mùa xuân năm 1960, Chủ tịch Hồ Chí Minh đã <strong>chín lần về thăm Hải Phòng</strong> — từ bến Cảng, Nhà máy Xi măng, Cơ khí Duyên Hải đến tận đảo xa Cát Bà, Đồ Sơn — trao tặng thành phố Cảng bốn chữ vàng: <strong class="text-red-500">“Trung dũng – Quyết thắng”</strong>.
           </p>
 
-          <blockquote class="bg-black/30 border-l-4 border-[#ee1c25] p-4 sm:p-5 backdrop-blur-sm">
-            <p class="font-quote-italic italic text-amber-200 text-sm sm:text-base leading-relaxed">
+          <blockquote class="bg-black/60 border-l-4 border-[#dc2626] p-4 sm:p-5">
+            <p class="font-quote-italic italic text-neutral-100 text-sm sm:text-base leading-relaxed">
               “Hải Phòng là cái cửa biển lớn của miền Bắc nước ta… Hải Phòng phải trở thành thành phố gương mẫu của cả nước.”
             </p>
-            <footer class="mt-2 text-xs font-mono-code text-stone-300 font-semibold">
-              — Lời căn dặn của Chủ tịch Hồ Chí Minh với Đảng bộ và nhân dân Hải Phòng
+            <footer class="mt-2 text-xs font-mono-code text-neutral-400 uppercase tracking-widest">
+              — Chủ tịch Hồ Chí Minh
             </footer>
           </blockquote>
         </div>
@@ -424,19 +266,18 @@
         <div id="hai-phong-stats-grid" class="relative z-10 mt-8 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
       </div>
 
-      <!-- Bộ lọc bo tròn & Biên niên 9 lần Bác Hồ về thăm Hải Phòng -->
+      <!-- Bộ lọc & Biên niên 9 lần Bác Hồ về thăm Hải Phòng -->
       <div class="space-y-6">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div class="space-y-1">
-            <h3 class="font-serif-editorial text-2xl sm:text-3xl font-extrabold">
-              🌺 Hành Trình Chín Lần Bác Hồ Về Thăm Hải Phòng (1946 – 1960)
+            <h3 class="font-serif-editorial text-2xl sm:text-3xl uppercase">
+              BIÊN NIÊN 09 LẦN BÁC HỒ VỀ THĂM HẢI PHÒNG (1946 – 1960)
             </h3>
-            <p class="text-xs sm:text-sm text-stone-400">
-              Chọn nhóm sự kiện bên cạnh để xem chi tiết từng lần Bác về thăm bến Cảng, đảo Cát Bà, Đồ Sơn, các nhà máy và đồng bào thành phố Hoa Phượng Đỏ.
+            <p class="text-xs sm:text-sm text-neutral-400">
+              Lọc theo nhóm sự kiện để tra cứu từng chuyến thăm lịch sử của Người tại đất Cảng.
             </p>
           </div>
 
-          <!-- Các nút lọc bo tròn -->
           <div id="hai-phong-filter-tabs" class="flex flex-wrap items-center gap-2">
             <button
               type="button"
@@ -450,25 +291,25 @@
               type="button"
               onclick="window.filterHaiPhongVisits('cang-bien')"
               data-hp-filter="cang-bien"
-              class="btn-soft-pill px-4 py-2.5 border border-white/15 bg-white/5 text-xs font-semibold text-stone-200 hover:border-amber-400/50"
+              class="btn-soft-pill px-4 py-2.5 border border-white/20 bg-transparent text-xs font-semibold text-neutral-300 hover:border-red-600"
             >
-              ⚓ Cảng biển, Đồ Sơn &amp; Cát Bà
+              Cảng biển, Đồ Sơn &amp; Cát Bà
             </button>
             <button
               type="button"
               onclick="window.filterHaiPhongVisits('nhan-dan')"
               data-hp-filter="nhan-dan"
-              class="btn-soft-pill px-4 py-2.5 border border-white/15 bg-white/5 text-xs font-semibold text-stone-200 hover:border-amber-400/50"
+              class="btn-soft-pill px-4 py-2.5 border border-white/20 bg-transparent text-xs font-semibold text-neutral-300 hover:border-red-600"
             >
-              🌺 Quân dân &amp; Kiều bào
+              Quân dân &amp; Kiều bào
             </button>
             <button
               type="button"
               onclick="window.filterHaiPhongVisits('cong-nghiep')"
               data-hp-filter="cong-nghiep"
-              class="btn-soft-pill px-4 py-2.5 border border-white/15 bg-white/5 text-xs font-semibold text-stone-200 hover:border-amber-400/50"
+              class="btn-soft-pill px-4 py-2.5 border border-white/20 bg-transparent text-xs font-semibold text-neutral-300 hover:border-red-600"
             >
-              ⚙️ Sóng Duyên Hải &amp; Đóng tàu
+              Sóng Duyên Hải &amp; Đóng tàu
             </button>
           </div>
         </div>
@@ -476,14 +317,15 @@
         <div id="hai-phong-visits-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
       </div>
 
-      <!-- Chuyên đề nối tiếp: Bác Hồ Với Biển Đảo & Mái Trường Đại Dương Trên Đất Hoa Phượng Đỏ -->
+      <!-- Chuyên đề nối tiếp: Bác Hồ Với Biển Đảo & Trường Đại học Hàng hải Việt Nam -->
       <div class="pt-6 space-y-6 reveal-on-scroll">
-        <div class="space-y-1 border-b border-white/10 pb-4">
-          <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-amber-400">
-            KHÁT VỌNG VƯƠN KHƠI TỪ THÀNH PHỐ HOA PHƯỢNG ĐỎ
+        <div class="section-header-block">
+          <div class="section-kicker-row">
+            <span>KHÁT VỌNG VƯƠN KHƠI TỪ ĐẤT CẢNG</span>
+            <span class="campaign-red-dash"></span>
           </div>
-          <h3 class="font-serif-editorial text-2xl sm:text-3xl font-extrabold">
-            Bác Hồ Với Biển Đảo &amp; Trường Đại Học Hàng Hải Việt Nam
+          <h3 class="font-serif-editorial text-2xl sm:text-4xl uppercase">
+            BÁC HỒ VỚI BIỂN ĐẢO &amp; TRƯỜNG ĐẠI HỌC HÀNG HẢI VIỆT NAM
           </h3>
         </div>
         <div id="maritime-timeline-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
@@ -492,42 +334,44 @@
 
     <!-- ================= 05. HỆ THỐNG 6 CHƯƠNG GIÁO TRÌNH TƯ TƯỞNG HỒ CHÍ MINH ================= -->
     <section id="05-giao-trinh" class="scroll-mt-24 space-y-10 reveal-on-scroll">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6">
-        <div class="space-y-2">
-          <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-[#ee1c25]">
-            05. HỌC PHẦN TƯ TƯỞNG HỒ CHÍ MINH • TRƯỜNG ĐẠI HỌC HÀNG HẢI VIỆT NAM
-          </div>
-          <h2 class="font-serif-editorial">
-            Hệ Thống 6 Chương Giáo Trình &amp; Vận Dụng Thực Tiễn Hàng Hải
-          </h2>
-          <p class="text-sm text-stone-300 max-w-2xl">
-            Bám sát Giáo trình chuẩn của Bộ Giáo dục và Đào tạo kết hợp định hướng vận dụng thực tiễn ngành Khoa học Hàng hải, Kinh tế biển, hậu cần cảng biển và đóng tàu tại Hải Phòng.
-          </p>
+      <div class="section-header-block">
+        <div class="section-kicker-row">
+          <span>05. HỌC PHẦN TƯ TƯỞNG HỒ CHÍ MINH • TRƯỜNG ĐẠI HỌC HÀNG HẢI VIỆT NAM</span>
+          <span class="campaign-red-dash"></span>
         </div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 class="font-serif-editorial">
+              HỆ THỐNG 06 CHƯƠNG GIÁO TRÌNH CHUẨN
+            </h2>
+            <p class="text-sm text-neutral-400 max-w-2xl mt-2">
+              Bám sát Giáo trình Bộ Giáo dục và Đào tạo kết hợp liên hệ thực tiễn sinh viên Hàng hải tại Hải Phòng.
+            </p>
+          </div>
 
-        <!-- Ô tìm kiếm nhanh từ khóa bo tròn -->
-        <div class="w-full md:w-80">
-          <input
-            id="chapter-search-input"
-            type="text"
-            placeholder="🔍 Tìm chương: độc lập, đạo đức, biển đảo..."
-            class="w-full px-5 py-3 bg-white/[0.06] border border-white/15 focus:border-[#ee1c25] focus:outline-none text-xs sm:text-sm text-white placeholder-stone-400 transition"
-          />
+          <div class="w-full md:w-80">
+            <input
+              id="chapter-search-input"
+              type="text"
+              placeholder="TÌM TỪ KHÓA: ĐỘC LẬP, ĐẠO ĐỨC..."
+              class="w-full px-4 py-3 bg-black/70 border border-white/25 focus:border-[#dc2626] focus:outline-none text-xs font-mono-code tracking-wider text-white placeholder-neutral-500 transition"
+            />
+          </div>
         </div>
       </div>
 
-      <!-- Danh sách Chương Mở đầu & 6 chương -->
       <div id="chapters-list" class="space-y-4"></div>
     </section>
 
     <!-- ================= 06. TRẮC NGHIỆM ÔN TẬP KẾT THÚC HỌC PHẦN ================= -->
     <section id="06-on-tap" class="scroll-mt-24 space-y-6 reveal-on-scroll">
-      <div class="border-b border-white/10 pb-5 space-y-2">
-        <div class="font-mono-code text-xs font-bold uppercase tracking-[0.22em] text-[#ee1c25]">
-          06. ÔN TẬP KIẾN THỨC • 14 CÂU HỎI TRỌNG TÂM &amp; CHUYÊN ĐỀ HẢI PHÒNG
+      <div class="section-header-block">
+        <div class="section-kicker-row">
+          <span>06. ÔN TẬP KIẾN THỨC • 100 CÂU HỎI</span>
+          <span class="campaign-red-dash"></span>
         </div>
         <h2 class="font-serif-editorial">
-          Trắc Nghiệm Ôn Tập Học Phần Tư Tưởng Hồ Chí Minh
+          TRẮC NGHIỆM TƯ TƯỞNG HỒ CHÍ MINH
         </h2>
       </div>
 
@@ -536,6 +380,7 @@
 
   </main>
 
+  <!-- Hộp thoại đọc sách lật trang -->
   <dialog id="work-reader" class="work-reader" aria-labelledby="work-reader-title">
     <header class="work-reader-header">
       <div>
@@ -562,18 +407,18 @@
     </footer>
   </dialog>
 
-  <!-- ================= HỘP THOẠI CHI TIẾT CHƯƠNG HỌC ================= -->
+  <!-- Hộp thoại chi tiết chương học -->
   <div
     id="chapter-modal"
-    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md"
     onclick="if(event.target === this) window.closeChapterModal()"
   >
-    <div class="bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 border-2 border-[#a30b10] shadow-2xl relative">
+    <div class="bg-[#0a0a0a] text-neutral-100 w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-white/20 border-t-4 border-t-[#dc2626] shadow-2xl relative">
       <button
         type="button"
         onclick="window.closeChapterModal()"
         aria-label="Đóng cửa sổ"
-        class="sticky top-2 float-right w-10 h-10 bg-stone-100 hover:bg-[#a30b10] text-slate-800 hover:text-white flex items-center justify-center text-sm font-bold transition shadow"
+        class="sticky top-2 float-right w-10 h-10 bg-neutral-900 hover:bg-[#dc2626] text-neutral-200 hover:text-white border border-white/15 flex items-center justify-center text-sm font-bold transition"
       >
         ✕
       </button>
@@ -581,25 +426,24 @@
     </div>
   </div>
 
-  <!-- ================= CHÂN TRANG (100% TIẾNG VIỆT TRANG TRỌNG) ================= -->
-  <footer class="border-t border-white/[0.08] bg-[#080504] py-10 px-4 sm:px-10 relative z-10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-stone-400 leading-relaxed">
+  <!-- Chân trang Editorial -->
+  <footer class="border-t border-white/10 bg-black/90 py-10 px-4 sm:px-10 relative z-10">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-neutral-500 leading-relaxed">
       <div class="space-y-1.5 max-w-2xl">
-        <p class="text-white font-bold flex items-center gap-2.5 uppercase tracking-wider font-mono-code">
-          <span class="w-2.5 h-2.5 rounded-full bg-[#ee1c25] inline-block"></span>
-          <span>CHỦ TỊCH HỒ CHÍ MINH (1890–1969) • HỌC LIỆU SỐ TRƯỜNG ĐẠI HỌC HÀNG HẢI VIỆT NAM</span>
+        <p class="text-neutral-200 font-bold flex items-center gap-2.5 uppercase tracking-widest font-mono-code">
+          <span class="w-2 h-2 bg-[#dc2626] inline-block"></span>
+          <span>CHỦ TỊCH HỒ CHÍ MINH (1890–1969) • HỌC LIỆU SỐ ĐẠI HỌC HÀNG HẢI VIỆT NAM</span>
         </p>
         <p>
-          Biên soạn dựa trên Giáo trình <em>Tư tưởng Hồ Chí Minh</em> của Bộ Giáo dục và Đào tạo (Nhà xuất bản Chính trị Quốc gia Sự thật) kết hợp tư liệu lịch sử <em>Bác Hồ với Đảng bộ và Nhân dân Hải Phòng</em>.
+          Không gian học liệu số phục vụ học tập và nghiên cứu. Nội dung biên soạn từ Giáo trình Tư tưởng Hồ Chí Minh và tư liệu Bảo tàng Hồ Chí Minh.
         </p>
       </div>
-      <div class="shrink-0 font-mono-code text-[11px] font-bold px-5 py-2.5 border border-red-500/30 bg-red-950/30 text-amber-300 uppercase tracking-widest">
-        🌺 VĂN HIẾN LẠC HỒNG • HOA PHƯỢNG ĐỎ HẢI PHÒNG
-      </div>
+      <a href="#" class="font-mono-code text-[11px] font-bold px-5 py-3 border border-white/20 hover:border-[#dc2626] text-neutral-300 hover:text-white uppercase tracking-widest transition">
+        LÊN ĐẦU TRANG ↑
+      </a>
     </div>
   </footer>
 
-  <!-- Tập lệnh -->
   <script src="data.js" charset="UTF-8"></script>
   <script src="app.js" charset="UTF-8"></script>
 </body>

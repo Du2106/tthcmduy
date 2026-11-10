@@ -772,217 +772,1419 @@ window.TTHCM_DATA = {
     }
   ],
 
-  // 06. CÂU HỎI TRẮC NGHIỆM ÔN TẬP (BAO GỒM CẢ CHUYÊN ĐỀ BÁC HỒ VỚI HẢI PHÒNG)
+  // 06. NGÂN HÀNG 100 CÂU HỎI TỪ BẢN 1
   quizQuestions: [
     {
-      id: 1,
-      chapter: "Chương Mở đầu",
-      question:
-        "Khái niệm “Tư tưởng Hồ Chí Minh” được Đảng Cộng sản Việt Nam chính thức nêu ra lần đầu tiên tại Đại hội đại biểu toàn quốc lần thứ mấy?",
-      options: [
+      "id": 1,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Đảng lần đầu khẳng định tư tưởng Hồ Chí Minh là nền tảng tư tưởng, kim chỉ nam cho hành động tại Đại hội nào?",
+      "options": [
+        "Đại hội IV (1976)",
+        "Đại hội V (1981)",
         "Đại hội VI (1986)",
-        "Đại hội VII (1991)",
-        "Đại hội IX (2001)",
-        "Đại hội XI (2011)"
+        "Đại hội VII (1991)"
       ],
-      answer: 1,
-      explanation:
-        "Tại Đại hội VII (tháng 6/1991), Đảng ta chính thức khẳng định lấy Chủ nghĩa Mác - Lênin và Tư tưởng Hồ Chí Minh làm nền tảng tư tưởng, kim chỉ nam cho hành động. Đến Đại hội XI (2011), định nghĩa hoàn chỉnh như trong giáo trình hiện hành được thông qua."
+      "answer": 3,
+      "explanation": "Đại hội VII năm 1991 xác định tư tưởng Hồ Chí Minh cùng với chủ nghĩa Mác–Lênin là nền tảng tư tưởng của Đảng. Câu hỏi yêu cầu mốc khẳng định lần đầu, nên chọn VII.",
+      "remember": "Đại hội VII · 1991",
+      "reference": "https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-vii/bao-cao-cua-ban-chap-hanh-trung-uong-khoa-vi-ve-cac-van-kien-trinh-dai-hoi-vii-cua-dang-1560",
+      "referenceName": "Văn kiện Đại hội VII"
     },
     {
-      id: 2,
-      chapter: "Chương I",
-      question:
-        "Trong các giá trị truyền thống tốt đẹp của dân tộc Việt Nam góp phần hình thành Tư tưởng Hồ Chí Minh, giá trị nào đứng ở vị trí hàng đầu và xuyên suốt nhất?",
-      options: [
-        "Chủ nghĩa yêu nước và ý chí bất khuất đấu tranh dựng nước, giữ nước",
-        "Tinh thần hiếu học và trọng hiền tài",
-        "Đức tính cần cù, sáng tạo trong lao động",
-        "Tinh thần lạc quan yêu đời"
+      "id": 2,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Nội dung cốt lõi của tư tưởng Hồ Chí Minh là gì?",
+      "options": [
+        "Độc lập dân tộc gắn liền với chủ nghĩa xã hội",
+        "Giải phóng dân tộc",
+        "Giải phóng giai cấp",
+        "Giải phóng con người"
       ],
-      answer: 0,
-      explanation:
-        "Chủ nghĩa yêu nước truyền thống ngàn đời của dân tộc Việt Nam là giá trị xuyên suốt nhất, là điểm xuất phát thôi thúc Nguyễn Tất Thành ra đi tìm đường cứu nước và đến với chủ nghĩa Mác - Lênin."
+      "answer": 0,
+      "explanation": "Độc lập dân tộc gắn với chủ nghĩa xã hội thể hiện mối liên hệ giữa giải phóng dân tộc và xây dựng xã hội mới. Các lựa chọn còn lại chỉ nêu một mặt của mục tiêu giải phóng.",
+      "remember": "Độc lập dân tộc + chủ nghĩa xã hội"
     },
     {
-      id: 3,
-      chapter: "Chương I",
-      question:
-        "Sự kiện nào đánh dấu bước ngoặt Nguyễn Ái Quốc từ một người yêu nước trở thành một người cộng sản Việt Nam đầu tiên?",
-      options: [
-        "Rời bến cảng Nhà Rồng ra đi tìm đường cứu nước (05/06/1911)",
-        "Gửi Bản yêu sách của nhân dân An Nam tới Hội nghị Vécxây (06/1919)",
-        "Đọc Sơ thảo Luận cương của Lênin (07/1920) và bỏ phiếu tán thành Quốc tế thứ ba, tham gia sáng lập Đảng Cộng sản Pháp tại Đại hội Tua (12/1920)",
-        "Sáng lập Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu (06/1925)"
+      "id": 3,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "UNESCO thông qua Nghị quyết 24C/18.65 tôn vinh Chủ tịch Hồ Chí Minh vào năm nào?",
+      "options": [
+        "1969",
+        "1975",
+        "1987",
+        "1990"
       ],
-      answer: 2,
-      explanation:
-        "Đọc Luận cương của Lênin (07/1920) giúp Người tìm thấy con đường cứu nước và tại Đại hội Tua (12/1920), khi bỏ phiếu tán thành Quốc tế Cộng sản và tham gia sáng lập Đảng Cộng sản Pháp, Người chính thức trở thành người cộng sản Việt Nam đầu tiên."
+      "answer": 2,
+      "explanation": "Cần phân biệt năm thông qua nghị quyết là 1987 với năm kỷ niệm 100 năm ngày sinh là 1990. Câu hỏi hỏi thời điểm thông qua nghị quyết.",
+      "remember": "Thông qua 1987 · kỷ niệm 1990"
     },
     {
-      id: 4,
-      chapter: "Chuyên đề Bác Hồ với Hải Phòng",
-      question:
-        "Trong suốt cuộc đời hoạt động cách mạng, Chủ tịch Hồ Chí Minh đã mấy lần về thăm Đảng bộ, quân và dân thành phố Hoa Phượng Đỏ Hải Phòng?",
-      options: [
-        "5 lần (từ năm 1946 đến năm 1955)",
-        "7 lần (từ năm 1946 đến năm 1958)",
-        "9 lần (từ ngày 20/10/1946 đến tháng 01/1960)",
-        "11 lần (từ năm 1945 đến năm 1965)"
+      "id": 4,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Nguồn gốc nào của tư tưởng Hồ Chí Minh thể hiện việc tiếp thu giá trị truyền thống?",
+      "options": [
+        "Lòng nhân ái của Hồi giáo",
+        "Văn hóa thời Phục hưng",
+        "Giá trị truyền thống dân tộc",
+        "Tư tưởng khai sáng châu Âu"
       ],
-      answer: 2,
-      explanation:
-        "Từ lần đầu tiên đặt chân lên Bến Ngự (Cảng Hải Phòng) ngày 20/10/1946 sau chuyến công tác tại Pháp cho đến chuyến thăm cuối cùng vào tháng 01/1960, Chủ tịch Hồ Chí Minh đã 9 lần về thăm Đảng bộ, quân và dân Hải Phòng."
+      "answer": 2,
+      "explanation": "Giá trị truyền thống dân tộc gồm lòng yêu nước, nhân nghĩa, đoàn kết và ý chí tự cường. Đây là nguồn từ lịch sử, văn hóa Việt Nam.",
+      "remember": "Truyền thống dân tộc → nguồn trong nước"
     },
     {
-      id: 5,
-      chapter: "Chuyên đề Bác Hồ với Hải Phòng",
-      question:
-        "Trong chuyến thăm Hải Phòng lần thứ chín (tháng 01/1960), sự kiện Bác Hồ đến thăm cơ sở công nghiệp nào của thành phố Cảng đã khơi nguồn cho phong trào thi đua nổi tiếng khắp miền Bắc xã hội chủ nghĩa?",
-      options: [
-        "Nhà máy Cơ khí Duyên Hải — khơi nguồn phong trào thi đua “Sóng Duyên Hải”",
-        "Nhà máy Dệt Nam Định",
-        "Khu Gang thép Thái Nguyên",
-        "Nhà máy Thủy điện Thác Bà"
+      "id": 5,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Nguồn gốc nào của tư tưởng Hồ Chí Minh thể hiện sự tiếp thu văn hóa thế giới?",
+      "options": [
+        "Tinh hoa văn hóa nhân loại",
+        "Văn hóa thời Phục hưng",
+        "Tư tưởng của các nhà khai sáng",
+        "Lòng nhân ái của Hồi giáo"
       ],
-      answer: 0,
-      explanation:
-        "Tháng 01/1960, Bác Hồ thăm Nhà máy Cơ khí Duyên Hải (Hải Phòng). Khắc sâu lời dạy của Bác về phát huy sáng kiến, cải tiến kỹ thuật, từ đây đã ra đời phong trào thi đua “Sóng Duyên Hải” lan tỏa mạnh mẽ trong toàn ngành công nghiệp miền Bắc."
+      "answer": 0,
+      "explanation": "Tinh hoa văn hóa nhân loại bao quát những giá trị tích cực từ cả phương Đông và phương Tây. Một trào lưu hay một tôn giáo riêng lẻ không bao quát toàn bộ nguồn này.",
+      "remember": "Văn hóa thế giới → tinh hoa nhân loại"
     },
     {
-      id: 6,
-      chapter: "Chương II",
-      question:
-        "Theo Tư tưởng Hồ Chí Minh, luận điểm nào thể hiện sự sáng tạo vượt bậc về mối quan hệ giữa cách mạng giải phóng dân tộc ở thuộc địa và cách mạng vô sản ở chính quốc?",
-      options: [
-        "Cách mạng thuộc địa hoàn toàn phụ thuộc vào thắng lợi của cách mạng vô sản ở chính quốc",
-        "Cách mạng giải phóng dân tộc cần chủ động, sáng tạo, có khả năng giành thắng lợi trước cách mạng vô sản ở chính quốc",
-        "Cách mạng thuộc địa chỉ có thể thắng lợi sau khi chính quốc đã xây dựng xong chủ nghĩa xã hội",
-        "Hai cuộc cách mạng không có mối liên hệ với nhau"
+      "id": 6,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Điếu văn năm 1969 viết Chủ tịch Hồ Chí Minh đã làm điều gì cho dân tộc, nhân dân và non sông đất nước?",
+      "options": [
+        "Nổi tiếng",
+        "Nâng tầm",
+        "Rạng danh",
+        "Rạng rỡ"
       ],
-      answer: 1,
-      explanation:
-        "Hồ Chí Minh ví chủ nghĩa đế quốc như “con đỉa hai vòi” và khẳng định cách mạng giải phóng dân tộc ở thuộc địa cần được tiến hành chủ động, sáng tạo, có khả năng giành thắng lợi trước cách mạng vô sản ở chính quốc."
+      "answer": 3,
+      "explanation": "Đây là câu kiểm tra từ ngữ trong Điếu văn: từ cần nhớ là rạng rỡ. Những từ gần nghĩa ở các phương án khác không khớp câu trong tài liệu.",
+      "remember": "Từ khóa: rạng rỡ"
     },
     {
-      id: 7,
-      chapter: "Chương II",
-      question:
-        "Theo Hồ Chí Minh, đặc điểm lớn nhất của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì?",
-      options: [
-        "Từ một nước tư bản phát triển trung bình tiến lên chủ nghĩa xã hội",
-        "Từ một nước công nghiệp nhẹ tiến lên chủ nghĩa xã hội",
-        "Từ một nước nông nghiệp lạc hậu tiến thẳng lên chủ nghĩa xã hội không phải kinh qua giai đoạn phát triển tư bản chủ nghĩa",
-        "Từ một nước thương mại hàng hải phát triển tiến lên chủ nghĩa xã hội"
+      "id": 7,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Tờ báo do Hồ Chí Minh sáng lập, xuất bản số đầu tiên ngày 21/6/1925 là báo nào?",
+      "options": [
+        "Thanh Niên",
+        "Người cùng khổ",
+        "Nhân Dân",
+        "Tuổi Trẻ"
       ],
-      answer: 2,
-      explanation:
-        "Hồ Chí Minh chỉ rõ: “Đặc điểm to nhất của ta trong thời kỳ quá độ là từ một nước nông nghiệp lạc hậu tiến thẳng lên chủ nghĩa xã hội không phải kinh qua giai đoạn phát triển tư bản chủ nghĩa”."
+      "answer": 0,
+      "explanation": "Báo Thanh Niên gắn với hoạt động của Nguyễn Ái Quốc ở Quảng Châu và số đầu ngày 21/6/1925. Người cùng khổ là một tờ báo khác, gắn với hoạt động tại Pháp.",
+      "remember": "Thanh Niên · 21/6/1925"
     },
     {
-      id: 8,
-      chapter: "Chương III",
-      question:
-        "Trong Tư tưởng Hồ Chí Minh, Đảng Cộng sản Việt Nam ra đời là sản phẩm của sự kết hợp những yếu tố nào?",
-      options: [
-        "Chủ nghĩa Mác - Lênin với phong trào công nhân",
-        "Chủ nghĩa Mác - Lênin với phong trào yêu nước",
-        "Chủ nghĩa Mác - Lênin với phong trào công nhân và phong trào yêu nước",
-        "Phong trào công nhân với phong trào nông dân và tiểu tư sản"
+      "id": 8,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Trong lời kể về việc đọc Luận cương của Lênin, Người nói đã tìm được con đường giải phóng cho ai?",
+      "options": [
+        "Nhân dân",
+        "Người dân",
+        "Đồng bào",
+        "Anh em"
       ],
-      answer: 2,
-      explanation:
-        "Trong bài viết “Ba mươi năm hoạt động của Đảng” (1960), Hồ Chí Minh tổng kết: Chủ nghĩa Mác - Lênin kết hợp với phong trào công nhân và phong trào yêu nước truyền thống của dân tộc đã dẫn tới việc thành lập Đảng vào đầu năm 1930."
+      "answer": 2,
+      "explanation": "Trong lời kể về Luận cương, Người hướng lời nói tới đồng bào bị áp bức. Câu này kiểm tra cách dùng từ, nên nhớ đồng bào thay vì thay bằng từ gần nghĩa.",
+      "remember": "Luận cương → con đường giải phóng đồng bào"
     },
     {
-      id: 9,
-      chapter: "Chương III",
-      question:
-        "Hồ Chí Minh đã dùng hình ảnh ẩn dụ gắn với nghề đi biển nào trong tác phẩm “Đường Kách mệnh” (1927) để nói về vai trò của Đảng?",
-      options: [
-        "Đảng như ngọn hải đăng giữa biển đêm",
-        "Đảng có vững cách mệnh mới thành công, cũng như người cầm lái có vững thuyền mới chạy",
-        "Đảng như cánh buồm đón gió đại dương",
-        "Đảng như mỏ neo giữ con tàu trước sóng gió"
+      "id": 9,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Giai đoạn tìm tòi con đường cứu nước, giải phóng dân tộc được tính từ khi nào?",
+      "options": [
+        "1890–1911",
+        "1911–1920",
+        "1921–1930",
+        "1930–1941"
       ],
-      answer: 1,
-      explanation:
-        "Trong “Đường Kách mệnh” (1927), Người viết: “Đảng có vững cách mệnh mới thành công, cũng như người cầm lái có vững thuyền mới chạy. Đảng muốn vững thì phải có chủ nghĩa làm cốt...”"
+      "answer": 1,
+      "explanation": "Năm 1911 là mốc ra đi tìm đường cứu nước; năm 1920 là mốc tiếp cận Luận cương và lựa chọn con đường cách mạng vô sản. Hai mốc giới hạn giai đoạn tìm tòi.",
+      "remember": "1911 ra đi → 1920 lựa chọn con đường"
     },
     {
-      id: 10,
-      chapter: "Chương III",
-      question:
-        "Theo Hồ Chí Minh, ba căn bệnh nào trong bộ máy Nhà nước được coi là “giặc nội xâm”, nguy hiểm không kém giặc ngoại xâm?",
-      options: [
-        "Tham ô, lãng phí, quan liêu",
-        "Bảo thủ, trì trệ, giáo điều",
-        "Độc đoán, chuyên quyền, gia trưởng",
-        "Tự cao, tự đại, hữu khuynh"
+      "id": 10,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Giai đoạn hình thành cơ bản tư tưởng về con đường cách mạng Việt Nam được tính từ khi nào?",
+      "options": [
+        "1911–1920",
+        "1921–1930",
+        "1930–1941",
+        "1941–1969"
       ],
-      answer: 0,
-      explanation:
-        "Hồ Chí Minh coi tham ô, lãng phí, quan liêu là “giặc nội xâm”, là “bạn đồng minh của thực dân và phong kiến” vì nó phá hoại từ bên trong và làm suy giảm lòng tin của nhân dân."
+      "answer": 1,
+      "explanation": "Giai đoạn 1921–1930 gắn với hoạt động tuyên truyền, tổ chức và chuẩn bị đường lối cho cách mạng Việt Nam. Đừng nhầm với giai đoạn tìm đường cứu nước 1911–1920.",
+      "remember": "1921–1930: hình thành cơ bản"
     },
     {
-      id: 11,
-      chapter: "Chương IV",
-      question:
-        "Trong Tư tưởng Hồ Chí Minh, đại đoàn kết toàn dân tộc có vị trí, vai trò như thế nào đối với sự nghiệp cách mạng?",
-      options: [
-        "Là một thủ đoạn chính trị nhất thời trong từng giai đoạn",
-        "Là một sách lược ngắn hạn khi gặp khó khăn",
-        "Là vấn đề có ý nghĩa chiến lược, quyết định thành công của cách mạng",
-        "Chỉ áp dụng trong thời kỳ kháng chiến chống ngoại xâm"
+      "id": 11,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Giai đoạn hình thành tư tưởng yêu nước và chí hướng cứu nước được tính từ khi nào?",
+      "options": [
+        "1890–1911",
+        "1911–1920",
+        "1921–1930",
+        "1930–1941"
       ],
-      answer: 2,
-      explanation:
-        "Đại đoàn kết toàn dân tộc kế thừa truyền thống đồng bào con Lạc cháu Hồng, không phải là sách lược nhất thời mà là vấn đề có ý nghĩa chiến lược lâu dài, quyết định thành công của cách mạng."
+      "answer": 0,
+      "explanation": "Giai đoạn từ khi sinh ra năm 1890 đến khi ra đi năm 1911 gắn với sự hình thành lòng yêu nước và chí hướng cứu nước. Đây là giai đoạn đầu của cách phân kỳ trong tài liệu.",
+      "remember": "1890–1911: yêu nước và chí hướng"
     },
     {
-      id: 12,
-      chapter: "Chương V",
-      question:
-        "Theo Hồ Chí Minh, trong bốn chuẩn mực đạo đức cách mạng cơ bản, phẩm chất nào là phẩm chất bao trùm, quan trọng nhất?",
-      options: [
-        "Cần, kiệm, liêm, chính, chí công vô tư",
+      "id": 12,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Giai đoạn vượt qua thử thách và kiên trì giữ vững lập trường cách mạng được tính từ khi nào?",
+      "options": [
+        "1911–1920",
+        "1921–1930",
+        "1930–1941",
+        "1941–1969"
+      ],
+      "answer": 2,
+      "explanation": "Tài liệu phân kỳ 1930–1941 là giai đoạn vượt thử thách, kiên trì con đường đã xác định. Mốc cuối là năm Người trở về Tổ quốc.",
+      "remember": "1930–1941: kiên trì qua thử thách"
+    },
+    {
+      "id": 13,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Giai đoạn tư tưởng Hồ Chí Minh tiếp tục phát triển, hoàn thiện được tính từ khi nào?",
+      "options": [
+        "1911–1920",
+        "1921–1930",
+        "1930–1941",
+        "1941–1969"
+      ],
+      "answer": 3,
+      "explanation": "Từ năm 1941, tư tưởng được tiếp tục phát triển trong quá trình lãnh đạo cách mạng và xây dựng đất nước. Năm 1969 là mốc kết thúc cuộc đời của Người.",
+      "remember": "1941–1969: phát triển, hoàn thiện"
+    },
+    {
+      "id": 14,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Nguồn gốc quyết định bản chất tư tưởng Hồ Chí Minh là gì?",
+      "options": [
+        "Giá trị truyền thống dân tộc",
+        "Chủ nghĩa Mác–Lênin",
+        "Tinh hoa văn hóa nhân loại",
+        "Phẩm chất cá nhân"
+      ],
+      "answer": 1,
+      "explanation": "Chủ nghĩa Mác–Lênin cung cấp thế giới quan và phương pháp luận, quyết định bản chất cách mạng, khoa học của tư tưởng Hồ Chí Minh. Truyền thống và văn hóa nhân loại là các nguồn quan trọng khác.",
+      "remember": "Quyết định bản chất → Mác–Lênin"
+    },
+    {
+      "id": 15,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Năm 1925, Nguyễn Ái Quốc cải tổ Tâm Tâm xã thành tổ chức nào?",
+      "options": [
+        "Hội Việt Nam Cách mạng Thanh niên",
+        "Đảng Phục Việt",
+        "Đảng Hưng Nam",
+        "Việt Nam Quốc dân Đảng"
+      ],
+      "answer": 0,
+      "explanation": "Hội Việt Nam Cách mạng Thanh niên gắn với quá trình Nguyễn Ái Quốc chuẩn bị tổ chức và đào tạo cán bộ cách mạng năm 1925. Những tổ chức khác trong lựa chọn không phải đáp án của mốc này.",
+      "remember": "Quảng Châu · 1925 · Hội Thanh niên"
+    },
+    {
+      "id": 16,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Trong thư gửi thanh niên năm 1947, Hồ Chí Minh gọi thanh niên là gì của nước nhà?",
+      "options": [
+        "Người chủ tương lai",
+        "Thế hệ tương lai",
+        "Lực lượng hùng hậu",
+        "Lực lượng cách mạng"
+      ],
+      "answer": 0,
+      "explanation": "Cách gọi người chủ tương lai nhấn mạnh trách nhiệm của thanh niên đối với vận mệnh đất nước. Đáp án yêu cầu đúng cách diễn đạt của bức thư.",
+      "remember": "Thanh niên → người chủ tương lai"
+    },
+    {
+      "id": 17,
+      "chapter": "Cơ sở và quá trình hình thành tư tưởng",
+      "question": "Nguyễn Tất Thành rời cảng Sài Gòn đi tìm đường cứu nước vào ngày nào?",
+      "options": [
+        "5/6/1910",
+        "6/5/1911",
+        "5/6/1911",
+        "19/5/1911"
+      ],
+      "answer": 2,
+      "explanation": "Ngày 5/6/1911 là mốc Nguyễn Tất Thành rời Sài Gòn. Chú ý thứ tự ngày và tháng vì có lựa chọn đảo thành 6/5.",
+      "remember": "5/6/1911"
+    },
+    {
+      "id": 18,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Khi xuống tàu Amiral Latouche-Tréville, Nguyễn Tất Thành dùng tên gọi nào?",
+      "options": [
+        "Nguyễn Sinh Cung",
+        "Nguyễn Tất Thành",
+        "Nguyễn Ái Quốc",
+        "Văn Ba"
+      ],
+      "answer": 3,
+      "explanation": "Văn Ba là tên được dùng khi làm việc trên tàu trong chuyến ra đi năm 1911. Nguyễn Ái Quốc gắn với giai đoạn hoạt động sau đó.",
+      "remember": "Lên tàu năm 1911 → Văn Ba"
+    },
+    {
+      "id": 19,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Trong lời gửi học sinh, Hồ Chí Minh nói tương lai dân tộc phụ thuộc phần lớn vào điều gì của các em?",
+      "options": [
+        "Một công lớn học tập của các em",
+        "Một phần lớn ở công học tập của các em",
+        "Một phần lớn công học tập các em",
+        "Một phần công lớn học tập của các em"
+      ],
+      "answer": 1,
+      "explanation": "Cụm cần nhớ là một phần lớn ở công học tập của các em. Câu hỏi kiểm tra từ ngữ trong lời gửi học sinh, đồng thời nhấn mạnh vai trò của học tập đối với tương lai dân tộc.",
+      "remember": "Một phần lớn ở công học tập"
+    },
+    {
+      "id": 20,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Nguyễn Ái Quốc đọc Sơ thảo luận cương của Lênin về vấn đề dân tộc và thuộc địa vào thời gian, địa điểm nào?",
+      "options": [
+        "7/1920 tại Liên Xô",
+        "7/1920 tại Pháp",
+        "7/1920 tại Trung Quốc",
+        "7/1920 tại Anh"
+      ],
+      "answer": 1,
+      "explanation": "Nguyễn Ái Quốc đọc Sơ thảo luận cương tại Pháp vào tháng 7/1920. Phải chọn phương án đúng đồng thời cả thời gian và địa điểm.",
+      "remember": "7/1920 · Pháp"
+    },
+    {
+      "id": 21,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Theo Hồ Chí Minh, điều ban đầu đưa Người tin theo Lênin và Quốc tế thứ ba là gì?",
+      "options": [
+        "Chủ nghĩa Mác",
+        "Khát vọng học thuật",
+        "Chủ nghĩa dân tộc hẹp hòi",
+        "Chủ nghĩa yêu nước"
+      ],
+      "answer": 3,
+      "explanation": "Lòng yêu nước là động lực ban đầu đưa Người tìm hiểu và tin theo Lênin, Quốc tế thứ ba. Câu hỏi nhấn mạnh điểm xuất phát ban đầu.",
+      "remember": "Ban đầu → chủ nghĩa yêu nước"
+    },
+    {
+      "id": 22,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Sau nhiều năm tìm đường cứu nước, Nguyễn Ái Quốc trở về Tổ quốc vào ngày nào?",
+      "options": [
+        "28/1/1941",
+        "8/2/1943",
+        "28/1/1942",
+        "8/2/1944"
+      ],
+      "answer": 0,
+      "explanation": "Nguyễn Ái Quốc trở về Tổ quốc ngày 28/1/1941 qua vùng biên giới Cao Bằng. Đây là mốc nối hành trình hoạt động ở nước ngoài với lãnh đạo cách mạng trong nước.",
+      "remember": "28/1/1941 · Cao Bằng"
+    },
+    {
+      "id": 23,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Trong lời khẳng định về quyền của nhân dân, nếu nước được điều gì mà dân không hưởng hạnh phúc, tự do thì cũng không có nghĩa lý?",
+      "options": [
+        "Độc lập",
+        "Tự do",
+        "Giải phóng",
+        "Hòa bình"
+      ],
+      "answer": 0,
+      "explanation": "Độc lập cần đem lại tự do và hạnh phúc cho nhân dân mới có ý nghĩa thực chất. Vì vậy, từ khuyết trong câu là độc lập.",
+      "remember": "Độc lập gắn với hạnh phúc của dân"
+    },
+    {
+      "id": 24,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Theo Hồ Chí Minh, độc lập và tự do là gì đối với các dân tộc?",
+      "options": [
+        "Điều tạo hóa ban riêng cho từng người",
+        "Trách nhiệm của nước lớn",
+        "Chỉ là mong muốn",
+        "Quyền thiêng liêng, bất khả xâm phạm"
+      ],
+      "answer": 3,
+      "explanation": "Quan điểm này khẳng định quyền độc lập, tự do thuộc về mọi dân tộc và không thể bị xâm phạm. Nó không phụ thuộc sự ban phát của một nước lớn.",
+      "remember": "Quyền thiêng liêng, bất khả xâm phạm"
+    },
+    {
+      "id": 25,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Trước khi ra đi tìm đường cứu nước, Nguyễn Tất Thành từng dạy học ở trường nào?",
+      "options": [
+        "Tiểu học Vinh",
+        "Pháp Việt Đông Ba",
+        "Quốc học Huế",
+        "Dục Thanh (Phan Thiết)"
+      ],
+      "answer": 3,
+      "explanation": "Nguyễn Tất Thành từng dạy học tại trường Dục Thanh ở Phan Thiết trước chuyến ra đi năm 1911. Quốc học Huế gắn với thời kỳ học tập của Người.",
+      "remember": "Dạy học → Dục Thanh · Phan Thiết"
+    },
+    {
+      "id": 26,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Theo Hồ Chí Minh, cách mạng giải phóng dân tộc muốn thắng lợi phải đi theo con đường nào?",
+      "options": [
+        "Con đường của các bậc tiền bối",
+        "Con đường cách mạng Pháp",
+        "Con đường cách mạng vô sản",
+        "Con đường cách mạng Mỹ"
+      ],
+      "answer": 2,
+      "explanation": "Theo nội dung ôn tập, con đường cách mạng vô sản là lựa chọn để giải phóng dân tộc. Đây là điểm khác với việc đi theo mô hình cách mạng tư sản Pháp hoặc Mỹ.",
+      "remember": "Giải phóng dân tộc → cách mạng vô sản"
+    },
+    {
+      "id": 27,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Cách mạng giải phóng dân tộc muốn thắng lợi cần lực lượng lãnh đạo nào?",
+      "options": [
+        "Nhiều cá nhân xuất sắc",
+        "Đảng của giai cấp công nhân",
+        "Một cá nhân duy nhất",
+        "Không cần tổ chức lãnh đạo"
+      ],
+      "answer": 1,
+      "explanation": "Câu hỏi nhấn mạnh vai trò tổ chức, lãnh đạo của đảng cách mạng mang bản chất giai cấp công nhân. Một hoặc nhiều cá nhân xuất sắc không thay thế được tổ chức lãnh đạo.",
+      "remember": "Lãnh đạo → Đảng của giai cấp công nhân"
+    },
+    {
+      "id": 28,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Theo Hồ Chí Minh, cách mạng giải phóng dân tộc là sự nghiệp đoàn kết của lực lượng nào?",
+      "options": [
+        "Chỉ giai cấp công nhân",
+        "Chỉ công nhân và nông dân",
+        "Toàn dân, trên cơ sở liên minh công–nông",
+        "Chỉ các dân tộc thuộc địa"
+      ],
+      "answer": 2,
+      "explanation": "Lực lượng cách mạng được xác định là toàn dân, với liên minh công–nông làm cơ sở. Chỉ chọn công nhân hoặc công–nông sẽ thu hẹp phạm vi lực lượng được hỏi.",
+      "remember": "Toàn dân · cơ sở công–nông"
+    },
+    {
+      "id": 29,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Cách mạng giải phóng dân tộc muốn giành thắng lợi phải được tiến hành thế nào?",
+      "options": [
+        "Chủ động và sáng tạo",
+        "Chờ thắng lợi ở thuộc địa khác",
+        "Chờ thắng lợi ở chính quốc",
+        "Chỉ dựa vào giúp đỡ bên ngoài"
+      ],
+      "answer": 0,
+      "explanation": "Chủ động, sáng tạo nghĩa là phát huy sức mình và lựa chọn cách làm phù hợp tình hình. Các phương án chờ đợi hay chỉ dựa vào bên ngoài trái với tinh thần đó.",
+      "remember": "Chủ động + sáng tạo"
+    },
+    {
+      "id": 30,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Theo Hồ Chí Minh, cách mạng giải phóng dân tộc cần sử dụng phương thức nào?",
+      "options": [
+        "Ám sát cá nhân",
+        "Bạo lực cách mạng",
+        "Chỉ đấu tranh nghị trường",
+        "Chỉ đấu tranh ôn hòa"
+      ],
+      "answer": 1,
+      "explanation": "Bạo lực cách mạng trong nội dung này là sức mạnh đấu tranh của quần chúng được tổ chức. Cần đọc cùng câu 31 để hiểu sự kết hợp đấu tranh chính trị và vũ trang.",
+      "remember": "Câu 30 phương thức · câu 31 thành phần"
+    },
+    {
+      "id": 31,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Bạo lực cách mạng theo tư tưởng Hồ Chí Minh bao gồm sự kết hợp nào?",
+      "options": [
+        "Chỉ đấu tranh chính trị",
+        "Chỉ đấu tranh vũ trang",
+        "Đấu tranh chính trị và đấu tranh vũ trang",
+        "Bạo động cá nhân"
+      ],
+      "answer": 2,
+      "explanation": "Đấu tranh chính trị và đấu tranh vũ trang là hai hình thức được kết hợp. Chọn một hình thức đơn lẻ không thể hiện đầy đủ quan điểm trong tài liệu.",
+      "remember": "Chính trị + vũ trang"
+    },
+    {
+      "id": 32,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Năm 1944, Hồ Chí Minh giao cho ai tổ chức Đội Việt Nam Tuyên truyền Giải phóng quân?",
+      "options": [
+        "Võ Nguyên Giáp",
+        "Trường Chinh",
+        "Phạm Văn Đồng",
+        "Vũ Kỳ"
+      ],
+      "answer": 0,
+      "explanation": "Võ Nguyên Giáp được giao tổ chức Đội Việt Nam Tuyên truyền Giải phóng quân năm 1944. Câu được biên tập lại để tập trung vào người nhận nhiệm vụ này.",
+      "remember": "1944 · Võ Nguyên Giáp",
+      "reference": "https://baotanghochiminh.vn/bien-nien-tieu-su/p-743.htm",
+      "referenceName": "Bảo tàng Hồ Chí Minh"
+    },
+    {
+      "id": 33,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Năm 1944, Hồ Chí Minh chỉ thị thành lập đội nào?",
+      "options": [
+        "Việt Nam Tuyên truyền Giải phóng quân",
+        "Việt Nam Giải phóng quân",
+        "Giải phóng quân Việt Nam",
+        "Việt Nam Cứu quốc quân"
+      ],
+      "answer": 0,
+      "explanation": "Đội Việt Nam Tuyên truyền Giải phóng quân được thành lập ngày 22/12/1944. Tên đội có thành tố Tuyên truyền; cần phân biệt với các tên lực lượng ở giai đoạn khác.",
+      "remember": "22/12/1944 · Tuyên truyền Giải phóng quân",
+      "reference": "https://baotanghochiminh.vn/bien-nien-tieu-su/p-743.htm",
+      "referenceName": "Bảo tàng Hồ Chí Minh"
+    },
+    {
+      "id": 34,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Bản Yêu sách của nhân dân An Nam được gửi tới Hội nghị Versailles vào ngày nào?",
+      "options": [
+        "18/6/1917",
+        "18/6/1919",
+        "18/6/1920",
+        "18/6/1921"
+      ],
+      "answer": 1,
+      "explanation": "Bản Yêu sách của nhân dân An Nam được gửi tới Hội nghị Versailles ngày 18/6/1919. Các phương án chỉ khác năm nên cần nhớ cả sự kiện và năm.",
+      "remember": "Versailles · 18/6/1919"
+    },
+    {
+      "id": 35,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "Hồ Chí Minh dùng hình tượng nào để nói về chủ nghĩa đế quốc?",
+      "options": [
+        "Con đỉa hai vòi",
+        "Con bạch tuộc",
+        "Con chim đại bàng",
+        "Con rắn độc"
+      ],
+      "answer": 0,
+      "explanation": "Hình ảnh con đỉa hai vòi diễn tả sự bóc lột ở cả chính quốc và thuộc địa. Cần nhớ hai vòi để liên hệ hai địa bàn đó.",
+      "remember": "Hai vòi → chính quốc và thuộc địa"
+    },
+    {
+      "id": 36,
+      "chapter": "Hành trình và giải phóng dân tộc",
+      "question": "'Ham muốn tột bậc' của Hồ Chí Minh gồm độc lập cho nước, tự do cho dân và điều gì nữa?",
+      "options": [
+        "Mọi người có cơm ăn",
+        "Mọi người có áo mặc",
+        "Mọi người được học hành",
+        "Cả ba điều trên"
+      ],
+      "answer": 3,
+      "explanation": "Mục tiêu được nêu bao gồm cả cơm ăn, áo mặc và học hành cho người dân. Ba lựa chọn riêng lẻ đều đúng một phần nên chọn phương án tổng hợp.",
+      "remember": "Cơm ăn + áo mặc + học hành"
+    },
+    {
+      "id": 37,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Câu khẳng định đồng bào Nam Bộ là dân nước Việt Nam được nêu trong văn bản nào?",
+      "options": [
+        "Thư gửi ủy ban nhân dân năm 1945",
+        "Thư gửi đồng bào Nam Bộ năm 1946",
+        "Sửa đổi lối làm việc năm 1947",
+        "Di chúc năm 1969"
+      ],
+      "answer": 1,
+      "explanation": "Thư gửi đồng bào Nam Bộ năm 1946 khẳng định sự thống nhất của dân tộc Việt Nam. Đây là câu phân biệt tên văn bản và thời điểm.",
+      "remember": "Nam Bộ · bức thư năm 1946"
+    },
+    {
+      "id": 38,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Trong Đường Kách mệnh, Đảng cần làm gì với dân chúng ở trong nước?",
+      "options": [
+        "Tập hợp và lãnh đạo",
+        "Vận động và tổ chức",
+        "Tập hợp và giác ngộ",
+        "Tổ chức và lãnh đạo"
+      ],
+      "answer": 1,
+      "explanation": "Theo cách diễn đạt trong Đường Kách mệnh, nhiệm vụ trong nước là vận động và tổ chức dân chúng. Câu này cần nhớ đúng cặp động từ.",
+      "remember": "Vận động + tổ chức"
+    },
+    {
+      "id": 39,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Nhà thơ Liên Xô năm 1923 nói một nền văn hóa tương lai tỏa ra từ ai?",
+      "options": [
+        "Văn Ba",
+        "Nguyễn Tất Thành",
+        "Nguyễn Ái Quốc",
+        "Hồ Chí Minh"
+      ],
+      "answer": 2,
+      "explanation": "Bài viết năm 1923 nói tới Nguyễn Ái Quốc, tên Người dùng trong giai đoạn hoạt động lúc ấy. Không dùng tên Hồ Chí Minh cho cách gọi trong bài viết này.",
+      "remember": "Bài viết 1923 → Nguyễn Ái Quốc"
+    },
+    {
+      "id": 40,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Theo tư tưởng Hồ Chí Minh, quan hệ giữa cách mạng thuộc địa và cách mạng ở chính quốc là gì?",
+      "options": [
+        "Thuộc địa phụ thuộc hoàn toàn chính quốc",
+        "Hai cuộc cách mạng buộc phải thắng đồng thời",
+        "Thuộc địa không thể thắng trước",
+        "Thuộc địa chủ động, sáng tạo và có thể thắng trước"
+      ],
+      "answer": 3,
+      "explanation": "Cách mạng thuộc địa có tính chủ động và có thể giành thắng lợi trước cách mạng ở chính quốc. Quan hệ hỗ trợ không có nghĩa là phụ thuộc hoàn toàn hay phải thắng đồng thời.",
+      "remember": "Có thể thắng trước · chủ động"
+    },
+    {
+      "id": 41,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Theo Hồ Chí Minh, công cuộc giải phóng 'anh em' chỉ có thể thực hiện bằng nỗ lực của ai?",
+      "options": [
+        "Giai cấp công nhân",
+        "Nhân dân lao động",
+        "Bản thân anh em",
+        "Cả dân tộc"
+      ],
+      "answer": 2,
+      "explanation": "Nỗ lực của bản thân anh em nhấn mạnh tự lực của những người bị áp bức trong sự nghiệp giải phóng. Hỗ trợ bên ngoài không thay thế được vai trò tự giải phóng.",
+      "remember": "Tự lực → bản thân anh em"
+    },
+    {
+      "id": 42,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Câu 'Không có gì quý hơn độc lập, tự do' được nêu trong văn bản nào?",
+      "options": [
+        "Đường Kách mệnh năm 1927",
+        "Tuyên ngôn Độc lập năm 1945",
+        "Lời kêu gọi toàn quốc kháng chiến năm 1946",
+        "Lời kêu gọi đồng bào, chiến sĩ cả nước năm 1966"
+      ],
+      "answer": 3,
+      "explanation": "Mệnh đề này gắn với Lời kêu gọi đồng bào, chiến sĩ cả nước năm 1966. Cần phân biệt với Lời kêu gọi toàn quốc kháng chiến năm 1946.",
+      "remember": "Độc lập, tự do · lời kêu gọi 1966"
+    },
+    {
+      "id": 43,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Năm 1951, Hồ Chí Minh tóm tắt mục đích của Đảng Lao động Việt Nam bằng tám chữ nào?",
+      "options": [
+        "Thực hiện đại đoàn kết toàn dân tộc",
+        "Đoàn kết toàn dân, xây dựng đất nước",
+        "Đoàn kết toàn dân, phụng sự Tổ quốc",
+        "Hòa bình, độc lập, thống nhất, giàu mạnh"
+      ],
+      "answer": 2,
+      "explanation": "Tám chữ nêu mục đích của Đảng Lao động Việt Nam gồm đoàn kết toàn dân và phụng sự Tổ quốc. Đây là câu ghi nhớ cách diễn đạt, không chỉ chọn một mục tiêu gần nghĩa.",
+      "remember": "Đoàn kết toàn dân · phụng sự Tổ quốc"
+    },
+    {
+      "id": 44,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Ví Đảng vững như người cầm lái vững, Hồ Chí Minh nêu trong tác phẩm nào?",
+      "options": [
+        "Đường Kách mệnh năm 1927",
+        "Tuyên ngôn Độc lập năm 1945",
+        "Lời kêu gọi toàn quốc kháng chiến",
+        "Lời kêu gọi năm 1966"
+      ],
+      "answer": 0,
+      "explanation": "Hình ảnh người cầm lái trong Đường Kách mệnh làm rõ vai trò dẫn dắt của Đảng. Đảng vững là điều kiện để đưa sự nghiệp cách mạng tới thành công.",
+      "remember": "Người cầm lái → Đường Kách mệnh · 1927"
+    },
+    {
+      "id": 45,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Trước khi rời Bến Nhà Rồng, Nguyễn Tất Thành nói sau khi xem nước ngoài làm thế nào sẽ làm gì?",
+      "options": [
+        "Truyền đạt lại cho đồng bào",
+        "Trở về giúp đồng bào",
+        "Lập kế hoạch thương mại",
+        "Chiến đấu ở nước ngoài"
+      ],
+      "answer": 1,
+      "explanation": "Mục đích tìm hiểu các nước là để trở về giúp đồng bào. Chi tiết này thể hiện động cơ cứu nước của chuyến đi.",
+      "remember": "Ra đi tìm hiểu → trở về giúp đồng bào"
+    },
+    {
+      "id": 46,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Trong lời nhắc năm 1966, Hồ Chí Minh nói 'Không sợ ... chỉ sợ không công bằng; không sợ ... chỉ sợ lòng dân không yên'. Hai từ còn thiếu là gì?",
+      "options": [
+        "Đói; nghèo",
+        "Thiếu; nhiều",
+        "Thiếu; nghèo",
+        "Yếu; thừa"
+      ],
+      "answer": 2,
+      "explanation": "Cặp từ thiếu và nghèo làm nổi bật yêu cầu công bằng và lòng dân yên ổn. Đừng chỉ nhớ hai từ mà bỏ qua ý nghĩa phân phối công bằng, chăm lo đời sống nhân dân.",
+      "remember": "Thiếu → công bằng · nghèo → lòng dân"
+    },
+    {
+      "id": 47,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Theo Hồ Chí Minh, để xây dựng chủ nghĩa xã hội trước hết cần có gì?",
+      "options": [
+        "Khoa học kỹ thuật hiện đại",
+        "Lực lượng sản xuất phát triển",
+        "Cơ sở vật chất kỹ thuật",
+        "Những con người xã hội chủ nghĩa"
+      ],
+      "answer": 3,
+      "explanation": "Những con người xã hội chủ nghĩa là chủ thể xây dựng xã hội mới. Cơ sở vật chất và kỹ thuật cần thiết nhưng câu hỏi nhấn mạnh yêu cầu trước hết về con người.",
+      "remember": "Trước hết → con người"
+    },
+    {
+      "id": 48,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Theo tư tưởng Hồ Chí Minh, động lực chủ yếu của sự phát triển đất nước là gì?",
+      "options": [
+        "Con người cá nhân",
+        "Đại đoàn kết dân tộc",
+        "Sự giúp đỡ nước ngoài",
+        "Đoàn kết quốc tế"
+      ],
+      "answer": 1,
+      "explanation": "Đại đoàn kết dân tộc huy động sức mạnh của nhiều giai cấp, tầng lớp vào mục tiêu chung. Đây là sức mạnh trong nước được tài liệu chọn làm động lực chủ yếu.",
+      "remember": "Phát triển đất nước → đại đoàn kết"
+    },
+    {
+      "id": 49,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Cùng với chủ nghĩa thực dân và thói quen lạc hậu, lực cản đi lên chủ nghĩa xã hội là gì?",
+      "options": [
+        "Giặc đói",
+        "Giặc dốt",
+        "Giặc ngoại xâm",
+        "Chủ nghĩa cá nhân"
+      ],
+      "answer": 3,
+      "explanation": "Chủ nghĩa cá nhân đặt lợi ích riêng lên trên lợi ích chung, làm suy yếu tinh thần hợp tác và trách nhiệm. Trong nhóm lựa chọn, đây là lực cản được hỏi.",
+      "remember": "Lực cản → chủ nghĩa cá nhân"
+    },
+    {
+      "id": 50,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Theo tư tưởng Hồ Chí Minh, chế độ chính trị cần xây dựng là chế độ do ai làm chủ?",
+      "options": [
+        "Giai cấp công nhân",
+        "Giai cấp nông dân",
+        "Nhân dân lao động",
+        "Riêng Đảng Cộng sản"
+      ],
+      "answer": 2,
+      "explanation": "Chế độ do nhân dân lao động làm chủ thể hiện phạm vi chủ thể rộng hơn một giai cấp đơn lẻ. Không đồng nhất quyền làm chủ của nhân dân với việc chỉ một tổ chức làm chủ.",
+      "remember": "Chủ thể làm chủ → nhân dân lao động"
+    },
+    {
+      "id": 51,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Nền kinh tế mới cần được tạo lập trên cơ sở nào?",
+      "options": [
+        "Nông nghiệp hiện đại",
+        "Công nghiệp hiện đại",
+        "Khoa học kỹ thuật tiên tiến",
+        "Tất cả các cơ sở trên"
+      ],
+      "answer": 3,
+      "explanation": "Nền kinh tế mới cần sự phát triển đồng thời của nông nghiệp, công nghiệp và khoa học kỹ thuật. Mỗi phương án riêng chỉ phản ánh một bộ phận của nền tảng đó.",
+      "remember": "Nông nghiệp + công nghiệp + khoa học kỹ thuật"
+    },
+    {
+      "id": 52,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Động lực quan trọng và bao trùm nhất của chủ nghĩa xã hội theo Hồ Chí Minh là gì?",
+      "options": [
+        "Vốn",
+        "Tài nguyên thiên nhiên",
+        "Con người",
+        "Khoa học kỹ thuật"
+      ],
+      "answer": 2,
+      "explanation": "Con người vừa tạo ra vừa sử dụng vốn, tài nguyên và kỹ thuật. Vì vậy tài liệu xác định con người là động lực quan trọng, bao trùm nhất.",
+      "remember": "Động lực bao trùm → con người"
+    },
+    {
+      "id": 53,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Câu dặn về công dựng nước của các vua Hùng và trách nhiệm giữ nước của con cháu được nêu ngày nào?",
+      "options": [
+        "2/9/1945",
+        "3/9/1945",
+        "19/5/1954",
+        "19/9/1954"
+      ],
+      "answer": 3,
+      "explanation": "Lời dặn về dựng nước và giữ nước gắn với ngày 19/9/1954. Cần phân biệt với ngày sinh của Bác 19/5 và ngày Quốc khánh 2/9.",
+      "remember": "19/9/1954 · dựng nước, giữ nước"
+    },
+    {
+      "id": 54,
+      "chapter": "Độc lập và xây dựng đất nước",
+      "question": "Muốn phát huy động lực của chủ nghĩa xã hội, theo Hồ Chí Minh cần chống những gì?",
+      "options": [
+        "Chủ nghĩa cá nhân, tham ô, lãng phí, quan liêu",
+        "Chia rẽ, bè phái, vô kỷ luật, giáo điều",
+        "Chủ nghĩa đế quốc thực dân",
+        "Tất cả các nhóm trên"
+      ],
+      "answer": 3,
+      "explanation": "Các nhóm trở lực đều có thể làm suy yếu công cuộc xây dựng xã hội mới. Theo phạm vi câu hỏi trong tài liệu, phương án tổng hợp bao quát các nhóm đã liệt kê.",
+      "remember": "Chống trở lực → xét toàn bộ các nhóm"
+    },
+    {
+      "id": 55,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Theo quan điểm được tài liệu ôn tập nêu, có mấy con đường quá độ lên chủ nghĩa xã hội?",
+      "options": [
+        "Hai",
+        "Ba",
+        "Bốn",
+        "Năm"
+      ],
+      "answer": 0,
+      "explanation": "Cách phân loại trong tài liệu gồm quá độ trực tiếp và quá độ gián tiếp. Câu hỏi hỏi số kiểu được phân loại, không hỏi số bước thực hiện.",
+      "remember": "Hai kiểu: trực tiếp · gián tiếp"
+    },
+    {
+      "id": 56,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Đặc điểm cơ bản nhất của nước ta trong thời kỳ quá độ theo Hồ Chí Minh là gì?",
+      "options": [
+        "Từ nông nghiệp lạc hậu đi lên CNXH, bỏ qua giai đoạn tư bản chủ nghĩa",
+        "Chịu chiến tranh tàn phá",
+        "Từng là nước thuộc địa nửa phong kiến",
+        "Tất cả đều đúng như nhau"
+      ],
+      "answer": 0,
+      "explanation": "Điểm xuất phát từ nền nông nghiệp lạc hậu và đi lên chủ nghĩa xã hội bỏ qua giai đoạn tư bản chủ nghĩa là đặc điểm cơ bản được nêu. Chiến tranh hay chế độ thuộc địa là những đặc điểm khác của bối cảnh.",
+      "remember": "Điểm xuất phát thấp · quá độ gián tiếp"
+    },
+    {
+      "id": 57,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Chủ tịch Hồ Chí Minh lần đầu về thăm Hải Phòng vào ngày nào?",
+      "options": [
+        "20/10/1941",
+        "20/10/1944",
+        "20/10/1945",
+        "20/10/1946"
+      ],
+      "answer": 3,
+      "explanation": "Mốc trong tài liệu là 20/10/1946, gắn với lần Người về Hải Phòng sau chuyến thăm Pháp. Các lựa chọn chỉ khác năm nên ghi nhớ sự kiện kèm mốc 1946.",
+      "remember": "Hải Phòng · 20/10/1946"
+    },
+    {
+      "id": 58,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Nội dung nào được coi là vấn đề 'cốt tử' trong xây dựng Đảng?",
+      "options": [
+        "Thực hiện nghị quyết",
+        "Phát triển đảng viên",
+        "Củng cố lập trường",
+        "Xây dựng đường lối chính trị"
+      ],
+      "answer": 3,
+      "explanation": "Đường lối chính trị xác định mục tiêu và hướng hành động của Đảng. Vì thế việc xây dựng đường lối được gọi là vấn đề cốt tử trong nội dung câu hỏi.",
+      "remember": "Cốt tử → đường lối chính trị"
+    },
+    {
+      "id": 59,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Khi thực hiện bước đi trong thời kỳ quá độ, theo Hồ Chí Minh cần áp dụng phương châm nào?",
+      "options": [
+        "Tuần tự, từ thấp đến cao",
+        "Tiến nhanh, mạnh nhưng vững chắc",
+        "Tránh chủ quan, nóng vội, phù hợp thực tiễn",
+        "Cả ba nội dung trên"
+      ],
+      "answer": 3,
+      "explanation": "Ba ý cùng nhấn mạnh bước đi có cơ sở thực tiễn, tránh nóng vội và giữ sự vững chắc. Cụm tiến nhanh, mạnh phải được hiểu cùng điều kiện vững chắc.",
+      "remember": "Nhanh, mạnh đi cùng vững chắc"
+    },
+    {
+      "id": 60,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Theo Hồ Chí Minh, bước đi trong thời kỳ quá độ phải căn cứ vào đâu?",
+      "options": [
+        "Rập khuôn các nước xã hội chủ nghĩa",
+        "Chỉ nhìn vào khả năng của nước lớn",
+        "Đặc điểm lịch sử cụ thể của nước ta, đi bước nào vững chắc bước ấy",
+        "Đi theo các nước tư bản"
+      ],
+      "answer": 2,
+      "explanation": "Bước đi phải xuất phát từ điều kiện lịch sử cụ thể của Việt Nam. Sao chép mô hình của nước khác mà không xét thực tiễn sẽ không đáp ứng yêu cầu đó.",
+      "remember": "Căn cứ thực tiễn nước ta"
+    },
+    {
+      "id": 61,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Đảng Cộng sản Việt Nam là sản phẩm kết hợp những yếu tố nào?",
+      "options": [
+        "Chủ nghĩa Mác–Lênin và phong trào công nhân",
+        "Chủ nghĩa Mác–Lênin và phong trào nông dân",
+        "Chủ nghĩa Mác–Lênin và phong trào yêu nước",
+        "Chủ nghĩa Mác–Lênin, phong trào công nhân và phong trào yêu nước"
+      ],
+      "answer": 3,
+      "explanation": "Ba yếu tố là chủ nghĩa Mác–Lênin, phong trào công nhân và phong trào yêu nước. Cần nhớ yếu tố yêu nước để phân biệt với công thức chỉ gồm hai yếu tố.",
+      "remember": "Mác–Lênin + công nhân + yêu nước"
+    },
+    {
+      "id": 62,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Tác phẩm nào sau đây không phải của Hồ Chí Minh?",
+      "options": [
+        "Kháng chiến nhất định thắng lợi",
+        "Bản án chế độ thực dân Pháp",
+        "Đường Kách mệnh",
+        "Đời sống mới"
+      ],
+      "answer": 0,
+      "explanation": "Kháng chiến nhất định thắng lợi là tác phẩm của Trường Chinh. Câu hỏi có từ không, nên phải chọn tác phẩm không thuộc Hồ Chí Minh.",
+      "remember": "Chú ý từ KHÔNG · Trường Chinh"
+    },
+    {
+      "id": 63,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Khẳng định Đảng là của giai cấp công nhân, nhân dân lao động và dân tộc nói lên điều gì?",
+      "options": [
+        "Vai trò của Đảng",
+        "Lợi ích của Đảng",
+        "Lý tưởng của Đảng",
+        "Bản chất của Đảng"
+      ],
+      "answer": 3,
+      "explanation": "Câu khẳng định nói tới bản chất giai cấp công nhân cùng sự thống nhất lợi ích của nhân dân lao động và dân tộc. Nó không chỉ mô tả nhiệm vụ hay một mục tiêu riêng.",
+      "remember": "Hỏi bản chất của Đảng"
+    },
+    {
+      "id": 64,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Nguyên tắc nào được Hồ Chí Minh coi là 'thang thuốc' chữa những căn bệnh trong Đảng?",
+      "options": [
+        "Tập trung dân chủ",
+        "Kỷ luật tự giác",
+        "Tự phê bình và phê bình",
+        "Đoàn kết thống nhất"
+      ],
+      "answer": 2,
+      "explanation": "Tự phê bình và phê bình giúp nhận ra, sửa chữa khuyết điểm để tổ chức tiến bộ. Hình ảnh thang thuốc nhấn mạnh chức năng chữa những hạn chế, sai lầm.",
+      "remember": "Thang thuốc → tự phê bình và phê bình"
+    },
+    {
+      "id": 65,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Luận điểm Đảng Cộng sản là nhân tố quyết định hàng đầu đưa cách mạng Việt Nam đến thắng lợi xác định điều gì?",
+      "options": [
+        "Quyền lãnh đạo",
+        "Vai trò lãnh đạo của Đảng",
+        "Nhiệm vụ của Đảng",
+        "Mục đích của Đảng"
+      ],
+      "answer": 1,
+      "explanation": "Nhân tố quyết định thắng lợi diễn tả vai trò lãnh đạo của Đảng trong cách mạng. Quyền lãnh đạo và nhiệm vụ là những khía cạnh khác với vai trò được hỏi.",
+      "remember": "Nhân tố quyết định → vai trò lãnh đạo"
+    },
+    {
+      "id": 66,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Thư dặn tiếp tục thi đua dạy tốt và học tốt được Hồ Chí Minh gửi nhân dịp năm học mới vào năm nào?",
+      "options": [
+        "1945",
+        "1950",
+        "1968",
+        "1969"
+      ],
+      "answer": 2,
+      "explanation": "Bức thư gửi ngành Giáo dục nhân dịp năm học mới mang ngày 15/10/1968. Đáp án 1950 được khoanh trong scan đã được sửa; hãy nhớ mốc của bức thư cụ thể này.",
+      "remember": "Thư ngành Giáo dục · 15/10/1968",
+      "note": "Bản scan khoanh 1950. Thư gửi ngành Giáo dục đề ngày 15/10/1968, nên đáp án chấm điểm đã được sửa thành 1968.",
+      "reference": "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/hai-buc-thu-bac-ho-gui-nganh-giao-duc-7829"
+    },
+    {
+      "id": 67,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Trong lời kêu gọi đoàn kết, Hồ Chí Minh nói ai có tài, có đức, có sức và điều gì thì cùng đoàn kết?",
+      "options": [
+        "Lòng phụng sự Tổ quốc, phục vụ nhân dân",
+        "Đạo đức trong sáng",
+        "Ý chí cách mạng",
+        "Lòng yêu nước"
+      ],
+      "answer": 0,
+      "explanation": "Lòng phụng sự Tổ quốc, phục vụ nhân dân là điểm chung để tập hợp người có tài, đức và sức. Câu hỏi yêu cầu hoàn thành đủ ý về động cơ phục vụ.",
+      "remember": "Phụng sự Tổ quốc · phục vụ nhân dân"
+    },
+    {
+      "id": 68,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Đại đoàn kết toàn dân tộc giữ vị trí nào trong tư tưởng Hồ Chí Minh?",
+      "options": [
+        "Vấn đề cơ bản nhất",
+        "Vấn đề sống còn duy nhất",
+        "Vấn đề chiến lược, quyết định thành công của cách mạng",
+        "Vấn đề số một của cách mạng"
+      ],
+      "answer": 2,
+      "explanation": "Đại đoàn kết là vấn đề chiến lược vì cần được duy trì lâu dài, đồng thời quyết định thành công của cách mạng. Nó không chỉ là một biện pháp dùng trong một thời điểm.",
+      "remember": "Chiến lược · quyết định thành công"
+    },
+    {
+      "id": 69,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Đại đoàn kết dân tộc vừa là gì trong tư tưởng Hồ Chí Minh?",
+      "options": [
+        "Chỉ là mục tiêu",
+        "Chỉ là nhiệm vụ hàng đầu",
+        "Chỉ là khẩu hiệu",
+        "Mục tiêu và nhiệm vụ hàng đầu của Đảng, của dân tộc"
+      ],
+      "answer": 3,
+      "explanation": "Đại đoàn kết vừa là mục tiêu cần đạt vừa là nhiệm vụ hàng đầu cần thực hiện. Chỉ gọi là khẩu hiệu hoặc chỉ nêu một vế đều chưa đầy đủ.",
+      "remember": "Vừa mục tiêu · vừa nhiệm vụ"
+    },
+    {
+      "id": 70,
+      "chapter": "CNXH, Đảng và đại đoàn kết",
+      "question": "Hồ Chí Minh nhấn mạnh thực hiện tốt điều gì thì con cháu đều tốt?",
+      "options": [
+        "Đại đoàn kết toàn dân tộc",
+        "Lòng yêu nước nồng nàn",
+        "Tinh thần chiến đấu anh dũng",
+        "Sự giúp đỡ của bè bạn thế giới"
+      ],
+      "answer": 0,
+      "explanation": "Ý được tài liệu nhấn mạnh là thực hiện tốt đại đoàn kết toàn dân tộc. Câu này tiếp nối nhóm câu về sức mạnh và tính lâu dài của đoàn kết.",
+      "remember": "Từ khóa: đại đoàn kết toàn dân tộc"
+    },
+    {
+      "id": 71,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Theo tư tưởng Hồ Chí Minh, nền tảng của khối đại đoàn kết dân tộc là gì?",
+      "options": [
+        "Liên minh công–nông",
+        "Liên minh công–nông và lao động trí óc",
+        "Liên minh công–nông và tư sản",
+        "Liên minh công–nông và địa chủ"
+      ],
+      "answer": 1,
+      "explanation": "Nền tảng được nêu gồm công nhân, nông dân và lao động trí óc. Liên minh công–nông là một phần, nhưng chưa đủ ba thành phần trong câu hỏi này.",
+      "remember": "Công nhân + nông dân + trí thức"
+    },
+    {
+      "id": 72,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Trong Tuyên ngôn Độc lập, nhân dân Việt Nam quyết đem những gì để giữ vững tự do, độc lập?",
+      "options": [
+        "Toàn bộ sức lực",
+        "Tinh thần và lực lượng",
+        "Tính mạng và của cải",
+        "Tất cả tinh thần, lực lượng, tính mạng và của cải"
+      ],
+      "answer": 3,
+      "explanation": "Lời kết Tuyên ngôn nêu quyết tâm bằng cả tinh thần, lực lượng, tính mạng và của cải. Mỗi phương án riêng chỉ trích một phần của sự cam kết đó.",
+      "remember": "Tinh thần · lực lượng · tính mạng · của cải"
+    },
+    {
+      "id": 73,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Theo Hồ Chí Minh, Đảng vừa là người lãnh đạo vừa là người gì của dân?",
+      "options": [
+        "Giúp việc",
+        "Chỉ huy",
+        "Đầy tớ",
+        "Bảo vệ"
+      ],
+      "answer": 2,
+      "explanation": "Đầy tớ của dân nhấn mạnh trách nhiệm phục vụ nhân dân của Đảng. Vai trò lãnh đạo phải gắn với trách nhiệm phục vụ, không tạo đặc quyền.",
+      "remember": "Lãnh đạo gắn với phục vụ dân"
+    },
+    {
+      "id": 74,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Câu 'Dân vận khéo, việc gì cũng thành công' nằm trong tác phẩm nào?",
+      "options": [
+        "Dân vận",
+        "Sửa đổi lối làm việc",
+        "Đạo đức cách mạng",
+        "Di chúc"
+      ],
+      "answer": 0,
+      "explanation": "Câu nói gắn với tác phẩm Dân vận, bàn về vận động và phát huy sức dân. Từ khóa dân vận trong câu cũng giúp nhận diện tác phẩm.",
+      "remember": "Dân vận khéo → tác phẩm Dân vận"
+    },
+    {
+      "id": 75,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Lời dặn mỗi đảng viên phải thấm nhuần đạo đức cách mạng, cần kiệm liêm chính, chí công vô tư được nêu trong tác phẩm nào?",
+      "options": [
+        "Đường Kách mệnh",
+        "Đời sống mới",
+        "Đạo đức cách mạng",
+        "Di chúc"
+      ],
+      "answer": 3,
+      "explanation": "Di chúc chứa lời căn dặn về đạo đức và trách nhiệm của mỗi đảng viên. Đây là câu xác định văn bản chứa lời dặn, không chỉ xác định chủ đề đạo đức.",
+      "remember": "Lời dặn đảng viên → Di chúc"
+    },
+    {
+      "id": 76,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Sau tuyên bố độc lập, Hồ Chí Minh chủ trương làm bạn với tất cả những nước nào và không gây thù oán với ai?",
+      "options": [
+        "Các dân tộc",
+        "Các nước xã hội chủ nghĩa",
+        "Mọi nước dân chủ",
+        "Các quốc gia khác"
+      ],
+      "answer": 2,
+      "explanation": "Chủ trương làm bạn với mọi nước dân chủ thể hiện tinh thần hòa bình và hợp tác. Không thu hẹp phạm vi vào riêng các nước xã hội chủ nghĩa.",
+      "remember": "Làm bạn với mọi nước dân chủ"
+    },
+    {
+      "id": 77,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Trong câu 'Quan sơn muôn dặm một nhà', Hồ Chí Minh gọi ai là anh em?",
+      "options": [
+        "Lao động thế giới",
+        "Bốn phương vô sản",
+        "Mọi sắc tộc",
+        "Nhân dân thế giới"
+      ],
+      "answer": 1,
+      "explanation": "Bốn phương vô sản là cụm từ cần hoàn thành trong bài thơ. Câu hỏi kiểm tra từ ngữ cụ thể, nên các cách diễn đạt gần nghĩa không thay thế được.",
+      "remember": "Từ khóa: bốn phương vô sản"
+    },
+    {
+      "id": 78,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Hoàn thành lời dạy: 'Thi đua là yêu nước, yêu nước là thi đua. Và những người thi đua là những người ...'",
+      "options": [
+        "Giỏi nhất",
+        "Hăng hái nhất",
+        "Yêu nước nhất",
+        "Cách mạng nhất"
+      ],
+      "answer": 2,
+      "explanation": "Cụm yêu nước nhất nối việc thi đua với lòng yêu nước. Ý nghĩa học tập là thể hiện lòng yêu nước thông qua hành động và kết quả công việc.",
+      "remember": "Thi đua → yêu nước"
+    },
+    {
+      "id": 79,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Phiên họp đầu tiên của Chính phủ lâm thời, khi Hồ Chí Minh nêu sáu nhiệm vụ cấp bách, diễn ra ngày nào?",
+      "options": [
+        "2/9/1945",
+        "3/9/1945",
+        "4/9/1945",
+        "5/9/1945"
+      ],
+      "answer": 1,
+      "explanation": "Phiên họp đầu tiên diễn ra ngày 3/9/1945, ngay sau ngày tuyên bố độc lập 2/9. Đừng nhầm hai ngày liền nhau này.",
+      "remember": "2/9 độc lập → 3/9 họp Chính phủ"
+    },
+    {
+      "id": 80,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Theo Hồ Chí Minh, 'nước ta là nước dân chủ' nghĩa là gì?",
+      "options": [
+        "Nước nhà do nhân dân làm chủ",
+        "Dân điều hành mọi việc trực tiếp",
+        "Dân có mọi quyền hành không qua pháp luật",
+        "Dân tự quyết mọi vấn đề riêng lẻ"
+      ],
+      "answer": 0,
+      "explanation": "Dân chủ được diễn giải là nhân dân làm chủ nước nhà. Điều đó không có nghĩa mỗi người trực tiếp quyết định mọi việc hoặc đứng ngoài pháp luật.",
+      "remember": "Dân chủ → nhân dân làm chủ"
+    },
+    {
+      "id": 81,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "'Nhà nước của dân' theo tư tưởng Hồ Chí Minh nhấn mạnh điều gì?",
+      "options": [
+        "Mọi quyền lực trong nhà nước và xã hội thuộc về nhân dân",
+        "Mọi việc do một nhóm người quyết định",
+        "Đại biểu không cần dân bầu",
+        "Nhà nước không chịu giám sát"
+      ],
+      "answer": 0,
+      "explanation": "Của dân trả lời câu hỏi quyền lực thuộc về ai: thuộc về nhân dân. Có thể học cùng câu 82 và 83 để phân biệt ba khía cạnh.",
+      "remember": "Của dân → quyền lực thuộc về dân"
+    },
+    {
+      "id": 82,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "'Nhà nước do dân' thể hiện qua những nội dung nào?",
+      "options": [
+        "Dân lựa chọn đại biểu",
+        "Dân đóng góp, ủng hộ nhà nước",
+        "Dân giám sát và có quyền bãi miễn đại biểu",
+        "Tất cả các nội dung trên"
+      ],
+      "answer": 3,
+      "explanation": "Do dân nhấn mạnh vai trò của nhân dân trong lập nên, đóng góp và giám sát nhà nước. Các lựa chọn đều là những biểu hiện được tài liệu nêu.",
+      "remember": "Do dân → dân xây dựng, giám sát"
+    },
+    {
+      "id": 83,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "'Nhà nước vì dân' theo tư tưởng Hồ Chí Minh có đặc điểm nào?",
+      "options": [
+        "Phục vụ lợi ích chính đáng của dân",
+        "Chính sách xuất phát từ lợi ích của dân",
+        "Trong sạch, không đặc quyền đặc lợi",
+        "Tất cả các nội dung trên"
+      ],
+      "answer": 3,
+      "explanation": "Vì dân nhấn mạnh mục đích phục vụ lợi ích chính đáng của nhân dân. Sự trong sạch, không đặc quyền cũng phục vụ mục đích đó.",
+      "remember": "Vì dân → lợi ích của dân"
+    },
+    {
+      "id": 84,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Nhà nước pháp quyền có hiệu lực pháp lý mạnh mẽ theo Hồ Chí Minh cần có gì?",
+      "options": [
+        "Hợp hiến, hợp pháp",
+        "Thượng tôn pháp luật",
+        "Pháp quyền nhân nghĩa",
+        "Tất cả các nội dung trên"
+      ],
+      "answer": 3,
+      "explanation": "Ba yếu tố trong câu cùng nói tới nền tảng pháp lý, việc tôn trọng pháp luật và tính nhân nghĩa. Theo cấu trúc câu hỏi, phương án tổng hợp là đầy đủ nhất.",
+      "remember": "Hợp pháp · thượng tôn pháp luật · nhân nghĩa"
+    },
+    {
+      "id": 85,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Bài thơ 'Không có việc gì khó...' được Hồ Chí Minh tặng thanh niên xung phong ở Bắc Kạn vào năm nào?",
+      "options": [
+        "1945",
+        "1946",
+        "1951",
+        "1969"
+      ],
+      "answer": 2,
+      "explanation": "Bài thơ được Bác tặng thanh niên xung phong ở Bắc Kạn năm 1951. Bản scan nêu năm 1950; lựa chọn và đáp án đã được sửa để khớp tư liệu đối chiếu.",
+      "remember": "Thanh niên xung phong · 1951",
+      "note": "Bản scan ghi 1950. Tư liệu của tỉnh Bắc Kạn xác định Bác tặng bài thơ cho thanh niên xung phong năm 1951; phương án C được sửa thành 1951.",
+      "reference": "https://backan.gov.vn/pages/bac-ho-voi-que-huong-bac-kan-e4ba.aspx"
+    },
+    {
+      "id": 86,
+      "chapter": "Đại đoàn kết và Nhà nước",
+      "question": "Bài 'Sức khỏe và thể dục' nêu tinh thần 'Dân cường thì quốc thịnh' đăng trên báo nào, ngày nào?",
+      "options": [
+        "Báo Cứu quốc, 27/3/1946",
+        "Báo Sự thật, 27/3/1948",
+        "Báo Nhân dân, 27/3/1954",
+        "Báo Thanh niên, 27/3/1969"
+      ],
+      "answer": 0,
+      "explanation": "Bài Sức khỏe và thể dục gắn với báo Cứu quốc ngày 27/3/1946. Cần kiểm tra cả tên báo và ngày, không chỉ một phần của phương án.",
+      "remember": "Cứu quốc · 27/3/1946"
+    },
+    {
+      "id": 87,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Trong tư tưởng Hồ Chí Minh, đạo đức có vai trò gì?",
+      "options": [
+        "Chỉ là kiến thức lý luận",
+        "Là gốc của người cách mạng và nền tảng tinh thần xã hội",
+        "Chỉ định hướng lý tưởng",
+        "Chỉ là một phương pháp tuyên truyền"
+      ],
+      "answer": 1,
+      "explanation": "Đạo đức được ví như gốc vì định hướng cách dùng năng lực, quyền hạn và hành động. Vì vậy đạo đức không chỉ là kiến thức lý luận.",
+      "remember": "Đạo đức → gốc của người cách mạng"
+    },
+    {
+      "id": 88,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Theo Hồ Chí Minh, xây dựng đạo đức mới cần thực hiện nguyên tắc nào?",
+      "options": [
+        "Nói đi đôi với làm",
+        "Xây đi đôi với chống",
+        "Tu dưỡng đạo đức suốt đời",
+        "Tất cả các nguyên tắc trên"
+      ],
+      "answer": 3,
+      "explanation": "Ba nguyên tắc bổ sung cho nhau: thực hành đúng lời nói, kết hợp xây dựng với chống cái xấu và rèn luyện thường xuyên. Chọn một nguyên tắc sẽ chưa bao quát câu hỏi.",
+      "remember": "Nói–làm · xây–chống · suốt đời"
+    },
+    {
+      "id": 89,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Điền vào lời dạy về bốn đức của con người trong tư tưởng Hồ Chí Minh.",
+      "options": [
+        "Cần, kiệm, liêm, chính",
+        "Tinh thần quốc tế trong sáng",
         "Trung với nước, hiếu với dân",
-        "Thương yêu con người, sống có tình có nghĩa",
-        "Tinh thần quốc tế trong sáng"
+        "Yêu thương con người"
       ],
-      answer: 1,
-      explanation:
-        "“Trung với nước, hiếu với dân” là phẩm chất đạo đức bao trùm, quan trọng nhất, nâng truyền thống yêu nước hiếu nghĩa của dân tộc lên tầm cao cách mạng mới."
+      "answer": 0,
+      "explanation": "Cần, kiệm, liêm, chính là bốn đức được hỏi. Những phẩm chất ở các lựa chọn khác có liên quan đạo đức nhưng không phải bộ bốn này.",
+      "remember": "Cần · kiệm · liêm · chính"
     },
     {
-      id: 13,
-      chapter: "Chuyên đề Bác Hồ với Hải Phòng & Biển đảo",
-      question:
-        "Khi về thăm làng cá đảo Cát Bà – Cát Hải (Hải Phòng) ngày 31/03 – 01/04/1959, Chủ tịch Hồ Chí Minh đã căn dặn câu nói nổi tiếng nào và ngày 01/04 trở thành ngày truyền thống của ngành nào?",
-      options: [
-        "“Rừng vàng, biển bạc của ta, do nhân dân ta làm chủ” — Ngày truyền thống Ngành Thủy sản Việt Nam",
-        "“Vì lợi ích trăm năm thì phải trồng người” — Ngày Nhà giáo Việt Nam",
-        "“Lương y như từ mẫu” — Ngày Thầy thuốc Việt Nam",
-        "“Không có gì quý hơn độc lập, tự do” — Ngày Quốc khánh"
+      "id": 90,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Theo Hồ Chí Minh, lực lượng đoàn kết mạnh mẽ nhất trong thế giới là của ai?",
+      "options": [
+        "Bạn bè",
+        "Nhân dân",
+        "Một nhóm người",
+        "Một cá nhân"
       ],
-      answer: 0,
-      explanation:
-        "Tại đảo Cát Bà (Hải Phòng) ngày 31/03 – 01/04/1959, Bác Hồ căn dặn: “Rừng vàng, biển bạc của ta, do nhân dân ta làm chủ!”. Để ghi nhớ sự kiện thiêng liêng này, ngày 01/04 hằng năm được chọn làm Ngày truyền thống Ngành Thủy sản Việt Nam."
+      "answer": 1,
+      "explanation": "Nhân dân là lực lượng được tài liệu nhấn mạnh, thay vì một cá nhân hay nhóm nhỏ. Ý cần nhớ là sức mạnh đoàn kết của đông đảo quần chúng.",
+      "remember": "Sức mạnh đoàn kết → nhân dân"
     },
     {
-      id: 14,
-      chapter: "Chương V",
-      question:
-        "Theo Hồ Chí Minh, để thực hiện chiến lược “trồng người”, việc xây dựng con người xã hội chủ nghĩa đòi hỏi phải kết hợp hai yếu tố cốt lõi nào?",
-      options: [
-        "Vừa “Văn” vừa “Võ”",
-        "Vừa “Hồng” vừa “Chuyên”",
-        "Vừa “Nhanh” vừa “Mạnh”",
-        "Vừa “Cần” vừa “Kiệm”"
+      "id": 91,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Hoàn thành lời dạy: 'Dễ mười lần không dân cũng ..., khó trăm lần dân liệu cũng xong'.",
+      "options": [
+        "Mệt",
+        "Khó",
+        "Chịu",
+        "Bỏ"
       ],
-      answer: 1,
-      explanation:
-        "Xây dựng con người toàn diện theo Tư tưởng Hồ Chí Minh là phải vừa “Hồng” (có đạo đức cách mạng, bản lĩnh chính trị, lòng yêu nước) vừa “Chuyên” (có trình độ văn hóa, khoa học - kỹ thuật, năng lực chuyên môn giỏi)."
+      "answer": 2,
+      "explanation": "Từ còn thiếu là chịu. Ý câu nói nhấn mạnh vai trò quyết định của sức dân và việc huy động nhân dân giải quyết công việc.",
+      "remember": "Không dân cũng chịu · dân liệu cũng xong"
+    },
+    {
+      "id": 92,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Khẳng định văn hóa nghệ thuật cũng là một mặt trận nhằm nói tới điều gì?",
+      "options": [
+        "Vai trò của văn hóa nghệ thuật",
+        "Đặc điểm riêng của nghệ sĩ",
+        "Vai trò của nhà nước",
+        "Chỉ hoạt động quân sự"
+      ],
+      "answer": 0,
+      "explanation": "Hình ảnh mặt trận khẳng định vai trò của văn hóa nghệ thuật trong sự nghiệp chung. Không hiểu mặt trận ở đây chỉ là hoạt động quân sự.",
+      "remember": "Mặt trận → vai trò văn hóa nghệ thuật"
+    },
+    {
+      "id": 93,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Bài viết ngày 28/11/1959 trên báo Nhân Dân phát động hoạt động nào?",
+      "options": [
+        "Tết thiếu nhi",
+        "Tết trồng cây",
+        "Tết Đoan ngọ",
+        "Tất cả các hoạt động trên"
+      ],
+      "answer": 1,
+      "explanation": "Bài viết ngày 28/11/1959 phát động Tết trồng cây. Hoạt động gắn với việc trồng cây, chăm lo môi trường và lợi ích lâu dài.",
+      "remember": "28/11/1959 · Tết trồng cây"
+    },
+    {
+      "id": 94,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Nhà thơ Xô viết nào viết về Nguyễn Ái Quốc trên tạp chí Ogoniok năm 1923?",
+      "options": [
+        "Sơn Tùng",
+        "Épghênhi Cabêlép",
+        "Ôxip Manđenxtam",
+        "V. I. Lênin"
+      ],
+      "answer": 2,
+      "explanation": "Ôxip Manđenxtam là nhà thơ Xô viết được hỏi, gắn với bài viết về Nguyễn Ái Quốc năm 1923. Câu 39 kiểm tra tên nhân vật trong bài; câu này kiểm tra tác giả.",
+      "remember": "1923 · Ôxip Manđenxtam"
+    },
+    {
+      "id": 95,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Hoàn thành lời gửi thanh niên: 'Một năm ... từ mùa xuân. Một đời ... từ tuổi trẻ'.",
+      "options": [
+        "Bắt đầu",
+        "Khởi đầu",
+        "Bước đầu",
+        "Mở đầu"
+      ],
+      "answer": 1,
+      "explanation": "Từ cần nhớ là khởi đầu ở cả hai vị trí. Câu nói dùng mùa xuân và tuổi trẻ để nhấn mạnh ý nghĩa của sự bắt đầu.",
+      "remember": "Khởi đầu · mùa xuân · tuổi trẻ"
+    },
+    {
+      "id": 96,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Theo Hồ Chí Minh, người cách mạng phải có điều gì làm nền tảng để hoàn thành nhiệm vụ vẻ vang?",
+      "options": [
+        "Sức khỏe",
+        "Tài năng",
+        "Tài năng và đức độ",
+        "Đạo đức cách mạng"
+      ],
+      "answer": 3,
+      "explanation": "Đạo đức cách mạng là nền tảng giúp người cách mạng sử dụng năng lực để hoàn thành nhiệm vụ. Tài năng hoặc sức khỏe riêng lẻ không thay thế nền tảng đạo đức.",
+      "remember": "Nền tảng → đạo đức cách mạng"
+    },
+    {
+      "id": 97,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Hoàn thành quan điểm của Hồ Chí Minh: 'Văn hóa phải soi đường cho ... đi'.",
+      "options": [
+        "Dân tộc",
+        "Toàn dân",
+        "Quốc dân",
+        "Mọi người"
+      ],
+      "answer": 2,
+      "explanation": "Quốc dân là từ đúng trong mệnh đề được hỏi. Ý nghĩa là văn hóa góp phần định hướng đời sống và sự phát triển của cộng đồng dân tộc.",
+      "remember": "Văn hóa soi đường → quốc dân"
+    },
+    {
+      "id": 98,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Hoàn thành lời dạy: 'Học để làm việc, ..., làm cán bộ'.",
+      "options": [
+        "Làm cách mạng",
+        "Phục vụ nhân dân",
+        "Có tri thức",
+        "Làm người"
+      ],
+      "answer": 3,
+      "explanation": "Làm người nằm giữa làm việc và làm cán bộ. Quan điểm này gắn việc học với cả năng lực làm việc và việc rèn nhân cách.",
+      "remember": "Học → làm việc · làm người · làm cán bộ"
+    },
+    {
+      "id": 99,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Hoàn thành hình ảnh về tu dưỡng đạo đức: 'Ngọc càng mài càng ..., vàng càng luyện càng ...'.",
+      "options": [
+        "Tốt; bền",
+        "Sáng; trong",
+        "Đắt; cao",
+        "Quý; bền"
+      ],
+      "answer": 1,
+      "explanation": "Hai từ sáng và trong diễn tả sự tiến bộ nhờ rèn luyện. Hình ảnh mài ngọc, luyện vàng liên hệ việc tu dưỡng đạo đức bền bỉ.",
+      "remember": "Ngọc → sáng · vàng → trong"
+    },
+    {
+      "id": 100,
+      "chapter": "Đạo đức, văn hóa và học tập",
+      "question": "Chỉ thị 05-CT/TW về học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh được ban hành ngày nào?",
+      "options": [
+        "15/5/2016",
+        "19/5/2016",
+        "19/5/2017",
+        "2/9/2018"
+      ],
+      "answer": 0,
+      "explanation": "Chỉ thị 05-CT/TW được ban hành ngày 15/5/2016. Đừng nhầm ngày ban hành với ngày sinh Chủ tịch Hồ Chí Minh 19/5.",
+      "remember": "Chỉ thị 05 · 15/5/2016",
+      "reference": "https://hochiminh.vn/tin-tuc/ket-luan-cua-bo-chinh-tri-ve-tiep-tuc-hoc-tap-lam-theo-tu-tuong-dao-duc-phong-cach-ho-chi-minh-4593",
+      "referenceName": "Tư liệu Hồ Chí Minh điện tử"
     }
   ]
 };
